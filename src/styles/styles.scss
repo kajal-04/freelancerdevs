@@ -1,0 +1,31 @@
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+
+@import 'font';
+@import 'color';
+@import 'layout';
+@import 'typography';
+@import 'button';
+@import 'input';
+@import 'nav';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #ffffff;
+    font-family: "Montserrat", serif;
+    font-weight: 500;
+    font-size: 13px;
+    background-color: #304f2f;
+}
+
+.bg-green {
+    background-color: #304f2f;
+}
+
+.text-primary {
+    color: #ffffff;
+}
