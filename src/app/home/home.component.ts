@@ -12,7 +12,7 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('circleContainer', { static: true }) circleContainer!: ElementRef<SVGElement>;
 
   ngAfterViewInit() {
-    const radius = 200;
+    const radius = 150;
     const centerX = 400;
     const centerY = 400;
     const duration = 5;
