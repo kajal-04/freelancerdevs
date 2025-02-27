@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { gsap } from "gsap";
 
 @Component({
@@ -18,7 +17,7 @@ export class HomeComponent implements AfterViewInit {
     const centerY = 400;
     const duration = 5;
 
-    const circles = this.circleContainer.nativeElement.querySelectorAll('circle.smallCircle');
+    const circles = this.circleContainer.nativeElement.querySelectorAll('g.smallCircleGroup');
     const totalCircles = circles.length;
 
     circles.forEach((circle, index) => {
@@ -33,8 +32,9 @@ export class HomeComponent implements AfterViewInit {
           const radianAngle = (angleObj.angle * Math.PI) / 180;
           const x = centerX + radius * Math.cos(radianAngle);
           const y = centerY + radius * Math.sin(radianAngle);
-          circle.setAttribute("cx", x.toString());
-          circle.setAttribute("cy", y.toString());
+
+          // Apply transformation to the <g> element
+          circle.setAttribute("transform", `translate(${x},${y})`);
         },
       });
     });
