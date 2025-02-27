@@ -1,5 +1,22 @@
 .navbar {
-    padding: 10px 20px;
+    padding: 6px 20px;
+    background-color: #0f1120;
+    border-radius: 16px;
+
+    ul {
+        li {
+            padding: 8px 10px;
+            border-radius: 4px;
+
+            &:hover {
+                background-color: #191934;
+            }
+            a {
+                text-decoration: none;
+                color: #f5f3f3f2;
+            }
+        }
+    }
 }
 
 .logo {

@@ -9,6 +9,9 @@
 @import 'input';
 @import 'nav';
 
+@import 'misc';
+@import 'queries';
+
 * {
     padding: 0;
     margin: 0;
@@ -19,7 +22,7 @@ body {
     font-family: "Montserrat", serif;
     font-weight: 500;
     font-size: 13px;
-    background-color: #304f2f;
+    background-color: #090E16;
 }
 
 .bg-green {
