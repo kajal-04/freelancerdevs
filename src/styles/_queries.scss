@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 50px;
+    height: calc(100vh - 20px);
 }
 
 @media (max-width: 991px) { /* Tablets (md to lg) */
@@ -10,6 +12,8 @@
         align-items: center;
         flex-direction: column;
         justify-content: space-between;
+        height: auto;
+        padding-top: 70px;
     }
 }
 

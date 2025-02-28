@@ -27,7 +27,6 @@
 }
 
 .w-200 {
-    width: 220px;
 }
 
 .bg-secondary {
@@ -36,7 +35,37 @@
     !important;
 }
 
-.primary-border-y {
-    border-top: 1px solid #3d2f77;
+.primary-border-b {
     border-bottom: 1px solid #3d2f77;
+}
+
+.profile {
+    border: 1px solid #3d2f77;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+        height: 250px;
+        width: 250px;
+    }
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #090E16;
+
+    &.bg-secondary {
+        .greeting {
+            background-color: #090E16;
+        }
+    }
+}
+
+.h-100-20 {
+    height: calc(100vh - 20px);
 }

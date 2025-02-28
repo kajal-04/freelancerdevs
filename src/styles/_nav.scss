@@ -1,20 +1,32 @@
-.navbar {
-    padding: 6px 20px;
-    background-color: #0f1120;
-    border-radius: 16px;
+.navigation {
+    position: fixed;
+    z-index: 1051;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    background-color: #090E16;
+}
 
-    .home-link {
+.navbar {
+    height: 50px;
+    background-color: #0f1120;
+    max-width: 1300px;
+    margin: auto;
+    padding: 6px 20px;
+    border-radius: 16px;
+    
+    ul {
         display: flex;
         align-items: center;
-        gap: 8px;
-        
-    }
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
 
-    ul {
         li {
-            padding: 8px 10px;
-            border-radius: 4px;
-
             a {
                 padding: 8px 10px;
                 border-radius: 4px;
@@ -29,10 +41,16 @@
     }
 }
 
+
 .logo {
     height: 28px;
 }
 
 .menu {
     font-size: 24px;
+}
+
+.home-link {
+    text-decoration: none;
+    color: white;
 }

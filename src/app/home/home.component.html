@@ -1,15 +1,27 @@
-<div class="home-content">
+<div class="home-content primary-border-b">
     <div class="w-100">
         <div class="greeting">
             <span>👋</span>
-            <span class="text-blue">Hello!</span>
+            <a href="" class="typewrite text-blue text-decoration-none" data-period="2000" data-type='[ "Hello!", "Hola!", "Konnichiwa!", "Bonjour!", "NEE-haow!" ]'>
+                <span class="wrap"></span>
+            </a>
         </div>
         <p class="fs-4 fw-bold mt-3 mb-4 w-75">Your End-to-End Web Development & Product Experts</p>
-        <p class="fs-6 text-yellow">Let's take your website to next level</p>
+        <p class="fs-6 text-yellow mb-4">Let's take your website to next level</p>
+        <button class="btn btn-outline">Hire Us</button>
+
     </div>
-    <div class="position-relative">
+    <div>
+        <svg #animationCanvas width="500" height="500" viewBox="350 350 500 500" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="600" cy="600" r="213" fill="#7B4AE2" fill-opacity="0.2" filter="url(#dropShadow)"/>
+        </svg>
+        
+        
+    </div>
+
+
+    <!-- <div class="position-relative">
         <svg #circleContainer width="400" height="400" viewBox="250 200 300 400" xmlns="http://www.w3.org/2000/svg">
-            <!-- Background Circle -->
             <circle cx="400" cy="400" r="150" fill="#7B4AE2" fill-opacity="0.2"/>
             <g class="smallCircleGroup" transform="translate(320, 260)">
                 <circle class="smallCircle" r="25" fill="#090E16"/>
@@ -19,7 +31,6 @@
                 </g>
             </g>
         
-            <!-- TypeScript Icon (Bigger) -->
             <g class="smallCircleGroup" transform="translate(550, 400)">
                 <circle class="smallCircle" r="25" fill="#090E16"/>
                 <g transform="scale(1.2)">
@@ -28,7 +39,6 @@
                 </g>
             </g>
         
-            <!-- Figma Icon (Bigger) -->
             <g class="smallCircleGroup" transform="translate(320, 540)">
                 <circle class="smallCircle" r="25" fill="#090E16"/>
                 <g transform="scale(0.6) translate(-20,-20)">
@@ -44,13 +54,10 @@
         
         <img src="/assets/home-character.svg" class="position-absolute top-50 start-50 translate-middle home-avatar">
         
-    </div>
-    <div class="w-100 d-flex justify-content-end">
-        <button class="btn btn-outline">Hire Us</button>
-    </div>
+    </div> -->
 </div>
 
-<div class="primary-border-y py-5 mt-5">
+<div class="primary-border-b py-5 mt-5">
     <div class="d-flex justify-content-center gap-4">
         <div class="card d-flex flex-column align-items-center w-200">
             <div class="card-icon">
@@ -60,7 +67,7 @@
                 team of 8
             </div>
             <div class="card-title">
-                Programmer
+                Programmers
             </div>
         </div>
         <div class="card d-flex flex-column align-items-center w-200 bg-secondary">
@@ -88,7 +95,7 @@
     </div>
 </div>
 
-<div>
-
+<div class="py-5 primary-border-b">
+    <app-profile></app-profile>
 </div>
 
