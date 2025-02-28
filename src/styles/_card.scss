@@ -1,0 +1,17 @@
+.card {
+    border: 1px solid #3d2f77;
+    border-radius: 6px;
+    background-color: transparent;
+    padding: 16px;
+
+    &-subtitle {
+        font-size: 14px;
+        color: antiquewhite;
+    }
+
+    &-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: white;
+    }
+}

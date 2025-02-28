@@ -15,7 +15,7 @@ export class HomeComponent implements AfterViewInit {
     const radius = 150;
     const centerX = 400;
     const centerY = 400;
-    const duration = 5;
+    const duration = 8;
 
     const circles = this.circleContainer.nativeElement.querySelectorAll('g.smallCircleGroup');
     const totalCircles = circles.length;
