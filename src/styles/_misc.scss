@@ -39,6 +39,10 @@
     border-bottom: 1px solid #3d2f77;
 }
 
+.primary-border-t {
+    border-top: 1px solid #3d2f77;
+}
+
 .profile {
     border: 1px solid #3d2f77;
     border-radius: 50%;
@@ -69,3 +73,62 @@
 .h-100-20 {
     height: calc(100vh - 20px);
 }
+
+.animation-container {
+    width: 426px; /* Matches the SVG circle */
+    height: 426px; /* Matches the SVG circle */
+    background-color: #201a3f;
+    border-radius: 50%; /* Perfect circle */
+    box-shadow: 0px 0px 30px rgba(123, 74, 226, 0.5); /* Softer, more visible glow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    .animation-container {
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+
+
+// slider
+.slider-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+        
+    .slider-wrapper {
+      width: 100%;
+      overflow: hidden;
+    }
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .card {
+      min-width: 100%;
+      padding: 20px;
+      background: #3498db;
+      color: white;
+      text-align: center;
+      font-size: 20px;
+      border-radius: 10px;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .left { left: 0; }
+    .right { right: 0; }
+  }

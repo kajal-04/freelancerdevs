@@ -21,6 +21,7 @@ export class ProfileComponent implements AfterViewInit {
     cards.forEach((card, index) => {
       const isLastCard = index === lastIndex;
       const element = card.nativeElement;
+      element.style.top = "74px";
 
       if (isLastCard) {
         element.style.position = 'relative';

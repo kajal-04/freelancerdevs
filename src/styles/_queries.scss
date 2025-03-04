@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 50px;
+    padding: 100px 0;
     height: calc(100vh - 20px);
 }
 
@@ -10,10 +10,14 @@
     .home-content {
         display: flex;
         align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
+        flex-direction: column-reverse;
+        justify-content: center;
         height: auto;
-        padding-top: 70px;
+        gap: 40px;
+
+        .left-content {
+            text-align: center;
+        }
     }
 }
 
