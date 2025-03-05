@@ -27,6 +27,11 @@
 }
 
 .w-200 {
+    width: 200px;
+}
+
+.w-280 {
+    width: 280px;
 }
 
 .bg-secondary {
@@ -84,10 +89,10 @@
 }
 
 .animation-container {
-    width: 426px; /* Matches the SVG circle */
-    height: 426px; /* Matches the SVG circle */
+    width: 426px;
+    height: 426px;
     background-color: #201a3f;
-    border-radius: 50%; /* Perfect circle */
+    border-radius: 50%;
     box-shadow: 0px 0px 30px rgba(123, 74, 226, 0.5); /* Softer, more visible glow */
     display: flex;
     justify-content: center;
@@ -114,3 +119,6 @@
     padding: 80px 0;
 }
 
+.text-secondary {
+    color: #727880;
+}

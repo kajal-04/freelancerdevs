@@ -91,7 +91,7 @@ export class HomeComponent implements OnInit, AfterViewInit  {
     this.homeSections.forEach((section, index) => {
       gsap.fromTo(
         section.nativeElement,
-        { opacity: 0, y: 80, scale: 0.95 }, // Initial state
+        { opacity: 0, y: 80, scale: 0.95 },
         {
           opacity: 1,
           y: 0,
@@ -101,9 +101,9 @@ export class HomeComponent implements OnInit, AfterViewInit  {
           delay: index * 0.2,
           scrollTrigger: {
             trigger: section.nativeElement,
-            start: "top 80%", // Start animation when 80% in view
-            end: "top 20%", // Ends at 20% in view
-            toggleActions: "play none none reset", // ✅ Resets when leaving viewport
+            start: "top 80%",
+            end: "top 20%",
+            toggleActions: "play none none reset",
           },
         }
       );
