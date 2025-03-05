@@ -99,36 +99,51 @@
 }
 
 .grid-masonry-2 {
-    width: 100%;
-    max-width: 100%;
-    column-count: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    .card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
 }
 
 .masonry-item {
-    width: 100%;
     break-inside: avoid;
-    padding: 10px;
+    display: flex;
 }
 
 .masonry-item-inner {
-    grid-row: 1 / -1;
-    grid-column: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 // Media queries
 // max width
 @media (max-width:1024px) {
-    .grid-masonry, .grid-masonry-2 {
+    .grid-masonry {
         width: 100%;
         column-count: 2;
     }
+
+    .grid-masonry-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 @media (max-width:768px) {
-    .grid-masonry, .grid-masonry-2 {
+    .grid-masonry {
         width: 100%;
         column-count: 1;
     }
 
+    .grid-masonry-2 {
+        grid-template-columns: 1fr;
+    }
+    
     [class^="col-"], [class*=" col-"] {
         justify-content: center !important;
         align-items: center !important;

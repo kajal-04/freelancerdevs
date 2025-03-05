@@ -1,20 +1,14 @@
 import { Component, ElementRef, Renderer2, OnInit, AfterViewInit, QueryList, ViewChildren } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ProfileComponent } from '../profile/profile.component';
-import { ProjectsComponent } from "../projects/projects.component";
-
-gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   standalone: true,
-  imports: [CommonModule, ProfileComponent, ProjectsComponent],
+  imports: [CommonModule],
 })
 export class HomeComponent implements OnInit, AfterViewInit  {
-  @ViewChildren('homeSection') homeSections!: QueryList<ElementRef>;
 
   private bubblePositions = [
     { left: "10%", top: "20%" },
@@ -87,33 +81,7 @@ export class HomeComponent implements OnInit, AfterViewInit  {
     });
   }
 
-  animateSections() {
-    this.homeSections.forEach((section, index) => {
-      gsap.fromTo(
-        section.nativeElement,
-        { opacity: 0, y: 80, scale: 0.95 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1.5,
-          ease: "power3.out",
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: section.nativeElement,
-            start: "top 80%",
-            end: "top 20%",
-            toggleActions: "play none none reset",
-          },
-        }
-      );
-    });
-  }
-  
-  
-
   ngAfterViewInit(): void {
     this.animateElements();
-    this.animateSections();
   }
 }

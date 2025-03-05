@@ -5,18 +5,88 @@
             <span class="text-xx-large font-mono-space">FreelancerDevs</span>
         </a>
         <ul class="d-none nav align-items-center gap-5 d-md-flex">
-            <li routerLinkActive="active">
-                <a routerLink="about">ABOUT</a>
+            <li>
+                <a href="#profile-section">ABOUT</a>
             </li>
-            <li routerLinkActive="active">
-                <a routerLink="projects">PROJECTS</a>
+            <li>
+                <a href="#projects-section">PROJECTS</a>
             </li>
-            <li routerLinkActive="active">
-                <a routerLink="contact">CONTACT US</a>
+            <li>
+                <a href="#contact-section">CONTACT US</a>
             </li>
         </ul>
         <div class="d-md-none">
             <i class="bi bi-list menu"></i>
         </div>
     </div>
+</div>
+
+<div>
+    <app-home></app-home>
+</div>
+
+<div class="home-section" #homeSection>
+    <div class="grid-masonry">
+        <div class="masonry-item">
+            <div class="masonry-item-inner">
+                <div class="card d-flex flex-column align-items-center w-200">
+                    <div class="card-icon">
+                        <img src="/assets/program.svg">
+                    </div>
+                    <div class="card-subtitle mt-3 mb-2">
+                        team of 8
+                    </div>
+                    <div class="card-title">
+                        Programmers
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="masonry-item">
+            <div class="masonry-item-inner">
+                <div class="card d-flex flex-column align-items-center w-200">
+                    <div class="card-icon">
+                        <img src="/assets/experience.svg">
+                    </div>
+                    <div class="card-subtitle mt-3 mb-2">
+                        5 + years
+                    </div>
+                    <div class="card-title">
+                        Experience
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="masonry-item">
+            <div class="masonry-item-inner">
+                <div class="card d-flex flex-column align-items-center w-200">
+                    <div class="card-icon">
+                        <img src="/assets/design.svg">
+                    </div>
+                    <div class="card-subtitle mt-3 mb-2">
+                        10 + delivered
+                    </div>
+                    <div class="card-title">
+                        Projects
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="home-section" #homeSection id="profile-section">
+    <app-profile></app-profile>
+</div>
+
+<div class="home-section" #homeSection>
+    <app-projects></app-projects>
+</div>
+
+<div class="home-section" #homeSection>
+    <app-experience></app-experience>
+</div>
+
+<div class="home-section" #homeSection>
+    <app-contact></app-contact>
 </div>
