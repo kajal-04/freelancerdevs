@@ -30,6 +30,11 @@ gsap.registerPlugin(ScrollTrigger);
 export class NavigationComponent implements AfterViewInit {
   @ViewChildren('homeSection') homeSections!: QueryList<ElementRef>;
   private navbarOffset = 120;
+  isSidebarOpen = false;
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
 
   setupSmoothScroll() {
     const navLinks = document.querySelectorAll('a[href^="#"]');

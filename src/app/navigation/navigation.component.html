@@ -4,7 +4,7 @@
             <img class="logo me-2" src="/assets/Logo.svg" />
             <span class="text-xx-large font-mono-space">FreelancerDevs</span>
         </a>
-        <ul class="d-none nav align-items-center gap-5 d-md-flex">
+        <ul class="d-none nav align-items-center gap-4 d-md-flex">
             <li>
                 <a href="#profile-section">ABOUT</a>
             </li>
@@ -19,9 +19,19 @@
             </li>
         </ul>
         <div class="d-md-none">
-            <i class="bi bi-list menu"></i>
+            <i class="bi bi-list menu-icon" (click)="toggleSidebar()"></i>
         </div>
     </div>
+</div>
+
+<div class="sidebar" [class.open]="isSidebarOpen">
+    <button class="close-btn" (click)="toggleSidebar()">✖</button>
+    <ul>
+        <li><a href="#profile-section" (click)="toggleSidebar()">About</a></li>
+        <li><a href="#projects-section" (click)="toggleSidebar()">Projects</a></li>
+        <li><a href="#experience-section" (click)="toggleSidebar()">Experience</a></li>
+        <li><a href="#contact-section" (click)="toggleSidebar()">Contact Us</a></li>
+    </ul>
 </div>
 
 <div>
