@@ -69,7 +69,7 @@ export class NavigationComponent implements AfterViewInit {
           scrollTrigger: {
             trigger: section.nativeElement,
             start: "top 100%",
-            end: "top 20%",
+            end: "top 10%",
             toggleActions: "play none none reset",
           },
         }
