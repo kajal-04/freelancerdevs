@@ -8,3 +8,16 @@
         border: 1px solid #5e47b9;
     }
 }
+
+.btn-primary {
+    background-color: #3d2f77;
+    border-radius: 6px;
+    color: #fff;
+    border: 0;
+    font-size: 13px;
+
+    &:hover {
+        color: fff;
+        background-color:#5e47b9;
+    }
+}

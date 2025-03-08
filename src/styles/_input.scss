@@ -1,0 +1,54 @@
+@import url('node_modules/@ng-select/ng-select/themes/default.theme.css');
+
+.form-control {
+    border: 1px solid #3d2f77;
+    color: #fff;
+
+    &:focus {
+        border: 1px solid #3d2f77;
+        color: #fff;
+        box-shadow: 0 0 0 0.25rem rgba(#3d2f77, .3);
+    }
+
+    &::placeholder {
+        color: #fff;
+    }
+}
+
+.ng-select {
+    background-color: #14142a;
+
+    input {
+        &:focus {
+            color: #fff;
+        }
+    }
+
+    .ng-select-container {
+        background-color: #14142a;
+        border: 1px solid #3d2f77;
+        color: #fff;
+    }
+    
+    &.ng-select-opened>.ng-select-container {
+        background-color: #14142a;
+        border: 1px solid #3d2f77;
+    }
+
+    .ng-dropdown-panel  {
+        background-color: #14142a;
+        border: 1px solid #3d2f77;
+
+        .ng-dropdown-panel-items .ng-option {
+            color: #fff;
+            background-color: #090E16;
+
+            &.ng-option-marked {
+                color: #fff;
+                background-color: #14142a;
+            }
+        }
+        
+
+    }
+}

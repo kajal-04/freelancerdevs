@@ -35,9 +35,7 @@
 }
 
 .bg-secondary {
-    background-color: #14142a
-
-    !important;
+    background-color: #14142a !important;
 }
 
 .primary-border {
@@ -115,10 +113,21 @@
 }
 
 .home-section {
-    border-bottom: 1px solid #3d2f77;
     padding: 80px 0;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid #3d2f77;
+    }
 }
 
 .text-secondary {
     color: #727880;
+}
+
+.primary-grad {
+    background-image: linear-gradient(to right, #14142a , transparent);
+}
+
+.primary-grad-bottom {
+    background-image: linear-gradient(#14142a , transparent);
 }

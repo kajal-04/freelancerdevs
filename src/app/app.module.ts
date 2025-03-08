@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     AboutComponent,
     ProjectsComponent,
     ContactComponent,
-    NavigationComponent
+    NavigationComponent,
+    FooterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
