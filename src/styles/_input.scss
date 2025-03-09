@@ -11,8 +11,13 @@
     }
 
     &::placeholder {
-        color: #fff;
+        color: #999;
+        font-size: 12px;
     }
+}
+
+.ng-select .ng-select-container .ng-value-container .ng-placeholder {
+    font-family: 'Montserrat';
 }
 
 .ng-select {
@@ -21,6 +26,10 @@
     input {
         &:focus {
             color: #fff;
+        }
+
+        &::placeholder {
+            font-family: 'Montserrat';
         }
     }
 

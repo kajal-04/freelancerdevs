@@ -11,47 +11,51 @@
                     <i class="bi  bi-chat-left fs-5 text-blue"></i>
                     <p class="text-x-large fw-bold text-white my-4">Send us a message</p>
                 </div>
-                <form>
+                <form [formGroup]="contactForm">
                     <div class="mb-3 text-start">
                       <label class="form-label">Your Name</label>
-                      <input type="text" class="form-control bg-secondary">
+                      <input type="text" formControlName="name" class="form-control bg-secondary" placeholder="Example: John Doe">
                       <!-- <div class="form-text text-secondary">We'll never share your email with anyone else.</div> -->
                     </div>
                     <div class="mb-3 text-start">
                         <label class="form-label">Email Address</label>
-                        <input type="email" class="form-control bg-secondary">
-                        </div>
-                    <div class="mb-3 text-start">
-                        <label class="form-label">Company Name / Organization </label>
-                        <input type="text" class="form-control bg-secondary">
-                        </div>
-                    <div class="mb-3 text-start">
-                        <label class="form-label">Company Name / Organization</label>
-                        <ng-select [items]="projectType" 
-                            bindLabel="name" 
-                            bindValue="id">
-                        </ng-select>
+                        <input type="email" formControlName="email" class="form-control bg-secondary" placeholder="Example: example@gmail.com">
                     </div>
                     <div class="mb-3 text-start">
-                        <label class="form-label">Project Budget</label>
-                        <ng-select [items]="projectBudget" 
+                        <label class="form-label">Phone Number</label>
+                        <input type="number" formControlName="phone" class="form-control bg-secondary" placeholder="Example: 0123456789">
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label class="form-label">Company Name / Organization</label>
+                        <input type="text" formControlName="companyName" class="form-control bg-secondary" placeholder="Example: Acme Solutions">
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label class="form-label">Project Type</label>
+                        <ng-select [items]="projectTypeList" 
                             bindLabel="name" 
-                            bindValue="id">
+                            bindValue="id"
+                            formControlName="projectType"
+                            placeholder="Select">
                         </ng-select>
                     </div>
                     <div class="mb-3 text-start">
                         <label class="form-label">Your Message / Project Details </label>
-                        <textarea class="form-control bg-secondary" placeholder="Leave a comment here" rows="3"></textarea>
+                        <textarea class="form-control bg-secondary" formControlName="description" placeholder="Tell us about your project..." rows="3"></textarea>
                     </div>
-                    <!-- <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control bg-secondary" id="exampleInputPassword1">
-                    </div> -->
-                    <!-- <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div> -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="mb-3 text-start">
+                        <label class="form-label">How Did You Hear About Us?</label>
+                        <ng-select [items]="discoveryList" 
+                            bindLabel="name" 
+                            bindValue="id"
+                            formControlName="discoveryType"
+                            (change)="onDiscoveryChange($event)"
+                            placeholder="Select">
+                        </ng-select>
+                    </div>
+                    <div class="mb-3 text-start" *ngIf="isDiscoveryOtherSelected">
+                        <input type="text" formControlName="discoveryTypeDescription" class="form-control bg-secondary" placeholder="Example: Instagram">
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
                 </form>
             </div>
         </div>
@@ -68,7 +72,7 @@
                     </div>
                     <div class="mb-4 text-start">
                         <p class="text-small text-secondary mb-2">Call us at</p>
-                        <p class="fw-bold text-white">123456789</p>
+                        <p class="fw-bold text-white">+91 8295309717</p>
                     </div>
                     <div class="mb-4 text-start">
                         <p class="text-small text-secondary mb-2">Our location</p>
