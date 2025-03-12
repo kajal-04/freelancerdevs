@@ -63,13 +63,13 @@ export class NavigationComponent implements AfterViewInit {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 1.5,
+          duration: 1.2,
           ease: "power3.out",
-          delay: index * 0.2,
+          // delay: index * 0.2,
           scrollTrigger: {
             trigger: section.nativeElement,
             start: "top 100%",
-            end: "top 10%",
+            end: "top 30%",
             toggleActions: "play none none reset",
           },
         }
