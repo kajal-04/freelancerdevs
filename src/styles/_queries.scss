@@ -4,6 +4,8 @@
     justify-content: space-between;
     padding: 100px 0;
     height: calc(100vh - 20px);
+    margin: auto;
+    max-width: 1300px;
 }
 
 @media (max-width: 991px) { /* Tablets (md to lg) */
@@ -12,11 +14,12 @@
         align-items: center;
         flex-direction: column-reverse;
         justify-content: center;
-        height: auto;
         gap: 40px;
+        padding: 0;
 
         .left-content {
             text-align: center;
+            padding: 0 20px;
         }
     }
 }
