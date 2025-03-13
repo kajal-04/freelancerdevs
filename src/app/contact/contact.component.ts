@@ -7,6 +7,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { Discovery, ProjectType } from '../models/enums.model';
 import { ContactService } from '../services/contactservice';
 import { ContactFormModel } from '../models/contact-form.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -40,7 +41,8 @@ export class ContactComponent implements OnInit {
   }
 
   constructor(private formBuilder: FormBuilder,
-    private contactService: ContactService
+    private contactService: ContactService,
+    private toastr: ToastrService
   ) {
 
   }
@@ -67,7 +69,7 @@ export class ContactComponent implements OnInit {
       projectType: new FormControl(null, [Validators.required]),
       description: new FormControl('', [Validators.required]),
       discoveryType: new FormControl(null),
-      discoveryTypeDescription: new FormControl('')
+      discoveryDescription: new FormControl('')
     })
   }
 
@@ -82,11 +84,12 @@ export class ContactComponent implements OnInit {
       const payload: ContactFormModel = this.contactForm.value;
       this.contactService.createContact(payload).subscribe({
         next: (data) => {
-          console.log("data saved successfully");
+          this.toastr.success('Data saved successfully!', 'Success');
           this.submitted = false;
+          this.contactForm.reset();
 
         }, error: (err) => {
-          console.log("error");
+          this.toastr.error('Something went wrong. Please try again.', 'Error');
           this.submitted = false;
         }
       })

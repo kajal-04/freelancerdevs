@@ -1,5 +1,6 @@
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import 'node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+@import 'node_modules/ngx-toastr/toastr';
 
 @import 'font';
 @import 'color';
@@ -36,4 +37,14 @@ p, h1, h2, h3, h4, h5, h6 {
 
 html {
     scroll-behavior: smooth;
+}
+
+.toast-success {
+  background-color: #28a745 !important;
+}
+.toast-error {
+  background-color: #dc3545 !important;
+}
+.toast-warning {
+  background-color: #ffc107 !important;
 }

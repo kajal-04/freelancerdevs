@@ -7,7 +7,7 @@ export class ContactFormModel {
     public projectType: number;
     public description: string;
     public discoveryType:boolean;
-    public discoveryTypeDescription:boolean;
+    public discoveryDescription:boolean;
 
     constructor(args: any) {
         this.id = args.id;
@@ -18,6 +18,6 @@ export class ContactFormModel {
         this.projectType = args.projectType;
         this.description = args.description;
         this.discoveryType = args.discoveryType;
-        this.discoveryTypeDescription = args.discoveryTypeDescription;
+        this.discoveryDescription = args.discoveryDescription;
     }
 }

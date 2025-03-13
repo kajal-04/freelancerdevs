@@ -4,8 +4,11 @@
     justify-content: space-between;
     padding: 100px 0;
     height: calc(100vh - 20px);
-    margin: auto;
-    max-width: 1300px;
+
+    .content {
+        max-width: 1300px;
+        margin: auto;
+    }
 }
 
 @media (max-width: 991px) { /* Tablets (md to lg) */

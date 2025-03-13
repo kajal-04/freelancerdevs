@@ -29,16 +29,20 @@ export class Enum {
 }
 
 export class ProjectType extends Enum {
-    static WebAppDevelopment = 0;
-    static WebsiteDevelopment = 1;
-    static ProductStrategy = 2;
-    static AutomationTesting = 3;
-    static Other = 4;
-    static 0 = 'Web App Development';
-    static 1 = 'Website Development';
-    static 2 = 'Product Strategy';
-    static 3 = 'QA & Automation Testing';
-    static 4 = 'Other';
+        static WEBDEVELOPMENT = 1;
+        static FRONTEND = 2;
+        static BACKEND = 3;
+        static DESIGN = 4;
+        static PRODUCT = 5;
+        static TESTING = 6;
+        static OTHERS = 100;
+        static 1 = 'End to End Web Development';
+        static 2 = 'Frontend';
+        static 3 = 'Backend';
+        static 4 = 'UI/UX Design';
+        static 5 = 'Product strategy';
+        static 6 = 'QA and automation testing';
+        static 100 = 'Others'
 }
 
 export class Discovery extends Enum {
