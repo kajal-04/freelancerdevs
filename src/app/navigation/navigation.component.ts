@@ -68,7 +68,7 @@ export class NavigationComponent implements AfterViewInit {
           // delay: index * 0.2,
           scrollTrigger: {
             trigger: section.nativeElement,
-            start: "top 100%",
+            start: "top 90%",
             end: "top 30%",
             toggleActions: "play none none reset",
           },

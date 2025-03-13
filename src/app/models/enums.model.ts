@@ -46,14 +46,20 @@ export class ProjectType extends Enum {
 }
 
 export class Discovery extends Enum {
-    static GoogleSearch = 0;
-    static LinkedIn = 1;
-    static Referral = 2;
-    static Upwork = 3;
-    static Other = 4;
-    static 0 = 'Google Search';
-    static 1 = 'LinkedIn';
-    static 2 = 'Referral';
-    static 3 = 'Upwork';
-    static 4 = 'Other';
+    static GOOGLESEARCH = 1;
+    static LINKEDIN = 2;
+    static REFERRAL = 3;
+    static UPWORK = 4;
+    static FIVERR: 5;
+    static FACEBOOK: 6;
+    static INSTAGRAM: 7;
+    static OTHER = 100;
+    static 1 = 'Google Search';
+    static 2 = 'LinkedIn';
+    static 3 = 'Referral';
+    static 4 = 'Upwork';
+    static 5 = 'Fiverr';
+    static 6 = 'Facebook';
+    static 7 = 'Instagram';
+    static 100 = 'Other';
 }

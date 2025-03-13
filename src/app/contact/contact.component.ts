@@ -74,7 +74,7 @@ export class ContactComponent implements OnInit {
   }
 
   onDiscoveryChange(value: any) {
-    this.isDiscoveryOtherSelected = value.id === Discovery.Other;
+    this.isDiscoveryOtherSelected = value.id === Discovery.OTHER;
   }
 
   onSubmit() {
