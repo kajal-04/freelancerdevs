@@ -128,5 +128,13 @@ export class ProjectsComponent {
       gradientClass: "gray-emerald-grad",
     }
   ];
-  
+
+  getInitials(name: string): string {
+    return name
+      .split(" ")
+      .map(word => word[0])
+      .join("")
+      .substring(0, 2)
+      .toUpperCase();
+  }
 }
