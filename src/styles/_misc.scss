@@ -159,3 +159,13 @@
 .h-280 {
     height: 280px;
 }
+
+.on-hover-color {
+    &:hover {
+        color: #7B4AE2 !important;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

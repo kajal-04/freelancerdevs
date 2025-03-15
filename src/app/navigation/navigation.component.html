@@ -6,16 +6,16 @@
         </a>
         <ul class="d-none nav align-items-center gap-4 d-md-flex">
             <li>
-                <a href="#profile-section">ABOUT</a>
+                <a href="#profile">ABOUT</a>
             </li>
             <li>
-                <a href="#projects-section">PROJECTS</a>
+                <a href="#projects">PROJECTS</a>
             </li>
             <li>
-                <a href="#experience-section">EXPERIENCE</a>
+                <a href="#experience">EXPERIENCE</a>
             </li>
             <li>
-                <a href="#contact-section">CONTACT US</a>
+                <a href="#contact">CONTACT US</a>
             </li>
         </ul>
         <div class="d-md-none">
@@ -27,10 +27,10 @@
 <div class="sidebar" [class.open]="isSidebarOpen">
     <button class="close-btn" (click)="toggleSidebar()">✖</button>
     <ul>
-        <li><a href="#profile-section" (click)="toggleSidebar()">About</a></li>
-        <li><a href="#projects-section" (click)="toggleSidebar()">Projects</a></li>
-        <li><a href="#experience-section" (click)="toggleSidebar()">Experience</a></li>
-        <li><a href="#contact-section" (click)="toggleSidebar()">Contact Us</a></li>
+        <li><a href="#profile" (click)="toggleSidebar()">About</a></li>
+        <li><a href="#projects" (click)="toggleSidebar()">Projects</a></li>
+        <li><a href="#experience" (click)="toggleSidebar()">Experience</a></li>
+        <li><a href="#contact" (click)="toggleSidebar()">Contact Us</a></li>
     </ul>
 </div>
 
@@ -56,19 +56,19 @@
         </div>
     </div>
     
-    <div class="home-section" #homeSection id="profile-section">
+    <div class="home-section" #homeSection id="profile">
         <app-profile></app-profile>
     </div>
     
-    <div class="home-section" #homeSection id="projects-section">
+    <div class="home-section" #homeSection id="projects">
         <app-projects></app-projects>
     </div>
     
-    <div class="home-section" #homeSection id="experience-section">
+    <div class="home-section" #homeSection id="experience">
         <app-experience></app-experience>
     </div>
     
-    <div class="home-section" #homeSection id="contact-section">
+    <div class="home-section" #homeSection id="contact">
         <app-contact></app-contact>
     </div>
 </div>

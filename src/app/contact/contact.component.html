@@ -14,7 +14,7 @@
                     <form [formGroup]="contactForm">
                         <div class="mb-3 text-start">
                             <label class="form-label">Your Name</label>
-                            <input type="text" formControlName="name" class="form-control bg-secondary" placeholder="Example: John Doe">
+                            <input type="text" formControlName="name" class="form-control bg-secondary" placeholder="Eg: John Doe">
                             <p class="mt-2" *ngFor="let validation of validationMessages.name">
                                 <span class="text-danger"
                                     *ngIf="contactForm.get('name')?.hasError(validation.type) && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched || submitted)">{{validation.message}}</span>
@@ -22,7 +22,7 @@
                         </div>
                         <div class="mb-3 text-start">
                             <label class="form-label">Email Address</label>
-                            <input type="email" formControlName="email" class="form-control bg-secondary" placeholder="Example: example@gmail.com">
+                            <input type="email" formControlName="email" class="form-control bg-secondary" placeholder="Eg: example@gmail.com">
                             <p class="mt-2" *ngFor="let validation of validationMessages.email">
                                 <span class="text-danger"
                                     *ngIf="contactForm.get('email')?.hasError(validation.type) && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched || submitted)">{{validation.message}}</span>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="mb-3 text-start">
                             <label class="form-label">Phone Number</label>
-                            <input type="number" formControlName="phone" class="form-control bg-secondary" placeholder="Example: 0123456789">
+                            <input type="number" formControlName="phone" class="form-control bg-secondary" placeholder="Eg: 0123456789">
                             <p class="mt-2" *ngFor="let validation of validationMessages.phone">
                                 <span class="text-danger"
                                     *ngIf="contactForm.get('phone')?.hasError(validation.type) && (contactForm.get('phone')?.dirty || contactForm.get('phone')?.touched || submitted)">{{validation.message}}</span>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="mb-3 text-start">
                             <label class="form-label">Company Name / Organization</label>
-                            <input type="text" formControlName="companyName" class="form-control bg-secondary" placeholder="Example: Acme Solutions">
+                            <input type="text" formControlName="companyName" class="form-control bg-secondary" placeholder="Eg: Acme Solutions">
                         </div>
                         <div class="mb-3 text-start">
                             <label class="form-label">Project Type</label>
@@ -72,9 +72,13 @@
                             </ng-select>
                         </div>
                         <div class="mb-3 text-start" *ngIf="isDiscoveryOtherSelected">
-                            <input type="text" formControlName="discoveryDescription" class="form-control bg-secondary" placeholder="Example: Instagram">
+                            <input type="text" formControlName="discoveryDescription" class="form-control bg-secondary" placeholder="Eg: Instagram">
+                            <p class="mt-2" *ngFor="let validation of validationMessages.discoveryDescription">
+                                <span class="text-danger"
+                                    *ngIf="contactForm.get('discoveryDescription')?.hasError(validation.type) && (contactForm.get('discoveryDescription')?.dirty || contactForm.get('discoveryDescription')?.touched || submitted)">{{validation.message}}</span>
+                            </p>
                         </div>
-                        <button type="submit" class="btn btn-primary" (click)="onContactFormSubmit()" [disabled]="submitted && contactForm.invalid">Submit</button>
+                        <button type="submit" class="btn btn-primary" (click)="onContactFormSubmit()" [disabled]="isRequestInProgress">Submit</button>
                     </form>
                 </div>
             </div>

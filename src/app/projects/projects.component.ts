@@ -162,10 +162,10 @@ export class ProjectsComponent {
 
   toggleProjects() {
     if (this.showAllProjects) {
-      this.router.navigate([], { fragment: 'projects-section' });
+      this.router.navigate([], { fragment: 'projects' });
   
       setTimeout(() => {
-        this.viewportScroller.scrollToAnchor('projects-section');
+        this.viewportScroller.scrollToAnchor('projects');
   
         setTimeout(() => {
           this.showAllProjects = false;

@@ -20,6 +20,7 @@ export class ContactComponent implements OnInit {
   discoveryList: Array<{ id: number, name: string }> = [];
   projectTypeList: Array<{ id: number, name: string }> = [];
   submitted = false;
+  isRequestInProgress: boolean = false;
 
   isDiscoveryOtherSelected = false;
   validationMessages = {
@@ -40,6 +41,9 @@ export class ContactComponent implements OnInit {
     description: [
       { type: 'required', message: 'Project details are required' },
     ],
+    discoveryDescription: [
+      { type: 'required', message: 'Discovery description are required' },
+    ]
   }
 
   constructor(private formBuilder: FormBuilder,
@@ -78,23 +82,31 @@ export class ContactComponent implements OnInit {
 
   onDiscoveryChange(value: any) {
     this.isDiscoveryOtherSelected = value.id === Discovery.OTHER;
+    if (value.id === Discovery.OTHER) {
+      this.contactForm.get('discoveryDescription')?.setValidators([Validators.required]);
+    } else {
+      this.contactForm.get('discoveryDescription')?.clearValidators();
+    }
+    this.contactForm.get('discoveryDescription')?.updateValueAndValidity();
   }
 
   onContactFormSubmit() {
-    this.submitted = true;
     if(this.contactForm.valid) {
+      this.isRequestInProgress = true;
+
       const payload: ContactFormModel = this.contactForm.value;
       this.contactService.createContact(payload).subscribe({
         next: (data) => {
           this.toastr.success('Data saved successfully!', 'Success');
-          this.submitted = false;
+          this.isRequestInProgress = false;
           this.contactForm.reset();
-
         }, error: (err) => {
           this.toastr.error('Something went wrong. Please try again.', 'Error');
-          this.submitted = false;
+          this.isRequestInProgress = false;
         }
       })
+    } else {
+      this.contactForm.markAllAsTouched()
     }
   }
 }
