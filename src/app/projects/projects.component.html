@@ -1,5 +1,10 @@
+<div>
+    <div class="greeting text-blue">EXPERTISE</div>
+    <p class="fs-3 fw-bold my-3">Our experience & services</p>
+    <p class="text-secondary mb-3">We're a diverse team of designers, developers, and strategists who are passionate about<br /> creating exceptional digital experiences that solve real problems.</p>
+</div>
 <div class="row">
-    <div *ngFor="let project of (showAllProjects ? projects : projects.slice(0, 3))" class="col-lg-4 col-md-6 col-sm-12 mb-5">
+    <div *ngFor="let project of (showAllProjects ? projects : projects.slice(0, 3))" class="col-lg-4 col-md-6 col-sm-12 mb-5"  @enterLeaveAnimation5>
         <div class="{{ project.borderClass }} rounded-3 overflow-hidden h-100">
             <div class="h-200 w-100 {{ project.gradientClass }} d-flex align-items-center justify-content-center">
                 <div class="h-80 w-80 bg-electric-blue rounded-circle d-flex align-items-center justify-content-center text-white fs-2">
@@ -23,7 +28,7 @@
 </div>
 
 <div class="text-center mt-4" *ngIf="projects.length > 3">
-    <button class="btn btn-primary" (click)="showAllProjects = !showAllProjects">
+    <button class="btn btn-primary" (click)="toggleProjects()">
         {{ showAllProjects ? 'Show Less Projects' : 'Show More Projects' }}
     </button>
 </div>

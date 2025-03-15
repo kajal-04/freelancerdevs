@@ -36,7 +36,7 @@ export class ContactComponent implements OnInit {
       { type: 'required', message: 'Project type is required' },
     ],
     description: [
-      { type: 'required', message: 'Project details is required' },
+      { type: 'required', message: 'Project details are required' },
     ],
   }
 

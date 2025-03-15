@@ -1,11 +1,31 @@
-import { NgFor, NgIf } from '@angular/common';
+import { animate, group, style, transition, trigger } from '@angular/animations';
+import { NgFor, NgIf, ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+export const enterLeaveAnimation5 = trigger(
+  'enterLeaveAnimation5', [
+      transition(':enter', [
+          style({ height: '0', opacity: 0, transform: 'translateY(-10%)' }), // Start small and faded
+          group([
+              animate('250ms ease', style({ height: '*' })), // Animate height first
+              animate('300ms 100ms ease', style({ opacity: 1, transform: 'translateY(0)' })) // Animate opacity/transform with a slight delay
+          ])
+      ]),
+      transition(':leave', [
+          group([
+              animate('200ms ease', style({ opacity: 0, transform: 'translateY(-10%)' })), // Animate opacity/transform first
+              animate('250ms 50ms ease', style({ height: '0' })) // Animate height with a delay
+          ])
+      ])
+]);
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   standalone: true,
-  imports: [NgFor, NgIf]
+  imports: [NgFor, NgIf],
+  animations: [enterLeaveAnimation5]
 })
 export class ProjectsComponent {
   showAllProjects = false;
@@ -129,6 +149,8 @@ export class ProjectsComponent {
     }
   ];
 
+  constructor(private router: Router, private viewportScroller: ViewportScroller) {}
+
   getInitials(name: string): string {
     return name
       .split(" ")
@@ -137,4 +159,20 @@ export class ProjectsComponent {
       .substring(0, 2)
       .toUpperCase();
   }
+
+  toggleProjects() {
+    if (this.showAllProjects) {
+      this.router.navigate([], { fragment: 'projects-section' });
+  
+      setTimeout(() => {
+        this.viewportScroller.scrollToAnchor('projects-section');
+  
+        setTimeout(() => {
+          this.showAllProjects = false;
+        }, 400);
+      }, 100);
+    } else {
+      this.showAllProjects = true;
+    }
+  }  
 }

@@ -74,7 +74,7 @@
                         <div class="mb-3 text-start" *ngIf="isDiscoveryOtherSelected">
                             <input type="text" formControlName="discoveryDescription" class="form-control bg-secondary" placeholder="Example: Instagram">
                         </div>
-                        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                        <button type="submit" class="btn btn-primary" (click)="onSubmit()" [disabled]="submitted && contactForm.invalid">Submit</button>
                     </form>
                 </div>
             </div>
