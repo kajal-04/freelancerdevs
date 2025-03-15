@@ -25,6 +25,7 @@ export class ContactComponent implements OnInit {
   validationMessages = {
     name: [
       { type: 'required', message: 'Name is required' },
+      { type: 'maxlength', message: 'Name should not exceed more than 128 characters' },
     ],
     email: [
       { type: 'required', message: 'Email is required' },
@@ -66,6 +67,7 @@ export class ContactComponent implements OnInit {
       name: new FormControl('', [Validators.required, Validators.maxLength(128)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [Validators.required]),
+      phoneCountryCode: new FormControl('+91', [Validators.required]),
       companyName: new FormControl(''),
       projectType: new FormControl(null, [Validators.required]),
       description: new FormControl('', [Validators.required]),
@@ -78,8 +80,7 @@ export class ContactComponent implements OnInit {
     this.isDiscoveryOtherSelected = value.id === Discovery.OTHER;
   }
 
-  onSubmit() {
-    console.log(this.contactForm.value);
+  onContactFormSubmit() {
     this.submitted = true;
     if(this.contactForm.valid) {
       const payload: ContactFormModel = this.contactForm.value;

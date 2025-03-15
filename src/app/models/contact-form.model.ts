@@ -2,7 +2,8 @@ export class ContactFormModel {
     public id: number;
     public name: string;
     public email: string;
-    public phone: number;
+    public phone: string;
+    public phoneCountryCode: string;
     public companyName: string;
     public projectType: number;
     public description: string;
@@ -14,6 +15,7 @@ export class ContactFormModel {
         this.name = args.name;
         this.email = args.email;
         this.phone = args.phone;
+        this.phoneCountryCode = args.phoneCountryCode;
         this.companyName = args.companyName;
         this.projectType = args.projectType;
         this.description = args.description;

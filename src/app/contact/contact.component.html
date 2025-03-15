@@ -74,7 +74,7 @@
                         <div class="mb-3 text-start" *ngIf="isDiscoveryOtherSelected">
                             <input type="text" formControlName="discoveryDescription" class="form-control bg-secondary" placeholder="Example: Instagram">
                         </div>
-                        <button type="submit" class="btn btn-primary" (click)="onSubmit()" [disabled]="submitted && contactForm.invalid">Submit</button>
+                        <button type="submit" class="btn btn-primary" (click)="onContactFormSubmit()" [disabled]="submitted && contactForm.invalid">Submit</button>
                     </form>
                 </div>
             </div>
@@ -96,10 +96,6 @@
                         <div class="mb-4 text-start">
                             <p class="text-small text-secondary mb-2">Our location</p>
                             <p class="fw-bold text-white">Hyderabad, India</p>
-                        </div>
-                        <div class="mb-4 text-start">
-                            <p class="text-small text-secondary mb-2">Working hours</p>
-                            <p class="fw-bold text-white">Mon - Fri: 9AM - 6PM PST</p>
                         </div>
                     </div>
                 </div>
