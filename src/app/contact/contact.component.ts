@@ -28,6 +28,7 @@ export class ContactComponent implements OnInit {
     ],
     email: [
       { type: 'required', message: 'Email is required' },
+      { type: 'email', message: 'Email is invalid'}
     ],
     phone: [
       { type: 'required', message: 'Phone number is required' },
@@ -63,7 +64,7 @@ export class ContactComponent implements OnInit {
   initForm() {
     this.contactForm = this.formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.maxLength(128)]),
-      email: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [Validators.required]),
       companyName: new FormControl(''),
       projectType: new FormControl(null, [Validators.required]),

@@ -1,13 +1,13 @@
 .home-content {
     padding: 100px 0;
     height: calc(100vh - 20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     .content {
         max-width: 1300px;
         margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
     }
 }
 
