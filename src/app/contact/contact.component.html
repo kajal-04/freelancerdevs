@@ -12,7 +12,7 @@
                         <p class="text-x-large fw-bold text-white my-4">Send us a message</p>
                     </div>
                     <form [formGroup]="contactForm">
-                        <div class="mb-3 text-start">
+                        <div class="mb-4 text-start">
                             <label class="form-label">Your Name</label>
                             <input type="text" formControlName="name" class="form-control bg-secondary" placeholder="Eg: John Doe">
                             <p class="mt-2" *ngFor="let validation of validationMessages.name">
@@ -20,7 +20,7 @@
                                     *ngIf="contactForm.get('name')?.hasError(validation.type) && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched || submitted)">{{validation.message}}</span>
                             </p>
                         </div>
-                        <div class="mb-3 text-start">
+                        <div class="mb-4 text-start">
                             <label class="form-label">Email Address</label>
                             <input type="email" formControlName="email" class="form-control bg-secondary" placeholder="Eg: example@gmail.com">
                             <p class="mt-2" *ngFor="let validation of validationMessages.email">
@@ -28,7 +28,7 @@
                                     *ngIf="contactForm.get('email')?.hasError(validation.type) && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched || submitted)">{{validation.message}}</span>
                             </p>
                         </div>
-                        <div class="mb-3 text-start">
+                        <div class="mb-4 text-start">
                             <label class="form-label">Phone Number</label>
                             <input type="number" formControlName="phone" class="form-control bg-secondary" placeholder="Eg: 0123456789">
                             <p class="mt-2" *ngFor="let validation of validationMessages.phone">
@@ -36,11 +36,11 @@
                                     *ngIf="contactForm.get('phone')?.hasError(validation.type) && (contactForm.get('phone')?.dirty || contactForm.get('phone')?.touched || submitted)">{{validation.message}}</span>
                             </p>
                         </div>
-                        <div class="mb-3 text-start">
+                        <div class="mb-4 text-start">
                             <label class="form-label">Company Name / Organization</label>
                             <input type="text" formControlName="companyName" class="form-control bg-secondary" placeholder="Eg: Acme Solutions">
                         </div>
-                        <div class="mb-3 text-start">
+                        <div class="mb-4 text-start">
                             <label class="form-label">Project Type</label>
                             <ng-select [items]="projectTypeList" 
                                 bindLabel="name" 
@@ -53,7 +53,7 @@
                                     *ngIf="contactForm.get('projectType')?.hasError(validation.type) && (contactForm.get('projectType')?.dirty || contactForm.get('projectType')?.touched || submitted)">{{validation.message}}</span>
                             </p>
                         </div>
-                        <div class="mb-3 text-start">
+                        <div class="mb-4 text-start">
                             <label class="form-label">Your Message / Project Details </label>
                             <textarea class="form-control bg-secondary" formControlName="description" placeholder="Tell us about your project..." rows="3"></textarea>
                             <p class="mt-2" *ngFor="let validation of validationMessages.description">
@@ -61,7 +61,7 @@
                                     *ngIf="contactForm.get('description')?.hasError(validation.type) && (contactForm.get('description')?.dirty || contactForm.get('description')?.touched || submitted)">{{validation.message}}</span>
                             </p>
                         </div>
-                        <div class="mb-3 text-start">
+                        <div class="mb-4 text-start">
                             <label class="form-label">How Did You Hear About Us?</label>
                             <ng-select [items]="discoveryList" 
                                 bindLabel="name" 
@@ -71,7 +71,7 @@
                                 placeholder="Select">
                             </ng-select>
                         </div>
-                        <div class="mb-3 text-start" *ngIf="isDiscoveryOtherSelected">
+                        <div class="mb-4 text-start" *ngIf="isDiscoveryOtherSelected">
                             <input type="text" formControlName="discoveryDescription" class="form-control bg-secondary" placeholder="Eg: Instagram">
                             <p class="mt-2" *ngFor="let validation of validationMessages.discoveryDescription">
                                 <span class="text-danger"
@@ -83,25 +83,30 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
-                <div class="primary-border rounded p-3 primary-grad w-100 h-100">
-                    <div class="d-flex align-items-center gap-3">
-                        <i class="bi bi-envelope fs-5 text-blue"></i>
-                        <p class="text-x-large fw-bold text-white my-4">Contact Information</p>
+                <div class="d-flex flex-column primary-border rounded p-3 primary-grad w-100 h-100">
+                    <div class="">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-envelope fs-5 text-blue"></i>
+                            <p class="text-x-large fw-bold text-white my-4">Contact Information</p>
+                        </div>
+                        <div>
+                            <div class="mb-4 text-start">
+                                <p class="text-small text-secondary mb-2">Message us at</p>
+                                <a href="mailto:contact.freelancerdevs@gmail.com" class="fw-bold text-decoration-none text-blue">contact.freelancerdevs&#64;gmail.com</a>
+                            </div>
+                            <div class="mb-4 text-start">
+                                <p class="text-small text-secondary mb-2">Call us at</p>
+                                <p class="fw-bold text-white">+91 8295309717</p>
+                            </div>
+                            <div class="mb-4 text-start">
+                                <p class="text-small text-secondary mb-2">Our location</p>
+                                <p class="fw-bold text-white">Hyderabad, India</p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <div class="mb-4 text-start">
-                            <p class="text-small text-secondary mb-2">Message us at</p>
-                            <a href="mailto:contact.freelancerdevs@gmail.com" class="fw-bold text-decoration-none text-blue">contact.freelancerdevs&#64;gmail.com</a>
-                        </div>
-                        <div class="mb-4 text-start">
-                            <p class="text-small text-secondary mb-2">Call us at</p>
-                            <p class="fw-bold text-white">+91 8295309717</p>
-                        </div>
-                        <div class="mb-4 text-start">
-                            <p class="text-small text-secondary mb-2">Our location</p>
-                            <p class="fw-bold text-white">Hyderabad, India</p>
-                        </div>
-                    </div>
+                    <div class="text-center mt-5">
+                        <img src="/assets/contact-svg.svg" class="contact-img"/>
+                    </div>  
                 </div>
             </div>
         </div>
