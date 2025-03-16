@@ -40,16 +40,17 @@
                                     bindValue="value"
                                     formControlName="phoneCountryCode"
                                     placeholder="Select"
-                                    class="border-none menu-250 w-25">
+                                    [clearable]="false"
+                                    class="border-none menu-250 w-80">
                                     <ng-template ng-option-tmp let-item="item">
                                         {{ item.value }} - {{ item.countryName }}
                                     </ng-template>
                                 
                                     <ng-template ng-label-tmp let-item="item">
-                                        {{ item.value }} - {{ item.countryCode }}
+                                        {{ item.value }}
                                     </ng-template>
                                 </ng-select>
-                                <input type="number" formControlName="phone" class="form-control bg-secondary border-0 w-75 rounded-end" placeholder="Eg: 0123456789">
+                                <input type="number" formControlName="phone" class="form-control bg-secondary border-0 w-100 rounded-end rounded-start-0" placeholder="Eg: 0123456789">
                             </div>
                             <p class="mt-2" *ngFor="let validation of validationMessages.phone">
                                 <span class="text-danger"
