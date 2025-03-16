@@ -7,9 +7,14 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 mb-5">
                 <div class="primary-border rounded p-3 w-100">
-                    <div class="d-flex align-items-center gap-3">
+                    <div class="d-flex align-items-center gap-3 my-4">
                         <i class="bi  bi-chat-left fs-5 text-blue"></i>
-                        <p class="text-x-large fw-bold text-white my-4">Send us a message</p>
+                        <p class="text-x-large fw-bold text-white">Send us a message</p>
+                        <p class="text-secondary mx-1">Or</p>
+                        <a href="https://calendly.com/contact-freelancerdevs/30min" target="_blank" class="text-decoration-none text-white btn btn-outline btn-sm d-flex gap-2 align-items-center">
+                            <i class="bi bi-calendar-check text-white"></i>
+                            <span>Schedule a call!</span>
+                        </a>
                     </div>
                     <form [formGroup]="contactForm">
                         <div class="mb-4 text-start">
@@ -30,10 +35,29 @@
                         </div>
                         <div class="mb-4 text-start">
                             <label class="form-label">Phone Number</label>
-                            <input type="number" formControlName="phone" class="form-control bg-secondary" placeholder="Eg: 0123456789">
+                            <div class="d-flex align-items-center primary-border rounded">
+                                <ng-select [items]="countryCodeList" 
+                                    bindValue="value"
+                                    formControlName="phoneCountryCode"
+                                    placeholder="Select"
+                                    class="border-none menu-250 w-25">
+                                    <ng-template ng-option-tmp let-item="item">
+                                        {{ item.value }} - {{ item.countryName }}
+                                    </ng-template>
+                                
+                                    <ng-template ng-label-tmp let-item="item">
+                                        {{ item.value }} - {{ item.countryCode }}
+                                    </ng-template>
+                                </ng-select>
+                                <input type="number" formControlName="phone" class="form-control bg-secondary border-0 w-75 rounded-end" placeholder="Eg: 0123456789">
+                            </div>
                             <p class="mt-2" *ngFor="let validation of validationMessages.phone">
                                 <span class="text-danger"
                                     *ngIf="contactForm.get('phone')?.hasError(validation.type) && (contactForm.get('phone')?.dirty || contactForm.get('phone')?.touched || submitted)">{{validation.message}}</span>
+                            </p>
+                            <p class="mt-2" *ngFor="let validation of validationMessages.phoneCountryCode">
+                                <span class="text-danger"
+                                    *ngIf="contactForm.get('phoneCountryCode')?.hasError(validation.type) && (contactForm.get('phoneCountryCode')?.dirty || contactForm.get('phoneCountryCode')?.touched || submitted)">{{validation.message}}</span>
                             </p>
                         </div>
                         <div class="mb-4 text-start">

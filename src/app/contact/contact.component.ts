@@ -3,11 +3,11 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { NgFor, NgIf } from '@angular/common';
 
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ToastrService } from 'ngx-toastr';
 
 import { Discovery, ProjectType } from '../models/enums.model';
 import { ContactService } from '../services/contactservice';
 import { ContactFormModel } from '../models/contact-form.model';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
@@ -23,6 +23,7 @@ export class ContactComponent implements OnInit {
   isRequestInProgress: boolean = false;
 
   isDiscoveryOtherSelected = false;
+  countryCodeList: any = [];
   validationMessages = {
     name: [
       { type: 'required', message: 'Name is required' },
@@ -43,6 +44,9 @@ export class ContactComponent implements OnInit {
     ],
     discoveryDescription: [
       { type: 'required', message: 'Discovery description are required' },
+    ],
+    phoneCountryCode: [
+      { type: 'required', message: 'Country code is required' },
     ]
   }
 
@@ -64,6 +68,8 @@ export class ContactComponent implements OnInit {
       id: item.id as number, 
       name: item.title
     }));
+
+    this.getContactCode();
   }
 
   initForm() {
@@ -71,7 +77,7 @@ export class ContactComponent implements OnInit {
       name: new FormControl('', [Validators.required, Validators.maxLength(128)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [Validators.required]),
-      phoneCountryCode: new FormControl('+91', [Validators.required]),
+      phoneCountryCode: new FormControl('', [Validators.required]),
       companyName: new FormControl(''),
       projectType: new FormControl(null, [Validators.required]),
       description: new FormControl('', [Validators.required]),
@@ -108,5 +114,16 @@ export class ContactComponent implements OnInit {
     } else {
       this.contactForm.markAllAsTouched()
     }
+  }
+
+  getContactCode() {
+    this.contactForm.patchValue({ phoneCountryCode: '+91' });
+    this.contactService.getCountryCodes().subscribe({
+      next: (data) => {
+        this.countryCodeList = data.countryCodes;
+      }, error: (err) => {
+        this.toastr.error(err?.message ?? 'Unable to fetch country code')
+      }
+    })
   }
 }
