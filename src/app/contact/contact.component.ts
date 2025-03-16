@@ -106,6 +106,7 @@ export class ContactComponent implements OnInit {
           this.toastr.success('Data saved successfully!', 'Success');
           this.isRequestInProgress = false;
           this.contactForm.reset();
+          this.contactForm.patchValue({ phoneCountryCode: '+91' });
         }, error: (err) => {
           this.toastr.error('Something went wrong. Please try again.', 'Error');
           this.isRequestInProgress = false;

@@ -103,7 +103,12 @@
                                     *ngIf="contactForm.get('discoveryDescription')?.hasError(validation.type) && (contactForm.get('discoveryDescription')?.dirty || contactForm.get('discoveryDescription')?.touched || submitted)">{{validation.message}}</span>
                             </p>
                         </div>
-                        <button type="submit" class="btn btn-primary" (click)="onContactFormSubmit()" [disabled]="isRequestInProgress">Submit</button>
+                        <button type="submit" class="btn btn-primary d-flex align-items-center" (click)="onContactFormSubmit()" [disabled]="isRequestInProgress">
+                            <div class="spinner-border text-light spinner-border-sm me-2" *ngIf="isRequestInProgress" role="status">
+                                <span class="sr-only"></span>
+                            </div>
+                            Submit
+                        </button>
                     </form>
                 </div>
             </div>
