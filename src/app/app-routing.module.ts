@@ -1,14 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ContactComponent } from './contact/contact.component';
 
-export const routes: Routes = [  ];
+export const routes: Routes = [
+    {
+        path: "support",
+        loadChildren: () =>
+            new Promise(() => {
+                if (window.location.href.match(/support/))
+                    window.location.href = "https://www.buymeacoffee.com/czuar";
+            }),
+    },
+    {
+        path: "syedali",
+        loadChildren: () =>
+            new Promise(() => {
+                if (window.location.href.match(/syedali/))
+                    window.location.href = "https://syedali.vercel.app";
+            }),
+    },
+];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
