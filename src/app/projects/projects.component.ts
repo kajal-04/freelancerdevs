@@ -123,7 +123,7 @@ export class ProjectsComponent {
     {
       name: "Error Service",
       category: "Web Application",
-      description: "A random word generator for creative inspiration and brainstorming.",
+      description: "An application designed to efficiently handle and manage website errors.",
       technologies: ["HTML", "CSS", "JavaScript"],
       link: "https://wrng.netlify.app/",
       borderClass: "indigo-midnight-border",
