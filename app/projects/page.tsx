@@ -113,7 +113,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Categories */}
-      <section className="bg-muted py-16 md:py-16">
+      <section className="bg-muted py-16 md:py-16 rounded-xl">
         <div className="container">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Project Categories</h2>

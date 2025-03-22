@@ -59,10 +59,10 @@ export default function AboutPage() {
             <p className="text-muted-foreground">
               Founded in 2015, FreelancerDevs began with a simple mission: to help businesses succeed in the digital
               world. What started as a small team of three passionate developers has grown into a full-service digital
-              agency with over 50 experts across web development, design, marketing, and strategy.
+              agency with over 10 experts across web development, design, marketing, and strategy.
             </p>
             <p className="text-muted-foreground">
-              Over the years, we've partnered with hundreds of businesses, from startups to Fortune 500 companies,
+              Over the years, we've partnered with a number of businesses,
               helping them transform their digital presence and achieve remarkable growth. Our client-first approach and
               commitment to excellence have made us a trusted partner for businesses looking to thrive in the digital
               landscape.
@@ -136,14 +136,10 @@ export default function AboutPage() {
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { name: "Alex Johnson", role: "CEO & Founder", image: "/images/team-member-1.png" },
-              { name: "Maria Rodriguez", role: "Creative Director", image: "/images/team-member-2.png" },
+              { name: "Syed Ali", role: "Full Stack Engineer", image: "/images/team-member-1.png" },
+              { name: "Kajal Kumari", role: "Frontend Engineer & UI/UX Specialist", image: "/images/team-member-2.png" },
               { name: "David Chen", role: "Lead Developer", image: "/images/team-member-3.png" },
               { name: "Sarah Kim", role: "Marketing Strategist", image: "/images/team-member-4.png" },
-              { name: "James Wilson", role: "UX Designer", image: "/images/team-member-1.png" },
-              { name: "Priya Patel", role: "Project Manager", image: "/images/team-member-2.png" },
-              { name: "Michael Brown", role: "SEO Specialist", image: "/images/team-member-3.png" },
-              { name: "Emma Garcia", role: "Content Strategist", image: "/images/team-member-4.png" },
             ].map((member, i) => (
               <div key={i} className="group relative overflow-hidden rounded-xl">
                 <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-0 group-hover:opacity-100 transition-all duration-300 z-0"></div>
@@ -171,9 +167,9 @@ export default function AboutPage() {
         <div className="container">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { number: "8+", label: "Years of Experience" },
-              { number: "200+", label: "Projects Completed" },
-              { number: "50+", label: "Team Members" },
+              { number: "5+", label: "Years of Experience" },
+              { number: "15+", label: "Projects Completed" },
+              { number: "10+", label: "Team Members" },
               { number: "95%", label: "Client Satisfaction" },
             ].map((stat, i) => (
               <GlowCard key={i}>

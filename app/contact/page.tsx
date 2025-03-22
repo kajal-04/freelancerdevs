@@ -176,9 +176,16 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <div className="space-y-8">
-              <div>
-                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Contact Information</h2>
-                <p className="mt-2 text-muted-foreground">Reach out to us directly using the information below.</p>
+              <div className="flex space-x-4 items-center">
+                <div>
+                  <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Contact Information</h2>
+                  <p className="mt-2 text-muted-foreground">Reach out to us directly using the information below.</p>
+                </div>
+                <Button size="sm" variant="default" asChild className="group">
+                  <Link href="https://calendly.com/contact-freelancerdevs/30min" target="_blank" className="text-white">
+                    Schedule a call!
+                  </Link>
+                </Button>
               </div>
 
               <div className="grid gap-6">

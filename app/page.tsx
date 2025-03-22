@@ -330,9 +330,9 @@ export default function HomePage() {
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { number: 8, suffix: "+", label: "Years of Experience" },
-              { number: 200, suffix: "+", label: "Projects Completed" },
-              { number: 50, suffix: "+", label: "Team Members" },
+              { number: 5, suffix: "+", label: "Years of Experience" },
+              { number: 15, suffix: "+", label: "Projects Completed" },
+              { number: 10, suffix: "+", label: "Team Members" },
               { number: 95, suffix: "%", label: "Client Satisfaction" },
             ].map((stat, i) => (
               <motion.div
@@ -377,10 +377,15 @@ export default function HomePage() {
                 <p className="text-white/80 text-lg">
                   Let's discuss how we can help your business grow with our comprehensive digital solutions.
                 </p>
-                <Button size="lg" variant="secondary" asChild className="group">
+                <Button size="lg" variant="secondary" asChild className="group mr-4">
                   <Link href="/contact" className="flex items-center gap-2">
                     Contact Us Today
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="secondary" asChild className="group">
+                  <Link href="https://calendly.com/contact-freelancerdevs/30min" target="_blank" className="flex items-center gap-2">
+                    Schedule a call!
                   </Link>
                 </Button>
               </div>

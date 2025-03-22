@@ -87,7 +87,7 @@ export default function Navbar() {
             className="relative flex items-center"
           >
             <div className="hidden md:block">
-              <Button asChild className="relative overflow-hidden group text-white">
+              <Button asChild className="relative overflow-hidden group text-white" size="sm">
                 <Link href="/contact">
                   <span className="relative z-10">Get Quote</span>
                   <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
