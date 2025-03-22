@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
 import { PageTransition } from '@/components/page-transition'
+import AnimatedGradientText from "@/components/animated-gradient-text"
 
 // Sample project data
 const projects = [
@@ -65,19 +66,21 @@ export default function ProjectsPage() {
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0 rounded-lg"></div>
+      <section className="container mx-auto relative py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 from-primary/5 to-background z-0 rounded-lg"></div>
         <div className="relative container z-10">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Our Projects</h1>
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+              Our <AnimatedGradientText text="Projects" />
+            </h1>
             <p className="text-xl text-muted-foreground">Explore our portfolio of successful digital solutions</p>
           </div>
         </div>
       </section>
 
       {/* Projects Grid */}
-      <section className="py-16 md:py-24">
-        <div className="container">
+      <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
               <Card key={project.id} className="overflow-hidden">
@@ -113,8 +116,8 @@ export default function ProjectsPage() {
       </section>
 
       {/* Categories */}
-      <section className="bg-muted py-16 md:py-16">
-        <div className="container">
+      <section className="container mx-auto bg-muted py-16 md:py-16 container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Project Categories</h2>
             <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground">Browse our work by specialty</p>
@@ -147,8 +150,8 @@ export default function ProjectsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24">
-        <div className="container">
+      <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-lg bg-primary p-8 text-primary-foreground md:p-12">
             <div className="mx-auto max-w-3xl space-y-6 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">

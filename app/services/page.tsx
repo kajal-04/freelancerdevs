@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -5,13 +7,24 @@ import { ArrowRight } from "lucide-react"
 import AnimatedGradientText from "@/components/animated-gradient-text"
 import GlowCard from "@/components/glow-card"
 import { PageTransition } from '@/components/page-transition'
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
 
 export default function ServicesPage() {
+  const targetRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end start"],
+  })
+  
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
+    
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0 rounded-lg"></div>
+      <section className="container mx-auto relative py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 from-primary/5 to-background z-0 rounded-lg"></div>
         <div className="container relative z-10">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
             <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-sm">
@@ -28,8 +41,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="py-16 md:py-24">
-        <div className="container">
+      <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-16">
             {/* Web Development */}
             <div className="grid gap-8 md:grid-cols-2 md:items-center">
@@ -71,16 +84,26 @@ export default function ServicesPage() {
               </div>
               <div className="order-1 md:order-2">
                 <div className="relative">
-                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20 blur-xl"></div>
-                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20"></div>
-                  <div className="relative rounded-xl overflow-hidden">
-                    <Image
-                      src="/images/web-development.png"
-                      width={600}
-                      height={400}
-                      alt="Web Development"
-                      className="rounded-lg shadow-xl"
-                    />
+                  {/* <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20 blur-xl"></div> */}
+                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-[0.025]"></div>
+                  <div className="relative rounded-xl overflow-hidden p-10">
+                    <motion.div style={{ scale }}>
+    
+                      <motion.div
+                        initial={{ y: 20 }}
+                        animate={{ y: 0 }}
+                        transition={{ duration: 1 }}
+                        className="space-y-6 max-w-4xl"
+                      >
+                        <Image
+                          src="/analyze-data.svg"
+                          width={400}
+                          height={200}
+                          alt="FreelancerDevs team"
+                          className="rounded-lg mx-auto"
+                        />
+                      </motion.div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -90,16 +113,26 @@ export default function ServicesPage() {
             <div className="grid gap-8 md:grid-cols-2 md:items-center">
               <div>
                 <div className="relative">
-                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20 blur-xl"></div>
-                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20"></div>
-                  <div className="relative rounded-xl overflow-hidden">
-                    <Image
-                      src="/images/ui-ux-design.png"
-                      width={600}
-                      height={400}
-                      alt="UI/UX Design"
-                      className="rounded-lg shadow-xl"
-                    />
+                  {/* <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20 blur-xl"></div> */}
+                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-[0.025]"></div>
+                  <div className="relative rounded-xl overflow-hidden p-10">
+                    <motion.div style={{ scale }}>
+    
+                      <motion.div
+                        initial={{ y: 20 }}
+                        animate={{ y: 0 }}
+                        transition={{ duration: 1 }}
+                        className="space-y-6 max-w-4xl"
+                      >
+                        <Image
+                          src="/designer-desk.svg"
+                          width={400}
+                          height={200}
+                          alt="FreelancerDevs team"
+                          className="rounded-lg mx-auto"
+                        />
+                      </motion.div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -181,16 +214,26 @@ export default function ServicesPage() {
               </div>
               <div className="order-1 md:order-2">
                 <div className="relative">
-                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20 blur-xl"></div>
-                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20"></div>
-                  <div className="relative rounded-xl overflow-hidden">
-                    <Image
-                      src="/images/digital-marketing.png"
-                      width={600}
-                      height={400}
-                      alt="Digital Marketing"
-                      className="rounded-lg shadow-xl"
-                    />
+                  {/* <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20 blur-xl"></div> */}
+                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-[0.025]"></div>
+                  <div className="relative rounded-xl overflow-hidden p-10">
+                    <motion.div style={{ scale }}>
+    
+                      <motion.div
+                        initial={{ y: 20 }}
+                        animate={{ y: 0 }}
+                        transition={{ duration: 1 }}
+                        className="space-y-6 max-w-4xl"
+                      >
+                        <Image
+                          src="/social-media.svg"
+                          width={400}
+                          height={200}
+                          alt="FreelancerDevs team"
+                          className="rounded-lg mx-auto"
+                        />
+                      </motion.div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -200,16 +243,26 @@ export default function ServicesPage() {
             <div className="grid gap-8 md:grid-cols-2 md:items-center">
               <div>
                 <div className="relative">
-                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20 blur-xl"></div>
-                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20"></div>
-                  <div className="relative rounded-xl overflow-hidden">
-                    <Image
-                      src="/images/product-strategy.png"
-                      width={600}
-                      height={400}
-                      alt="Product Strategy"
-                      className="rounded-lg shadow-xl"
-                    />
+                  {/* <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20 blur-xl"></div> */}
+                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-[0.025]"></div>
+                  <div className="relative rounded-xl overflow-hidden p-10">
+                    <motion.div style={{ scale }}>
+    
+                      <motion.div
+                        initial={{ y: 20 }}
+                        animate={{ y: 0 }}
+                        transition={{ duration: 1 }}
+                        className="space-y-6 max-w-4xl"
+                      >
+                        <Image
+                          src="/business-presentation.svg"
+                          width={400}
+                          height={200}
+                          alt="FreelancerDevs team"
+                          className="rounded-lg mx-auto"
+                        />
+                      </motion.div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -254,8 +307,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Process */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-background via-primary/5 to-background">
-        <div className="container">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-background via-primary/5 to-background px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-sm mb-4">
               How We Work
@@ -295,8 +348,8 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24">
-        <div className="container">
+      <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-90"></div>
             <div className="absolute inset-0 bg-[url('/images/cta-background.png')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
