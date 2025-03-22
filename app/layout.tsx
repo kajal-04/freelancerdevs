@@ -10,7 +10,7 @@ import BackgroundGrid from "@/components/background-grid"
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "TechSolutions - Web Development & Digital Marketing Agency",
+  title: "FreelancerDevs - Web Development & Digital Marketing Agency",
   description:
     "Professional web development, UI/UX design, digital marketing, and product strategy solutions for your business.",
   generator: 'v0.dev'

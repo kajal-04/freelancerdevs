@@ -18,7 +18,7 @@ export default function AboutPage() {
                 About Us
               </div>
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                About <AnimatedGradientText text="TechSolutions" />
+                About <AnimatedGradientText text="FreelancerDevs" />
               </h1>
               <p className="text-xl text-muted-foreground">
                 We're a team of passionate digital experts committed to delivering exceptional solutions that drive
@@ -39,7 +39,7 @@ export default function AboutPage() {
                   src="/images/team-photo.png"
                   width={800}
                   height={600}
-                  alt="TechSolutions team"
+                  alt="FreelancerDevs team"
                   className="rounded-lg shadow-xl"
                 />
               </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
               Our <AnimatedGradientText text="Story" />
             </h2>
             <p className="text-muted-foreground">
-              Founded in 2015, TechSolutions began with a simple mission: to help businesses succeed in the digital
+              Founded in 2015, FreelancerDevs began with a simple mission: to help businesses succeed in the digital
               world. What started as a small team of three passionate developers has grown into a full-service digital
               agency with over 50 experts across web development, design, marketing, and strategy.
             </p>
