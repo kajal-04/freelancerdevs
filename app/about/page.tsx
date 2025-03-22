@@ -27,7 +27,7 @@ export default function AboutPage() {
               <Button asChild className="group relative overflow-hidden">
                 <Link href="/contact" className="flex items-center gap-2">
                   <span className="relative z-10">Get in Touch</span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
                 </Link>
               </Button>
             </div>

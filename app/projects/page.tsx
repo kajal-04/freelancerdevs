@@ -98,7 +98,7 @@ export default function ProjectsPage() {
                     <p className="text-muted-foreground">{project.description}</p>
                     <Link
                       href={`/projects/${project.id}`}
-                      className="inline-flex items-center text-sm font-medium text-primary"
+                      className="inline-flex items-center text-sm font-medium text-primary group translate-y-2 transform"
                     >
                       View Case Study <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>

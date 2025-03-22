@@ -26,7 +26,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section ref={targetRef} className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background"></div>
+          <div className="absolute inset-0 from-primary/5 to-background"></div>
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent"></div>
         </div>
 
@@ -58,8 +58,8 @@ export default function HomePage() {
             >
               <Button asChild size="lg" className="group relative overflow-hidden">
                 <Link href="/contact">
-                  <span className="relative z-10">Get Started</span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className="relative z-10">Get Quote</span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild className="group">
@@ -76,18 +76,18 @@ export default function HomePage() {
               transition={{ duration: 1, delay: 0.4 }}
               className="relative mt-8 w-full max-w-5xl"
             >
-              <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20 blur-xl"></div>
-              <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20"></div>
-              <div className="relative rounded-xl overflow-hidden shadow-2xl">
+              <div className="absolute -inset-0.5 rounded-xl from-primary to-primary-foreground opacity-20 blur-xl"></div>
+              <div className="absolute -inset-0.5 rounded-xl from-primary to-primary-foreground opacity-20"></div>
+              <div className="relative rounded-xl overflow-hidden flex items-center content-center mt-8">
                 <Image
-                  src="/images/hero-dashboard.png"
-                  width={1200}
-                  height={600}
+                  src="/hero-svg.svg"
+                  width={500}
+                  height={350}
                   alt="Digital solutions showcase"
-                  className="w-full"
+                  className="m-auto"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-center">
                   <div>
                     <h3 className="text-xl font-bold text-white">Latest Project: TechFusion Platform</h3>
@@ -96,7 +96,7 @@ export default function HomePage() {
                   <Button variant="secondary" size="sm" asChild>
                     <Link href="/projects/techfusion">View Case Study</Link>
                   </Button>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           </div>
@@ -227,7 +227,7 @@ export default function HomePage() {
                     </p>
                     <Link
                       href={`/projects/project-${project.id}`}
-                      className="inline-flex items-center text-sm font-medium text-primary group"
+                      className="inline-flex items-center text-sm font-medium text-primary group translate-y-2 transform"
                     >
                       View Case Study
                       <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-0" />

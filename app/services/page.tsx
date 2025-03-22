@@ -61,8 +61,8 @@ export default function ServicesPage() {
                   <div className="mt-6">
                     <Button asChild className="group relative overflow-hidden">
                       <Link href="/contact">
-                        <span className="relative z-10">Get Started</span>
-                        <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span className="relative z-10">Get Quote</span>
+                        <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
                       </Link>
                     </Button>
                   </div>
@@ -132,7 +132,7 @@ export default function ServicesPage() {
                     <Button asChild className="group relative overflow-hidden">
                       <Link href="/contact">
                         <span className="relative z-10">Get Started</span>
-                        <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
                       </Link>
                     </Button>
                   </div>
@@ -172,7 +172,7 @@ export default function ServicesPage() {
                     <Button asChild className="group relative overflow-hidden">
                       <Link href="/contact">
                         <span className="relative z-10">Get Started</span>
-                        <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
                       </Link>
                     </Button>
                   </div>
@@ -241,7 +241,7 @@ export default function ServicesPage() {
                     <Button asChild className="group relative overflow-hidden">
                       <Link href="/contact">
                         <span className="relative z-10">Get Started</span>
-                        <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
                       </Link>
                     </Button>
                   </div>
