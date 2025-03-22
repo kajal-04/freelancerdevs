@@ -16,7 +16,7 @@ export default function GlowCard({ className, children }: GlowCardProps) {
       <div className="absolute inset-px rounded-xl bg-gradient-to-r from-primary/20 to-primary-foreground/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
       {/* Content */}
-      <div className="relative rounded-xl bg-card p-6 h-full z-10">{children}</div>
+      <div className="relative rounded-xl bg-card p-6 h-full z-10 border">{children}</div>
     </div>
   )
 }

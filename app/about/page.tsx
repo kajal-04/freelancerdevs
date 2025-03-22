@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -5,13 +7,24 @@ import { Award, CheckCircle, Users, ArrowRight } from "lucide-react"
 import AnimatedGradientText from "@/components/animated-gradient-text"
 import GlowCard from "@/components/glow-card"
 import { PageTransition } from '@/components/page-transition'
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
 
 export default function AboutPage() {
+  const targetRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end start"],
+  })
+  
+    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+    const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
+    
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0 rounded-lg"></div>
+      <section className="container mx-auto relative py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 from-primary/5 to-background z-0 rounded-lg"></div>
         <div className="container relative z-10">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div className="space-y-6">
@@ -33,16 +46,26 @@ export default function AboutPage() {
               </Button>
             </div>
             <div className="relative">
-              <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20 blur-xl"></div>
-              <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20"></div>
-              <div className="relative rounded-xl overflow-hidden">
-                <Image
-                  src="/images/team-photo.png"
-                  width={800}
-                  height={600}
-                  alt="FreelancerDevs team"
-                  className="rounded-lg shadow-xl"
-                />
+              {/* <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-[0.05] blur-xl"></div> */}
+              <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-[0.025]"></div>
+              <div className="relative rounded-xl overflow-hidden p-10">
+                <motion.div style={{ opacity, scale }}>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+                  className="space-y-6 max-w-4xl"
+                >
+                  <Image
+                    src="/accent-team.svg"
+                    width={600}
+                    height={400}
+                    alt="FreelancerDevs team"
+                    className="rounded-lg mx-auto"
+                  />
+                </motion.div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -50,8 +73,8 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-16 md:py-24">
-        <div className="container">
+      <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl space-y-8 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Our <AnimatedGradientText text="Story" />
@@ -72,8 +95,8 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-background via-primary/5 to-background">
-        <div className="container">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-background via-primary/5 to-background px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-sm mb-4">
               Our Principles
@@ -121,8 +144,8 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-16 md:py-24">
-        <div className="container">
+      <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-sm mb-4">
               Our People
@@ -163,8 +186,8 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-background via-primary/5 to-background">
-        <div className="container">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-background via-primary/5 to-background px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { number: "5+", label: "Years of Experience" },
@@ -184,8 +207,8 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24">
-        <div className="container">
+      <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-90"></div>
             <div className="absolute inset-0 bg-[url('/images/cta-background.png')] bg-cover bg-center mix-blend-overlay opacity-20"></div>

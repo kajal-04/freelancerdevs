@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { PageTransition } from '@/components/page-transition'
+import AnimatedGradientText from "@/components/animated-gradient-text"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -57,19 +58,21 @@ export default function ContactPage() {
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0 rounded-lg"></div>
+      <section className="container mx-auto relative py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 from-primary/5 to-background z-0 rounded-lg"></div>
         <div className="container relative z-10">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Contact Us</h1>
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+            Contact <AnimatedGradientText text="Us" />
+            </h1>
             <p className="text-xl text-muted-foreground">Get in touch with our team to discuss your project</p>
           </div>
         </div>
       </section>
 
       {/* Contact Form and Info */}
-      <section className="py-16 md:py-24">
-        <div className="container">
+      <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
             {/* Contact Form */}
             <Card>
@@ -255,8 +258,8 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24">
-        <div className="container">
+      <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl space-y-12">
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Frequently Asked Questions</h2>
@@ -305,8 +308,8 @@ export default function ContactPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24">
-        <div className="container">
+      <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-lg bg-primary p-8 text-primary-foreground md:p-12">
             <div className="mx-auto max-w-3xl space-y-6 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
