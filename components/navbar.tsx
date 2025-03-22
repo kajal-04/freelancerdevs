@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "sticky top-0 z-50 w-full transition-all duration-300 mb-5",
         scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border/40" : "bg-transparent",
       )}
     >
@@ -46,7 +46,7 @@ export default function Navbar() {
               transition={{ duration: 0.5 }}
               className="relative flex items-center"
             >
-              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary to-primary-foreground opacity-75 blur-sm"></div>
+              <div className="absolute -inset-1 from-primary opacity-75 blur-sm"></div>
               <div className="relative rounded-full bg-background p-1.5">
                 <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
                   FreelancerDevs
