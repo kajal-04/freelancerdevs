@@ -187,8 +187,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <Link href="mailto:info@techsolutions.com" className="text-muted-foreground hover:text-primary">
-                        info@techsolutions.com
+                      <Link href="mailto:info@FreelancerDevs.com" className="text-muted-foreground hover:text-primary">
+                        info@FreelancerDevs.com
                       </Link>
                     </div>
                   </CardContent>

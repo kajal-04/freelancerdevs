@@ -49,7 +49,7 @@ export default function Navbar() {
               <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary to-primary-foreground opacity-75 blur-sm"></div>
               <div className="relative rounded-full bg-background p-1.5">
                 <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-                  TechSolutions
+                  FreelancerDevs
                 </span>
               </div>
             </motion.div>

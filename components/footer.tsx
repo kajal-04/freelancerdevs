@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
             <div className="space-y-4">
               <h3 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-                TechSolutions
+                FreelancerDevs
               </h3>
               <p className="text-sm text-muted-foreground">
                 Providing innovative digital solutions for businesses of all sizes since 2015.
@@ -113,10 +113,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="mailto:info@techsolutions.com"
+                    href="mailto:info@FreelancerDevs.com"
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
-                    info@techsolutions.com
+                    info@FreelancerDevs.com
                   </Link>
                 </li>
                 <li>
@@ -132,7 +132,7 @@ export default function Footer() {
           </div>
           <div className="mt-12 border-t border-border/40 pt-6">
             <p className="text-center text-xs text-muted-foreground">
-              © {new Date().getFullYear()} TechSolutions. All rights reserved.
+              © {new Date().getFullYear()} FreelancerDevs. All rights reserved.
             </p>
           </div>
         </div>

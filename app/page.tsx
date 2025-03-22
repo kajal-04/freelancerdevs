@@ -270,13 +270,13 @@ export default function HomePage() {
                 name: "Sarah Johnson",
                 role: "CEO, TechStart",
                 quote:
-                  "Working with TechSolutions transformed our online presence. Their team delivered a website that perfectly captures our brand and has significantly increased our conversion rates.",
+                  "Working with FreelancerDevs transformed our online presence. Their team delivered a website that perfectly captures our brand and has significantly increased our conversion rates.",
               },
               {
                 name: "Michael Chen",
                 role: "Marketing Director, GrowthCorp",
                 quote:
-                  "The digital marketing strategy developed by TechSolutions helped us reach new audiences and grow our customer base by 40% in just six months.",
+                  "The digital marketing strategy developed by FreelancerDevs helped us reach new audiences and grow our customer base by 40% in just six months.",
               },
               {
                 name: "Emily Rodriguez",
