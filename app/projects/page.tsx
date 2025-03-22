@@ -3,6 +3,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
+import { PageTransition } from '@/components/page-transition'
 
 // Sample project data
 const projects = [
@@ -62,10 +63,11 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <>
+    <PageTransition>
       {/* Hero Section */}
-      <section className="bg-muted py-16 md:py-24">
-        <div className="container">
+      <section className="relative py-16 md:py-24">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0"></div>
+        <div className="relative container z-10">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Our Projects</h1>
             <p className="text-xl text-muted-foreground">Explore our portfolio of successful digital solutions</p>
@@ -162,7 +164,7 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
-    </>
+    </PageTransition>
   )
 }
 

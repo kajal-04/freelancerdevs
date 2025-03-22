@@ -47,7 +47,7 @@ export default function Navbar() {
               className="relative flex items-center"
             >
               <div className="absolute -inset-1 from-primary opacity-75 blur-sm"></div>
-              <div className="relative rounded-full bg-background p-1.5">
+              <div className="relative p-1.5">
                 <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
                   FreelancerDevs
                 </span>
@@ -74,7 +74,7 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden md:block">
-            <Button asChild className="relative overflow-hidden group">
+            <Button asChild className="relative overflow-hidden group text-white">
               <Link href="/contact">
                 <span className="relative z-10">Get Quote</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>

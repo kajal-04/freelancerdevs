@@ -56,7 +56,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-col gap-4 sm:flex-row"
             >
-              <Button asChild size="lg" className="group relative overflow-hidden">
+              <Button asChild size="lg" className="group relative overflow-hidden text-white">
                 <Link href="/contact">
                   <span className="relative z-10">Get Quote</span>
                   <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>

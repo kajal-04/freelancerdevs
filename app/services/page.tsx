@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import AnimatedGradientText from "@/components/animated-gradient-text"
 import GlowCard from "@/components/glow-card"
+import { PageTransition } from '@/components/page-transition'
 
 export default function ServicesPage() {
   return (
-    <>
+    <PageTransition>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0"></div>
@@ -59,7 +60,7 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                   <div className="mt-6">
-                    <Button asChild className="group relative overflow-hidden">
+                    <Button asChild className="group relative overflow-hidden text-white">
                       <Link href="/contact">
                         <span className="relative z-10">Get Quote</span>
                         <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
@@ -319,7 +320,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-    </>
+    </PageTransition>
   )
 }
 

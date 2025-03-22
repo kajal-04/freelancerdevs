@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Mail, MapPin, Phone } from "lucide-react"
+import { PageTransition } from '@/components/page-transition'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -54,10 +55,11 @@ export default function ContactPage() {
   }
 
   return (
-    <>
+    <PageTransition>
       {/* Hero Section */}
-      <section className="bg-muted py-16 md:py-24">
-        <div className="container">
+      <section className="relative py-16 md:py-24">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0"></div>
+        <div className="container relative z-10">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Contact Us</h1>
             <p className="text-xl text-muted-foreground">Get in touch with our team to discuss your project</p>
@@ -332,7 +334,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </>
+    </PageTransition>
   )
 }
 
