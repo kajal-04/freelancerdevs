@@ -11,7 +11,7 @@ export default function AboutPage() {
     <PageTransition>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0 rounded-lg"></div>
         <div className="container relative z-10">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div className="space-y-6">

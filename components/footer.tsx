@@ -105,18 +105,14 @@ export default function Footer() {
               <h3 className="mb-4 text-sm font-semibold">Contact</h3>
               <ul className="space-y-2 text-sm">
                 <li className="text-muted-foreground">
-                  123 Business Avenue
-                  <br />
-                  Tech District
-                  <br />
-                  New York, NY 10001
+                  Hyderabad, India
                 </li>
                 <li>
                   <Link
-                    href="mailto:info@FreelancerDevs.com"
+                    href="mailto:contact@freelancerdevs.com"
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
-                    info@FreelancerDevs.com
+                    contact@freelancerdevs.com
                   </Link>
                 </li>
                 <li>
@@ -124,7 +120,7 @@ export default function Footer() {
                     href="tel:+1234567890"
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
-                    +1 (234) 567-890
+                    +91 8295309717
                   </Link>
                 </li>
               </ul>

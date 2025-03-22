@@ -11,7 +11,7 @@ export default function ServicesPage() {
     <PageTransition>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0 rounded-lg"></div>
         <div className="container relative z-10">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
             <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-sm">

@@ -56,31 +56,45 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "relative text-sm font-medium transition-colors hover:text-primary",
-                  pathname === item.href
-                    ? "text-primary after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-primary after:content-['']"
-                    : "text-muted-foreground",
-                )}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative flex items-center"
+          >
+            <nav className="hidden md:flex gap-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "relative text-sm font-medium transition-colors hover:text-primary",
+                    pathname === item.href
+                      ? "text-primary after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:bg-primary after:content-['']"
+                      : "text-muted-foreground",
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          </motion.div>
 
-          <div className="hidden md:block">
-            <Button asChild className="relative overflow-hidden group text-white">
-              <Link href="/contact">
-                <span className="relative z-10">Get Quote</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
-              </Link>
-            </Button>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative flex items-center"
+          >
+            <div className="hidden md:block">
+              <Button asChild className="relative overflow-hidden group text-white">
+                <Link href="/contact">
+                  <span className="relative z-10">Get Quote</span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
+                </Link>
+              </Button>
+            </div>
+          </motion.div>
 
           {/* Mobile menu button */}
           <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>

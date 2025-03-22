@@ -66,7 +66,7 @@ export default function ProjectsPage() {
     <PageTransition>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0 rounded-lg"></div>
         <div className="relative container z-10">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Our Projects</h1>
@@ -113,7 +113,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Categories */}
-      <section className="bg-muted py-16 md:py-24">
+      <section className="bg-muted py-16 md:py-16">
         <div className="container">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Project Categories</h2>

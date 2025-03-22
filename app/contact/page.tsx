@@ -58,7 +58,7 @@ export default function ContactPage() {
     <PageTransition>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-background z-0 rounded-lg"></div>
         <div className="container relative z-10">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Contact Us</h1>
@@ -189,8 +189,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <Link href="mailto:info@FreelancerDevs.com" className="text-muted-foreground hover:text-primary">
-                        info@FreelancerDevs.com
+                      <Link href="mailto:contact@freelancerdevs.com" className="text-muted-foreground hover:text-primary">
+                        contact@freelancerdevs.com
                       </Link>
                     </div>
                   </CardContent>
@@ -203,8 +203,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-medium">Phone</h3>
-                      <Link href="tel:+1234567890" className="text-muted-foreground hover:text-primary">
-                        +1 (234) 567-890
+                      <Link href="tel:+918295309717" className="text-muted-foreground hover:text-primary">
+                        +91 8295309717
                       </Link>
                     </div>
                   </CardContent>
@@ -216,13 +216,9 @@ export default function ContactPage() {
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-medium">Office</h3>
+                      <h3 className="font-medium">Our location</h3>
                       <p className="text-muted-foreground">
-                        123 Business Avenue
-                        <br />
-                        Tech District
-                        <br />
-                        New York, NY 10001
+                        Hyderabad, India
                       </p>
                     </div>
                   </CardContent>
@@ -245,21 +241,6 @@ export default function ContactPage() {
                     <span>Closed</span>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map */}
-      <section className="py-16 md:py-24 bg-muted">
-        <div className="container">
-          <div className="mx-auto max-w-3xl space-y-6 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Visit Our Office</h2>
-            <div className="aspect-video w-full overflow-hidden rounded-lg bg-background">
-              {/* Placeholder for map - in a real implementation, you would use Google Maps or similar */}
-              <div className="flex h-full w-full items-center justify-center">
-                <p className="text-muted-foreground">Interactive map would be displayed here</p>
               </div>
             </div>
           </div>
@@ -317,7 +298,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-muted">
+      <section className="py-16 md:py-24">
         <div className="container">
           <div className="rounded-lg bg-primary p-8 text-primary-foreground md:p-12">
             <div className="mx-auto max-w-3xl space-y-6 text-center">
