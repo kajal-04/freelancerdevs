@@ -354,7 +354,6 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-90"></div>
-            <div className="absolute inset-0 bg-[url('/images/cta-background.png')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
 
             <div className="relative z-10 p-8 md:p-12">
               <div className="mx-auto max-w-3xl space-y-6 text-center">

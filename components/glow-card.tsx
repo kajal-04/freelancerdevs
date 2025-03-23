@@ -8,7 +8,7 @@ interface GlowCardProps {
 
 export default function GlowCard({ className, children }: GlowCardProps) {
   return (
-    <div className={cn("group relative rounded-xl overflow-hidden", className)}>
+    <div className={cn("group relative rounded-xl overflow-hidden h-full", className)}>
       {/* Glow effect */}
       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-primary-foreground/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
 

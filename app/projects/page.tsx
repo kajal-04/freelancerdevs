@@ -146,6 +146,40 @@ const projects = [
   }
 ]
 
+const categories = [
+  {
+    name: "Web Development",
+    description: "We build fast, scalable, and modern websites tailored to your business needs."
+  },
+  {
+    name: "UI/UX Design",
+    description: "Creating intuitive and engaging user experiences with sleek, user-friendly interfaces."
+  },
+  {
+    name: "Digital Marketing",
+    description: "Data-driven strategies to enhance brand visibility, engagement, and conversions."
+  },
+  {
+    name: "E-commerce",
+    description: "Custom online stores optimized for seamless shopping experiences and high conversions."
+  },
+  {
+    name: "Branding",
+    description: "Crafting strong brand identities with unique logos, visuals, and messaging."
+  },
+  {
+    name: "SEO",
+    description: "Optimizing websites for higher search rankings, organic traffic, and better visibility."
+  },
+  {
+    name: "Product Strategy",
+    description: "Defining clear roadmaps to align business goals with innovative digital solutions."
+  },
+  {
+    name: "Automation",
+    description: "Streamlining workflows with smart solutions to enhance efficiency, reduce costs, and improve accuracy."
+  }
+]
 export default function ProjectsPage() {
   return (
     <PageTransition>
@@ -205,31 +239,23 @@ export default function ProjectsPage() {
       <section className="container mx-auto bg-muted py-16 md:py-16 container px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Project Categories</h2>
-            <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground">Browse our work by specialty</p>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Project Areas</h2>
+            <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground">We excel in web apps, UI/UX design, branding, and custom software, delivering high-quality, tailored solutions.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {[
-              "Web Development",
-              "UI/UX Design",
-              "Digital Marketing",
-              "E-commerce",
-              "Mobile Apps",
-              "Branding",
-              "SEO",
-              "Product Strategy",
-            ].map((category, i) => (
+            {categories.map((category, i) => ( 
               <Card key={i} className="bg-background">
-                <CardContent className="flex flex-col items-center p-6 text-center">
-                  <h3 className="text-lg font-medium">{category}</h3>
-                  <Link
-                    href={`/projects/category/${category.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="mt-2 inline-flex items-center text-sm font-medium text-primary"
-                  >
-                    View Projects <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </CardContent>
-              </Card>
+              <CardContent className="flex flex-col items-center p-6 text-center">
+                <h3 className="text-lg font-medium">{category.name}</h3>
+                <p className="text-muted-foreground hover:text-primary text-sm">{category.description}</p>
+                {/* <Link
+                  href={`/projects/category/${category.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="mt-2 inline-flex items-center text-sm font-medium text-primary"
+                >
+                  View Projects <ArrowRight className="ml-1 h-4 w-4" />
+                </Link> */}
+              </CardContent>
+            </Card>
             ))}
           </div>
         </div>
@@ -238,12 +264,12 @@ export default function ProjectsPage() {
       {/* CTA */}
       <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-lg bg-primary p-8 text-primary-foreground md:p-12">
+          <div className="rounded-lg bg-primary p-8 bg-gradient-to-r from-primary to-primary-foreground opacity-90 md:p-12">
             <div className="mx-auto max-w-3xl space-y-6 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Ready to start your project?
               </h2>
-              <p className="text-primary-foreground/80">
+              <p className="text-white/80">
                 Let's discuss how we can help your business grow with our comprehensive digital solutions.
               </p>
               <Button size="lg" variant="secondary" asChild>
