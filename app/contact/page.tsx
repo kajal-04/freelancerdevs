@@ -95,6 +95,15 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
+    if (!new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(formData.email)) {
+      toast({
+        title: "Inalid email address",
+        variant: "destructive",
+      });
+      setIsSubmitting(false)
+      return
+    }
+
     if (!formData.phoneCountryCode) {
       toast({
         title: "Please select a country code",
@@ -156,7 +165,7 @@ export default function ContactPage() {
       setFormData({
         name: "",
         email: "",
-        phoneCountryCode: "",
+        phoneCountryCode: countries.find(c => c.countryName === 'India').value,
         phone: "",
         companyName: "",
         projectType: null,
@@ -209,7 +218,7 @@ export default function ContactPage() {
                     <p className="text-muted-foreground">
                       We've received your message and will get back to you as soon as possible.
                     </p>
-                    <Button className="mt-4" onClick={() => setIsSubmitted(false)}>
+                    <Button className="mt-4 text-white" onClick={() => setIsSubmitted(false)}>
                       Send another message
                     </Button>
                   </div>
@@ -273,7 +282,7 @@ export default function ContactPage() {
                         <Input
                           id="phone"
                           name="phone"
-                          placeholder="+91 1234567890"
+                          placeholder="Eg: 1234567890"
                           required
                           value={formData.phone}
                           onChange={handleChange}
@@ -285,7 +294,7 @@ export default function ContactPage() {
                       <Input
                         id="companyName"
                         name="companyName"
-                        placeholder="Your Company"
+                        placeholder="Eg: ACME Solutions"
                         value={formData.companyName}
                         onChange={handleChange}
                       />
@@ -297,7 +306,7 @@ export default function ContactPage() {
                           <SelectValue placeholder="Select a projectType">
                             {formData.projectType ?
                               ProjectType.getById(formData.projectType) :
-                              <span className="text-gray-400">Select a service</span>
+                              <span className="text-gray-400">Eg: End to End Web Development</span>
                             }
                           </SelectValue>
                         </SelectTrigger>
@@ -311,6 +320,7 @@ export default function ContactPage() {
                     <div className="space-y-2">
                       <Label htmlFor="description">Message</Label>
                       <Textarea
+                        className="resize-none"
                         id="description"
                         name="description"
                         placeholder="Tell us about your project..."
@@ -346,6 +356,7 @@ export default function ContactPage() {
                           id="discoveryDescription"
                           name="discoveryDescription"
                           placeholder="Enter the source of discovery"
+                          required
                           value={formData.discoveryDescription}
                           onChange={handleChange}
                         />
