@@ -12,9 +12,10 @@ import {
 
 export function Toaster() {
   const { toasts } = useToast()
+  const duration = 3000 
 
   return (
-    <ToastProvider>
+    <ToastProvider duration={duration}>
       {toasts.map(function ({ id, title, description, action, ...props }) {
         return (
           <Toast key={id} {...props}>

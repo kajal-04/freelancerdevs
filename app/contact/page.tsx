@@ -18,19 +18,6 @@ import { useToast } from "@/hooks/use-toast"
 export default function ContactPage() {
   const { toast } = useToast();
 
-  function testToast() {
-    console.log("Toast");
-    toast({
-      title: "Submission Failed",
-      description: "Something went wrong. Please try again.",
-      variant: "destructive",
-    });
-    toast({
-      title: "Form Submitted Successfully",
-      description: "",
-      variant: "default",
-    });
-  }
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -87,7 +74,7 @@ export default function ContactPage() {
 
     // Add api call here
     try {      
-      const response = await fetch("https://api.freelancerdevs.com", {
+      const response = await fetch("https://api.freelancerdevs.com/api/v1/prospect", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -109,8 +96,8 @@ export default function ContactPage() {
 
       if (data.error) {
         toast({
-          title: "Submission Failed",
-          description: data.msg || "Something went wrong. Please try again.",
+          title: data.msg || "Something went wrong. Please try again.",
+          description: "",
           variant: "destructive",
         });
         // console.error("Failed to submit form", data.msg)
@@ -120,8 +107,8 @@ export default function ContactPage() {
   
       toast({
         title: "Form Submitted Successfully",
-        description: "Your form has been submitted successfully!",
-        variant: "default",
+        description: "",
+        variant: "success",
       });
 
       // console.log("Form submitted successfully", data)
@@ -141,22 +128,13 @@ export default function ContactPage() {
     } catch (error) {
       setIsSubmitting(false)
       toast({
-        title: "Submission Failed",
-        description: "Something went wrong. Please try again.",
+        title: "Something went wrong. Please try again.",
+        description: "",
         variant: "destructive",
       });
       return
     }
   }
-
-  // function testToast(): void {
-  //   console.log("toast");
-  //   toast({
-  //     title: "Submission Failed",
-  //     description: "Something went wrong. Please try again.",
-  //     variant: "destructive",
-  //   });
-  // }
 
   return (
     <PageTransition>
@@ -329,7 +307,6 @@ export default function ContactPage() {
                     </Button>
                   </form>
                 )}
-                <Button onClick={testToast}>Toast Test</Button>
               </CardContent>
             </Card>
 
