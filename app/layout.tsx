@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import BackgroundGrid from "@/components/background-grid"
 import { Toaster } from "@/components/ui/toaster"
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
@@ -93,6 +94,7 @@ export default function RootLayout({
           </div>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-5G5YZMHH1J" />
     </html>
   )
 }

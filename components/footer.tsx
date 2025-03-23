@@ -21,21 +21,11 @@ export default function Footer() {
                   { icon: <Instagram className="h-5 w-5" />, label: "Instagram" },
                   { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn" },
                 ].map((social, i) => (
-                  <div className="text-muted-foreground hover:text-primary transition-colors duration-200 relative group">
+                  <div key={i} className="text-muted-foreground hover:text-primary transition-colors duration-200 relative group">
                     <span className="absolute -inset-2 rounded-full bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     {social.icon}
                     <span className="sr-only">{social.label}</span>
                   </div>
-                  
-                  // <Link
-                  //   key={i}
-                  //   href="/"
-                  //   className="text-muted-foreground hover:text-primary transition-colors duration-200 relative group"
-                  // >
-                  //   <span className="absolute -inset-2 rounded-full bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  //   {social.icon}
-                  //   <span className="sr-only">{social.label}</span>
-                  // </Link>
                 ))}
               </div>
             </div>
