@@ -12,6 +12,12 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "FreelancerDevs | Web Development, UI/UX & Digital Marketing Experts",
   description: "Expert web development, UI/UX design, and digital marketing services to grow your business online. Build stunning websites, optimize for SEO, and drive engagement with our custom solutions.",
+  icons: {
+      href: "/favicon.ico",
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/favicon.png",
+  },
   keywords: [
     "FreelancerDevs",
     "Web Development",
