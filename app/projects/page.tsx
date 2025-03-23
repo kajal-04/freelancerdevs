@@ -208,6 +208,7 @@ export default function ProjectsPage() {
                     width={800}
                     height={600}
                     alt={project.title}
+                    loading="lazy"
                     className="h-full w-full transition-transform duration-300 hover:scale-105"
                   />
                 </div>
@@ -242,19 +243,19 @@ export default function ProjectsPage() {
             <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground">We excel in web apps, UI/UX design, branding, and custom software, delivering high-quality, tailored solutions.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {categories.map((category, i) => ( 
+            {categories.map((category, i) => (
               <Card key={i} className="bg-background">
-              <CardContent className="flex flex-col items-center p-6 text-center">
-                <h3 className="text-lg font-medium">{category.name}</h3>
-                <p className="text-muted-foreground hover:text-primary text-sm">{category.description}</p>
-                {/* <Link
+                <CardContent className="flex flex-col items-center p-6 text-center">
+                  <h3 className="text-lg font-medium">{category.name}</h3>
+                  <p className="text-muted-foreground hover:text-primary text-sm">{category.description}</p>
+                  {/* <Link
                   href={`/projects/category/${category.toLowerCase().replace(/\s+/g, "-")}`}
                   className="mt-2 inline-flex items-center text-sm font-medium text-primary"
                 >
                   View Projects <ArrowRight className="ml-1 h-4 w-4" />
                 </Link> */}
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>

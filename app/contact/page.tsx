@@ -13,6 +13,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, MapPin, Phone } from "lucide-react"
 import { PageTransition } from '@/components/page-transition'
 import AnimatedGradientText from "@/components/animated-gradient-text"
+import { Discovery, ProjectType } from "@/types/enums"
+import { Toast } from "@radix-ui/react-toast"
 
 export default function ContactPage() {
   const [countries, setCountries] = useState([]);
@@ -20,21 +22,23 @@ export default function ContactPage() {
   useEffect(() => {
     fetch("/codes.json")
       .then((res) => res.json())
-      .then((data) => setCountries(data))
+      .then((data) => {
+        setCountries(data.countryCodes)
+        setFormData((prev) => ({ ...prev, phoneCountryCode: data.countryCodes.find(c => c.countryName === 'India').value }));
+      })
       .catch((err) => console.error("Error loading countries:", err));
   }, []);
 
-  useEffect(() => {
-    console.log("Countries loaded:", countries);
-  }, [countries]);
-  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    company: "",
-    service: "",
-    message: "",
+    phoneCountryCode: "",
+    companyName: "",
+    projectType: 0,
+    description: "",
+    discoveryType: 0,
+    discoveryDescription: "",
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -45,28 +49,71 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSelectChange = (value: string) => {
-    setFormData((prev) => ({ ...prev, service: value }))
+  const handleProjectTypeSelectChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, projectType: parseInt(value) }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleDiscoverySelectChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, discoveryType: parseInt(value) }))
+  }
+
+  const handlePhoneSelectChange = (value: string) => {
+    if (!value) return;
+    const selectedCode = countries.find(c => c._id === value)?.value;
+
+    setFormData((prev) => {
+      if (prev.phoneCountryCode === value) return prev; // Prevent unnecessary updates
+      return { ...prev, phoneCountryCode: selectedCode };
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
+    // Add api call here
+    try {      
+      const response = await fetch("http://localhost:5000/api/v1/prospect", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      
+      if (!response.ok) {
+        console.error("Failed to submit form")
+        setIsSubmitting(false)
+        return
+      }
+  
+      const data = await response.json();
+  
+      if (data.error) {
+        console.error("Failed to submit form", data.msg)
+        setIsSubmitting(false)
+        return
+      }
+  
+      console.log("Form submitted successfully", data)
       setIsSubmitting(false)
       setIsSubmitted(true)
       setFormData({
         name: "",
         email: "",
+        phoneCountryCode: "",
         phone: "",
-        company: "",
-        service: "",
-        message: "",
+        companyName: "",
+        projectType: 0,
+        description: "",
+        discoveryType: 0,
+        discoveryDescription: "",
       })
-      console.log("Form submitted:", formData);
-    }, 1500)
+    } catch (error) {
+      setIsSubmitting(false)
+      console.error("Failed to submit form", error)
+      return
+    }
   }
 
   return (
@@ -77,7 +124,7 @@ export default function ContactPage() {
         <div className="container relative z-10">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-            Contact <AnimatedGradientText text="Us" />
+              Contact <AnimatedGradientText text="Us" />
             </h1>
             <p className="text-xl text-muted-foreground">Get in touch with our team to discuss your project</p>
           </div>
@@ -101,7 +148,7 @@ export default function ContactPage() {
                   <div className="rounded-lg bg-primary/10 p-6 text-center">
                     <h3 className="mb-2 text-xl font-bold text-primary">Thank you for contacting us!</h3>
                     <p className="text-muted-foreground">
-                      We've received your message and will get back to you within 24 hours.
+                      We've received your message and will get back to you as soon as possible.
                     </p>
                     <Button className="mt-4" onClick={() => setIsSubmitted(false)}>
                       Send another message
@@ -136,53 +183,96 @@ export default function ContactPage() {
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number {countries.length > 0 && countries['currency'][0].shortName}</Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          placeholder="+1 (234) 567-890"
-                          value={formData.phone}
-                          onChange={handleChange}
-                        />
+                        <Label htmlFor="phone">Phone Number</Label>
+                        <div className="flex items-center gap-2">
+                          {/* can i add search bar in select? */}
+
+                        <Select value={formData.phoneCountryCode} onValueChange={handlePhoneSelectChange}>
+                          <SelectTrigger id="phoneCountryCode">
+                            <SelectValue placeholder="Select Country Code">
+                              {formData.phoneCountryCode || "Select Country Code"}
+                            </SelectValue>
+                          </SelectTrigger>
+                          <SelectContent>
+                            {countries.length > 0 &&
+                              countries.map((c) => (
+                                <SelectItem key={c._id} value={c._id}>
+                                  {c.value}
+                                </SelectItem>
+                              ))}
+                          </SelectContent>
+                        </Select>
+                          <Input
+                            id="phone"
+                            name="phone"
+                            placeholder="+1 (234) 567-890"
+                            value={formData.phone}
+                            onChange={handleChange}
+                          />
+                        </div>
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="company">Company</Label>
+                        <Label htmlFor="companyName">Company</Label>
                         <Input
-                          id="company"
-                          name="company"
+                          id="companyName"
+                          name="companyName"
                           placeholder="Your Company"
-                          value={formData.company}
+                          value={formData.companyName}
                           onChange={handleChange}
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="service">Service Interested In</Label>
-                      <Select value={formData.service} onValueChange={handleSelectChange}>
-                        <SelectTrigger id="service">
-                          <SelectValue placeholder="Select a service" />
+                      <Label htmlFor="projectType">Service Interested In</Label>
+                      <Select value={`${formData.projectType}`} onValueChange={handleProjectTypeSelectChange}>
+                        <SelectTrigger id="projectType">
+                          <SelectValue placeholder="Select a projectType" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="web-development">Web Development</SelectItem>
-                          <SelectItem value="ui-ux-design">UI/UX Design</SelectItem>
-                          <SelectItem value="digital-marketing">Digital Marketing</SelectItem>
-                          <SelectItem value="product-strategy">Product Strategy</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          {ProjectType.getAll().map((projectType) => (
+                            <SelectItem key={projectType.id} value={`${projectType.id}`}>{projectType.title}</SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="message">Message</Label>
+                      <Label htmlFor="description">Message</Label>
                       <Textarea
-                        id="message"
-                        name="message"
+                        id="description"
+                        name="description"
                         placeholder="Tell us about your project..."
                         rows={5}
                         required
-                        value={formData.message}
+                        value={formData.description}
                         onChange={handleChange}
                       />
                     </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="discoveryType">How did you hear about us?</Label>
+                      <Select value={`${formData.discoveryType}`} onValueChange={handleDiscoverySelectChange}>
+                        <SelectTrigger id="discoveryType">
+                          <SelectValue placeholder="Select a discoveryType" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {Discovery.getAll().map((discoveryType) => (
+                            <SelectItem key={discoveryType.id} value={`${discoveryType.id}`}>{discoveryType.title}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    {/* discoveryDescription should only come if the discoveryType is Other ie. 100 */}
+                    {formData.discoveryType === 100 && (
+                      <div className="space-y-2">
+                        <Label htmlFor="discoveryDescription">Other</Label>
+                        <Input
+                          id="discoveryDescription"
+                          name="discoveryDescription"
+                          placeholder="Enter the source of discovery"
+                          value={formData.discoveryDescription}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    )}
                     <Button type="submit" className="w-full" disabled={isSubmitting}>
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>

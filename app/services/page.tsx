@@ -16,10 +16,10 @@ export default function ServicesPage() {
     target: targetRef,
     offset: ["start start", "end start"],
   })
-  
+
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
-    
+
   return (
     <PageTransition>
       {/* Hero Section */}
@@ -88,7 +88,7 @@ export default function ServicesPage() {
                   <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-[0.025]"></div>
                   <div className="relative rounded-xl overflow-hidden p-10">
                     <motion.div style={{ scale }}>
-    
+
                       <motion.div
                         initial={{ y: 20 }}
                         animate={{ y: 0 }}
@@ -100,6 +100,7 @@ export default function ServicesPage() {
                           width={400}
                           height={200}
                           alt="FreelancerDevs team"
+                          loading="lazy"
                           className="rounded-lg mx-auto"
                         />
                       </motion.div>
@@ -117,7 +118,7 @@ export default function ServicesPage() {
                   <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-[0.025]"></div>
                   <div className="relative rounded-xl overflow-hidden p-10">
                     <motion.div style={{ scale }}>
-    
+
                       <motion.div
                         initial={{ y: 20 }}
                         animate={{ y: 0 }}
@@ -218,7 +219,7 @@ export default function ServicesPage() {
                   <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-[0.025]"></div>
                   <div className="relative rounded-xl overflow-hidden p-10">
                     <motion.div style={{ scale }}>
-    
+
                       <motion.div
                         initial={{ y: 20 }}
                         animate={{ y: 0 }}
@@ -247,7 +248,7 @@ export default function ServicesPage() {
                   <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-[0.025]"></div>
                   <div className="relative rounded-xl overflow-hidden p-10">
                     <motion.div style={{ scale }}>
-    
+
                       <motion.div
                         initial={{ y: 20 }}
                         animate={{ y: 0 }}
@@ -259,6 +260,7 @@ export default function ServicesPage() {
                           width={400}
                           height={200}
                           alt="FreelancerDevs team"
+                          loading="lazy"
                           className="rounded-lg mx-auto"
                         />
                       </motion.div>

@@ -55,6 +55,7 @@ export default function Navbar() {
                     width={20}
                     height={20}
                     alt="FreelancerDevs team"
+                    loading="eager"
                     className="rounded-lg mx-auto"
                   />
                   <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
@@ -107,16 +108,16 @@ export default function Navbar() {
           </motion.div>
 
           {/* Mobile menu button */}
-            <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                  className="relative flex items-center"
-              >
-                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </motion.div>
-            </button>
+          <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative flex items-center"
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </motion.div>
+          </button>
         </div>
 
         {/* Mobile navigation */}

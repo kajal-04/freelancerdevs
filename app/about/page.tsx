@@ -16,10 +16,10 @@ export default function AboutPage() {
     target: targetRef,
     offset: ["start start", "end start"],
   })
-  
-    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-    const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
-    
+
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
+
   return (
     <PageTransition>
       {/* Hero Section */}
@@ -51,20 +51,21 @@ export default function AboutPage() {
               <div className="relative rounded-xl overflow-hidden p-10">
                 <motion.div style={{ opacity, scale }}>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1 }}
-                  className="space-y-6 max-w-4xl"
-                >
-                  <Image
-                    src="/accent-team.svg"
-                    width={600}
-                    height={400}
-                    alt="FreelancerDevs team"
-                    className="rounded-lg mx-auto"
-                  />
-                </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                    className="space-y-6 max-w-4xl"
+                  >
+                    <Image
+                      src="/accent-team.svg"
+                      width={600}
+                      height={400}
+                      alt="FreelancerDevs team"
+                      loading="lazy"
+                      className="rounded-lg mx-auto"
+                    />
+                  </motion.div>
                 </motion.div>
               </div>
             </div>
