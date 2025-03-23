@@ -188,7 +188,7 @@ export default function HomePage() {
               {
                 id: 1,
                 title: "Disteven",
-                category: "Disteven is your all-in-one solution for effortlessly managing groups, friends, expenses, and their resolutions.",
+                category: "Disteven is your ultimate solution for managing groups, friends, and expenses effortlessly.",
                 image: "/disteven.png",
                 demoUrl: "https://www.disteven.com/"
               },
