@@ -222,7 +222,7 @@ export default function ProjectsPage() {
                   <div>
                       <div>
                         <p className="text-sm text-muted-foreground">{project.category}</p>
-                        <h3 className="text-xl font-bold">{project.title}</h3>
+                        <h3 className="text-xl font-bold mt-3 mb-1">{project.title}</h3>
                         {/* <p className="text-sm text-muted-foreground">Client: {project.client}</p> */}
                       </div>
                       <p className="text-muted-foreground">{project.description}</p>
