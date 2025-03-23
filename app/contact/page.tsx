@@ -290,6 +290,7 @@ export default function ContactPage() {
                         <Input
                           id="phone"
                           name="phone"
+                          type="number"
                           placeholder="Eg: 1234567890"
                           required
                           value={formData.phone}
