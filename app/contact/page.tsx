@@ -19,16 +19,37 @@ export default function ContactPage() {
   const { toast } = useToast();
 
   const [countries, setCountries] = useState([]);
+  const [filteredCountries, setFilteredCountries] = useState([]);
+  const [search, setSearch] = useState("");
 
+  // Load countries data
   useEffect(() => {
     fetch("/codes.json")
       .then((res) => res.json())
       .then((data) => {
-        setCountries(data.countryCodes)
+        setCountries(data.countryCodes);
+        setFilteredCountries(data.countryCodes); // Set initial filtered countries
         setFormData((prev) => ({ ...prev, phoneCountryCode: data.countryCodes.find(c => c.countryName === 'India').value }));
       })
       .catch((err) => console.error("Error loading countries:", err));
   }, []);
+
+  // handle search - only run when search or countries change
+  useEffect(() => {
+    if (!countries.length) return; // Don't run if countries haven't loaded
+
+    const timer = setTimeout(() => {
+      const filtered = search
+        ? countries.filter((c) =>
+          c.countryName.toLowerCase().includes(search.toLowerCase()) ||
+          c.value.toLowerCase().includes(search.toLowerCase())
+        )
+        : countries;
+      setFilteredCountries(filtered);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [search, countries]);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -66,6 +87,8 @@ export default function ContactPage() {
       if (prev.phoneCountryCode === value) return prev; // Prevent unnecessary updates
       return { ...prev, phoneCountryCode: selectedCode };
     });
+
+    setSearch(""); // Clear the search after selection
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -73,7 +96,7 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     // Add api call here
-    try {      
+    try {
       const response = await fetch("https://api.freelancerdevs.com/api/v1/prospect", {
         method: "POST",
         body: JSON.stringify(formData),
@@ -102,7 +125,7 @@ export default function ContactPage() {
         setIsSubmitting(false)
         return
       }
-  
+
       toast({
         title: "Form Submitted Successfully",
         description: "",
@@ -211,12 +234,21 @@ export default function ContactPage() {
                               </SelectValue>
                             </SelectTrigger>
                             <SelectContent>
-                              {countries.length > 0 &&
-                                countries.map((c) => (
+                              <div className="px-4 my-4">
+                                <Input
+                                  type="search"
+                                  name="search"
+                                  placeholder="Search country"
+                                  value={search}
+                                  onChange={(e) => setSearch(e.target.value)}>
+                                </Input>
+                              </div>
+                              {filteredCountries.length > 0 ?
+                                filteredCountries.map((c) => (
                                   <SelectItem key={c._id} value={c._id}>
-                                    {c.value}
+                                    {c.value} - {c.countryName}
                                   </SelectItem>
-                                ))}
+                                )) : <SelectItem value="0">No results found</SelectItem>}
                             </SelectContent>
                           </Select>
                         </div>
