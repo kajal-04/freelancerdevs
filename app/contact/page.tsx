@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -15,6 +15,19 @@ import { PageTransition } from '@/components/page-transition'
 import AnimatedGradientText from "@/components/animated-gradient-text"
 
 export default function ContactPage() {
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    fetch("/codes.json")
+      .then((res) => res.json())
+      .then((data) => setCountries(data))
+      .catch((err) => console.error("Error loading countries:", err));
+  }, []);
+
+  useEffect(() => {
+    console.log("Countries loaded:", countries);
+  }, [countries]);
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -52,6 +65,7 @@ export default function ContactPage() {
         service: "",
         message: "",
       })
+      console.log("Form submitted:", formData);
     }, 1500)
   }
 
@@ -122,7 +136,7 @@ export default function ContactPage() {
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number</Label>
+                        <Label htmlFor="phone">Phone Number {countries.length > 0 && countries['currency'][0].shortName}</Label>
                         <Input
                           id="phone"
                           name="phone"
@@ -179,9 +193,16 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <div className="space-y-8">
-              <div>
-                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Contact Information</h2>
-                <p className="mt-2 text-muted-foreground">Reach out to us directly using the information below.</p>
+              <div className="flex space-x-4 items-center">
+                <div>
+                  <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Contact Information</h2>
+                  <p className="mt-2 text-muted-foreground">Reach out to us directly using the information below.</p>
+                </div>
+                <Button size="sm" variant="default" asChild className="group">
+                  <Link href="https://calendly.com/contact-freelancerdevs/30min" target="_blank" className="text-white">
+                    Schedule a call!
+                  </Link>
+                </Button>
               </div>
 
               <div className="grid gap-6">

@@ -10,12 +10,62 @@ import BackgroundGrid from "@/components/background-grid"
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "FreelancerDevs - Web Development & Digital Marketing Agency",
-  description:
-    "Professional web development, UI/UX design, digital marketing, and product strategy solutions for your business.",
-  generator: 'v0.dev'
-}
-
+  title: "FreelancerDevs | Web Development, UI/UX & Digital Marketing Experts",
+  description: "Expert web development, UI/UX design, and digital marketing services to grow your business online. Build stunning websites, optimize for SEO, and drive engagement with our custom solutions.",
+  icons: {
+      href: "/favicon.ico",
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+      apple: "/favicon.png",
+  },
+  keywords: [
+    "FreelancerDevs",
+    "Web Development",
+    "UI/UX Design",
+    "Digital Marketing",
+    "SEO",
+    "Frontend Development",
+    "Backend Development",
+    "Full-Stack Development",
+    "E-commerce Development",
+    "Custom Software",
+    "Branding",
+    "Social Media Marketing",
+    "PPC Advertising",
+    "Website Optimization",
+    "Conversion Rate Optimization",
+    "Product Strategy",
+    "Business Growth",
+  ],
+  generator: "FreelancerDevs",
+  creator: "FreelancerDevs",
+  applicationName: "FreelancerDevs | Web Development & Digital Marketing Agency",
+  openGraph: {
+    title: "FreelancerDevs | Web Development & Digital Marketing Agency",
+    description: "Expert web development, UI/UX design, and digital marketing services to grow your business online. Build stunning websites, optimize for SEO, and drive engagement with our custom solutions.",
+    url: "https://stage.freelancerdevs.com",
+    siteName: "FreelancerDevs",
+    images: [
+      {
+        url: "https://stage.freelancerdevs.com/logo.svg", // Replace with your actual OG image
+        width: 1200,
+        height: 630,
+        alt: "FreelancerDevs | Web Development & Digital Marketing Agency",
+      },
+    ],
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@freelancerdevs", // Replace with your actual Twitter handle
+    title: "FreelancerDevs - Web Development & Digital Marketing Agency",
+    description:
+      "FreelancerDevs offers high-quality web development, UI/UX design, and digital marketing services. Build, scale, and grow your business with our expert solutions.",
+    images: ["https://stage.freelancerdevs.com/logo.svg"], // Replace with actual Twitter OG image
+  },
+  robots: "index, follow",
+};
 export default function RootLayout({
   children,
 }: Readonly<{
