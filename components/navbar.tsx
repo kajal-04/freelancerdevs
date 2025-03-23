@@ -49,17 +49,19 @@ export default function Navbar() {
             >
               <div className="absolute -inset-1 from-primary opacity-75 blur-sm"></div>
               <div className="relative p-1.5 flex items-center gap-2">
-                <Image
-                  src="/logo.svg"
-                  width={20}
-                  height={20}
-                  alt="FreelancerDevs team"
-                  loading="eager"
-                  className="rounded-lg mx-auto"
-                />
-                <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-                  FreelancerDevs
-                </span>
+                <Link href="/" className="flex items-center gap-2">
+                  <Image
+                    src="/logo.svg"
+                    width={20}
+                    height={20}
+                    alt="FreelancerDevs team"
+                    loading="eager"
+                    className="rounded-lg mx-auto"
+                  />
+                  <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
+                    FreelancerDevs
+                  </span>
+                </Link>
               </div>
             </motion.div>
           </Link>

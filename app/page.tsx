@@ -190,18 +190,21 @@ export default function HomePage() {
                 title: "Disteven",
                 category: "Disteven is your all-in-one solution for effortlessly managing groups, friends, expenses, and their resolutions.",
                 image: "/disteven.png",
+                demoUrl: "https://www.disteven.com/"
               },
               {
                 id: 2,
                 title: "Cipher Bay",
                 category: "A secure platform for encrypting and decrypting text online.",
                 image: "/cipher-bay.png",
+                demoUrl: "https://cipherbay.vercel.app/home"
               },
               {
                 id: 3,
                 title: "URL Shortener",
                 category: "A simple and efficient URL shortener for quick link management.",
                 image: "url-shortner.png",
+                demoUrl: "https://fexy.vercel.app/"
               },
             ].map((project, i) => (
               <motion.div
@@ -219,7 +222,7 @@ export default function HomePage() {
                     width={600}
                     height={400}
                     alt={project.title}
-                    className="h-[300px] w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-[300px] w-full transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/70 to-transparent p-6 flex flex-col justify-end transform transition-transform duration-500 translate-y-8 group-hover:translate-y-0">
                     <h3 className="text-xl font-bold">{project.title}</h3>
@@ -227,10 +230,11 @@ export default function HomePage() {
                       {project.category}
                     </p>
                     <Link
-                      href={`/projects/project-${project.id}`}
+                      target="_blank"
+                      href={`${project.demoUrl}`}
                       className="inline-flex items-center text-sm font-medium text-primary group translate-y-2 transform"
                     >
-                      View Case Study
+                      Live Demo
                       <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-0" />
                     </Link>
                   </div>
