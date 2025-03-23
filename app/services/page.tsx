@@ -75,7 +75,7 @@ export default function ServicesPage() {
                   <div className="mt-6">
                     <Button asChild className="group relative overflow-hidden text-white">
                       <Link href="/contact">
-                        <span className="relative z-10">Get Quote</span>
+                        <span className="relative z-10">Build Now</span>
                         <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
                       </Link>
                     </Button>
@@ -166,7 +166,7 @@ export default function ServicesPage() {
                   <div className="mt-6">
                     <Button asChild className="group relative overflow-hidden">
                       <Link href="/contact">
-                        <span className="relative z-10">Get Started</span>
+                        <span className="relative z-10 text-white">Design Now</span>
                         <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
                       </Link>
                     </Button>
@@ -206,7 +206,7 @@ export default function ServicesPage() {
                   <div className="mt-6">
                     <Button asChild className="group relative overflow-hidden">
                       <Link href="/contact">
-                        <span className="relative z-10">Get Started</span>
+                        <span className="relative z-10 text-white">Grow Now</span>
                         <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
                       </Link>
                     </Button>
@@ -296,7 +296,7 @@ export default function ServicesPage() {
                   <div className="mt-6">
                     <Button asChild className="group relative overflow-hidden">
                       <Link href="/contact">
-                        <span className="relative z-10">Get Started</span>
+                        <span className="relative z-10 text-white">Strategize & Execute</span>
                         <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
                       </Link>
                     </Button>
