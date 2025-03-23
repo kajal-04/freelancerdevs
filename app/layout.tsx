@@ -36,6 +36,8 @@ export const metadata: Metadata = {
     "Conversion Rate Optimization",
     "Product Strategy",
     "Business Growth",
+    "Automation Testing",
+    "Quality Assurance",
   ],
   generator: "FreelancerDevs",
   creator: "FreelancerDevs",
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "FreelancerDevs",
     images: [
       {
-        url: "https://stage.freelancerdevs.com/logo.svg", // Replace with your actual OG image
+        url: "https://stage.freelancerdevs.com/logo-og.svg", // Replace with your actual OG image
         width: 1200,
         height: 630,
         alt: "FreelancerDevs | Web Development & Digital Marketing Agency",
@@ -62,7 +64,7 @@ export const metadata: Metadata = {
     title: "FreelancerDevs - Web Development & Digital Marketing Agency",
     description:
       "FreelancerDevs offers high-quality web development, UI/UX design, and digital marketing services. Build, scale, and grow your business with our expert solutions.",
-    images: ["https://stage.freelancerdevs.com/logo.svg"], // Replace with actual Twitter OG image
+    images: ["https://stage.freelancerdevs.com/logo-og.svg"], // Replace with actual Twitter OG image
   },
   robots: "index, follow",
 };

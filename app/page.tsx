@@ -85,6 +85,7 @@ export default function HomePage() {
                   height={350}
                   alt="Digital solutions showcase"
                   className="m-auto"
+                  loading="eager"
                   priority
                 />
                 {/* <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>

@@ -174,6 +174,7 @@ export default function ProjectsPage() {
                     width={800}
                     height={600}
                     alt={project.title}
+                    loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                   />
                 </div>
