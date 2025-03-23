@@ -49,9 +49,9 @@ export default function ContactPage() {
     phone: "",
     phoneCountryCode: "",
     companyName: "",
-    projectType: 0,
+    projectType: null,
     description: "",
-    discoveryType: 0,
+    discoveryType: null,
     discoveryDescription: "",
   })
 
@@ -94,7 +94,7 @@ export default function ContactPage() {
           "Content-Type": "application/json",
         },
       })
-      
+
       if (!response.ok) {
         toast({
           title: "Submission Failed",
@@ -104,9 +104,9 @@ export default function ContactPage() {
         setIsSubmitting(false)
         return
       }
-  
+
       const data = await response.json();
-  
+
       if (data.error) {
         toast({
           title: "Submission Failed",
@@ -133,9 +133,9 @@ export default function ContactPage() {
         phoneCountryCode: "",
         phone: "",
         companyName: "",
-        projectType: 0,
+        projectType: null,
         description: "",
-        discoveryType: 0,
+        discoveryType: null,
         discoveryDescription: "",
       })
     } catch (error) {
@@ -264,10 +264,15 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="projectType">Service Interested In</Label>
+                      <Label htmlFor="projectType">Service interested in</Label>
                       <Select value={`${formData.projectType}`} onValueChange={handleProjectTypeSelectChange}>
                         <SelectTrigger id="projectType">
-                          <SelectValue placeholder="Select a projectType" />
+                          <SelectValue placeholder="Select a projectType">
+                            {formData.projectType ?
+                              ProjectType.getById(formData.projectType) :
+                              <span className="text-gray-400">Select a service</span>
+                            }
+                          </SelectValue>
                         </SelectTrigger>
                         <SelectContent>
                           {ProjectType.getAll().map((projectType) => (
@@ -292,7 +297,12 @@ export default function ContactPage() {
                       <Label htmlFor="discoveryType">How did you hear about us?</Label>
                       <Select value={`${formData.discoveryType}`} onValueChange={handleDiscoverySelectChange}>
                         <SelectTrigger id="discoveryType">
-                          <SelectValue placeholder="Select a discoveryType" />
+                          <SelectValue placeholder="Select a discoveryType">
+                            {formData.discoveryType ?
+                              Discovery.getById(formData.discoveryType) :
+                              <span className="text-gray-400">Google, Facebook, Upwork etc.</span>
+                            }
+                          </SelectValue>
                         </SelectTrigger>
                         <SelectContent>
                           {Discovery.getAll().map((discoveryType) => (
@@ -456,8 +466,8 @@ export default function ContactPage() {
       {/* CTA */}
       <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-lg bg-primary p-8 bg-gradient-to-r from-primary to-primary-foreground opacity-90 md:p-12">
-          <div className="mx-auto max-w-3xl space-y-6 text-center">
+          <div className="rounded-lg bg-primary p-8 bg-gradient-to-r from-primary to-primary-foreground opacity-90 md:p-12">
+            <div className="mx-auto max-w-3xl space-y-6 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Ready to start your project?
               </h2>
