@@ -95,6 +95,24 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
+    if (!formData.phoneCountryCode) {
+      toast({
+        title: "Please select a country code",
+        variant: "destructive",
+      });
+      setIsSubmitting(false)
+      return
+    }
+
+    if (!formData.projectType) {
+      toast({
+        title: "Please select a service",
+        variant: "destructive",
+      });
+      setIsSubmitting(false)
+      return
+    }
+
     // Add api call here
     try {
       const response = await fetch("https://api.freelancerdevs.com/api/v1/prospect", {
@@ -255,7 +273,8 @@ export default function ContactPage() {
                         <Input
                           id="phone"
                           name="phone"
-                          placeholder="+1 (234) 567-890"
+                          placeholder="+91 1234567890"
+                          required
                           value={formData.phone}
                           onChange={handleChange}
                         />
@@ -273,7 +292,7 @@ export default function ContactPage() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="projectType">Service interested in</Label>
-                      <Select value={`${formData.projectType}`} onValueChange={handleProjectTypeSelectChange}>
+                      <Select value={`${formData.projectType}`} required onValueChange={handleProjectTypeSelectChange}>
                         <SelectTrigger id="projectType">
                           <SelectValue placeholder="Select a projectType">
                             {formData.projectType ?
