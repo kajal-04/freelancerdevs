@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow crawling of administrative/private paths
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Link to your sitemap
+Sitemap: https://yourdomain.com/sitemap.xml
