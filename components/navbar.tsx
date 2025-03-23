@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -21,15 +21,27 @@ export default function Navbar() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setMobileMenuOpen(false)
+      }
+    }
+
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, []);
+    document.addEventListener("mousedown", handleClickOutside)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   return (
     <header
@@ -40,31 +52,29 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative flex items-center"
-            >
-              <div className="absolute -inset-1 from-primary opacity-75 blur-sm"></div>
-              <div className="relative p-1.5 flex items-center gap-2">
-                <Link href="/" className="flex items-center gap-2">
-                  <Image
-                    src="/logo.svg"
-                    width={20}
-                    height={20}
-                    alt="FreelancerDevs team"
-                    loading="eager"
-                    className="rounded-lg mx-auto"
-                  />
-                  <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-                    FreelancerDevs
-                  </span>
-                </Link>
-              </div>
-            </motion.div>
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative flex items-center"
+          >
+            <div className="absolute -inset-1 from-primary opacity-75 blur-sm"></div>
+            <div className="relative p-1.5 flex items-center gap-2">
+              <Link href="/" className="flex items-center gap-2">
+                <Image
+                  src="/logo.svg"
+                  width={20}
+                  height={20}
+                  alt="FreelancerDevs team"
+                  loading="eager"
+                  className="rounded-lg mx-auto"
+                />
+                <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
+                  FreelancerDevs
+                </span>
+              </Link>
+            </div>
+          </motion.div>
 
           {/* Desktop navigation */}
           <motion.div
@@ -123,6 +133,7 @@ export default function Navbar() {
         {/* Mobile navigation */}
         {mobileMenuOpen && (
           <motion.div
+            ref={mobileMenuRef}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
