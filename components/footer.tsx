@@ -123,7 +123,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="+91 8295309717"
+                    href="tel:+918295309717"
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     +91 8295309717

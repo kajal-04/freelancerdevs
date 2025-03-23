@@ -202,24 +202,31 @@ export default function ProjectsPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
               <Card key={project.id} className="overflow-hidden">
-                <div className="aspect-video overflow-hidden">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    width={800}
-                    height={600}
-                    alt={project.title}
-                    loading="lazy"
-                    className="h-full w-full transition-transform duration-300 hover:scale-105"
-                  />
+                <div className="aspect-video overflow-hidden h-1/2 w-full">
+                  <Link
+                      target="_blank"
+                      href={`${project.demoUrl}`}
+                    >
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      width={800}
+                      height={600}
+                      alt={project.title}
+                      loading="lazy"
+                      className="h-full w-full transition-transform duration-300 hover:scale-105"
+                    />
+                  </Link>
                 </div>
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-sm text-muted-foreground">{project.category}</p>
-                      <h3 className="text-xl font-bold">{project.title}</h3>
-                      {/* <p className="text-sm text-muted-foreground">Client: {project.client}</p> */}
+                <CardContent className="p-6 h-1/2">
+                <div className="space-y-4 flex flex-col justify-between h-full">
+                  <div>
+                      <div>
+                        <p className="text-sm text-muted-foreground">{project.category}</p>
+                        <h3 className="text-xl font-bold mt-3 mb-1">{project.title}</h3>
+                        {/* <p className="text-sm text-muted-foreground">Client: {project.client}</p> */}
+                      </div>
+                      <p className="text-muted-foreground">{project.description}</p>
                     </div>
-                    <p className="text-muted-foreground">{project.description}</p>
                     <Link
                       target="_blank"
                       href={`${project.demoUrl}`}
