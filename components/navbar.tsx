@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -28,7 +29,7 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, []);
 
   return (
     <header
@@ -47,7 +48,14 @@ export default function Navbar() {
               className="relative flex items-center"
             >
               <div className="absolute -inset-1 from-primary opacity-75 blur-sm"></div>
-              <div className="relative p-1.5">
+              <div className="relative p-1.5 flex items-center gap-2">
+                <Image
+                  src="/logo-new.svg"
+                  width={20}
+                  height={20}
+                  alt="FreelancerDevs team"
+                  className="rounded-lg mx-auto"
+                />
                 <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
                   FreelancerDevs
                 </span>
@@ -97,9 +105,16 @@ export default function Navbar() {
           </motion.div>
 
           {/* Mobile menu button */}
-          <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+            <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative flex items-center"
+              >
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </motion.div>
+            </button>
         </div>
 
         {/* Mobile navigation */}
@@ -109,9 +124,9 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border/40"
+            className="md:hidden"
           >
-            <div className="container py-4 space-y-4">
+            <div className="container py-4 space-y-4 px-4 bg-background/80 backdrop-blur-xl border mb-4 rounded-xl">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -129,8 +144,8 @@ export default function Navbar() {
                 asChild
                 className="w-full bg-gradient-to-r from-primary to-primary-foreground hover:from-primary-foreground hover:to-primary"
               >
-                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  Get Started
+                <Link className="text-white" href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                  Get Quote
                 </Link>
               </Button>
             </div>
