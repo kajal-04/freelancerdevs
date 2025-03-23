@@ -63,6 +63,14 @@ export default function ContactPage() {
     discoveryDescription: "",
   })
 
+  const generateGuid = () => {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+      var r = (Math.random() * 16) | 0,
+        v = c == "x" ? r : (r & 0x3) | 0x8
+      return v.toString(16)
+    })
+  } 
+
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -272,7 +280,7 @@ export default function ContactPage() {
                               </div>
                               {filteredCountries.length > 0 ?
                                 filteredCountries.map((c) => (
-                                  <SelectItem key={c._id} value={c._id}>
+                                  <SelectItem key={c._id + generateGuid} value={c._id}>
                                     {c.value} - {c.countryName}
                                   </SelectItem>
                                 )) : <SelectItem value="0">No results found</SelectItem>}
