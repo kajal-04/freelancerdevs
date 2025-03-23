@@ -186,13 +186,13 @@ export default function ContactPage() {
 
               <div className="grid gap-6">
                 <Card>
-                  <CardContent className="flex items-center gap-4 p-6">
+                  <CardContent className="flex items-center gap-4 p-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                       <Mail className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <Link href="mailto:contact@freelancerdevs.com" className="text-muted-foreground hover:text-primary">
+                      <Link href="mailto:contact@freelancerdevs.com" className="text-muted-foreground hover:text-primary text-sm">
                         contact@freelancerdevs.com
                       </Link>
                     </div>
@@ -200,13 +200,13 @@ export default function ContactPage() {
                 </Card>
 
                 <Card>
-                  <CardContent className="flex items-center gap-4 p-6">
+                  <CardContent className="flex items-center gap-4 p-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                       <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-medium">Phone</h3>
-                      <Link href="tel:+918295309717" className="text-muted-foreground hover:text-primary">
+                      <Link href="tel:+918295309717" className="text-muted-foreground hover:text-primary text-sm">
                         +91 8295309717
                       </Link>
                     </div>
@@ -214,13 +214,13 @@ export default function ContactPage() {
                 </Card>
 
                 <Card>
-                  <CardContent className="flex items-center gap-4 p-6">
+                  <CardContent className="flex items-center gap-4 p-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-medium">Our location</h3>
-                      <p className="text-muted-foreground">
+                      <p className="text-muted-foreground text-sm">
                         Hyderabad, India
                       </p>
                     </div>
@@ -228,7 +228,7 @@ export default function ContactPage() {
                 </Card>
               </div>
 
-              <div>
+              {/* <div>
                 <h3 className="text-xl font-bold">Business Hours</h3>
                 <div className="mt-4 space-y-2">
                   <div className="flex justify-between">
@@ -244,7 +244,7 @@ export default function ContactPage() {
                     <span>Closed</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

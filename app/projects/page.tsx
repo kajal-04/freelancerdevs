@@ -10,56 +10,140 @@ import AnimatedGradientText from "@/components/animated-gradient-text"
 const projects = [
   {
     id: 1,
-    title: "E-commerce Platform Redesign",
-    client: "FashionRetail Inc.",
+    title: "Disteven",
+    client: "",
     category: "Web Development, UI/UX Design",
     description:
-      "Complete redesign of an e-commerce platform resulting in a 40% increase in conversion rates and improved user experience.",
-    image: "/placeholder.svg?height=600&width=800&text=E-commerce+Project",
+      "Disteven is your all-in-one solution for effortlessly managing groups, friends, expenses, and their resolutions.",
+    image: "/disteven.PNG",
+    demoUrl: "https://app.disteven.com/"
   },
   {
     id: 2,
-    title: "Digital Marketing Campaign",
+    title: "Cipher Bay",
     client: "GrowthTech Startup",
-    category: "Digital Marketing, Content Strategy",
+    // category: "Digital Marketing, Content Strategy",
+    category: "Web Development, UI/UX Design",
     description:
-      "Comprehensive digital marketing campaign that increased organic traffic by 150% and generated 200+ qualified leads.",
-    image: "/placeholder.svg?height=600&width=800&text=Marketing+Campaign",
+      "A secure platform for encrypting and decrypting text online.",
+    image: "/cipher-bay.PNG",
+    demoUrl: "https://cipherbay.vercel.app/home"
   },
   {
     id: 3,
-    title: "Mobile App Development",
+    title: "URL Shortener",
     client: "HealthCare Solutions",
-    category: "App Development, UI/UX Design",
+    category: "Web Development, UI/UX Design",
     description:
-      "Development of a healthcare mobile app with patient management features, secure data handling, and intuitive interface.",
-    image: "/placeholder.svg?height=600&width=800&text=Mobile+App",
+      "A simple and efficient URL shortener for quick link management.",
+    image: "/url-shortner.PNG",
+    demoUrl: "https://fexy.vercel.app/"
   },
   {
     id: 4,
-    title: "Brand Identity Refresh",
+    title: "Colors Expo",
     client: "Legacy Financial",
-    category: "Branding, Design",
-    description: "Complete brand refresh including new visual identity, website redesign, and marketing materials.",
-    image: "/placeholder.svg?height=600&width=800&text=Brand+Identity",
+    // category: "Branding, Design",
+    category: "Web Application",
+    description: "A color palette exploration tool for designers and developers.",
+    image: "/colors-expo.PNG",
+    demoUrl: "https://find-colors.netlify.app/"
   },
   {
     id: 5,
-    title: "SaaS Platform Development",
+    title: "Lottery Matching App",
     client: "ProductivityPro",
     category: "Web Development, Product Strategy",
-    description: "Development of a SaaS platform for team productivity with custom features and integrations.",
-    image: "/placeholder.svg?height=600&width=800&text=SaaS+Platform",
+    description: "A random lottery number matcher for testing luck.",
+    image: "/lottery.PNG",
+    demoUrl: "https://lottery-js.netlify.app/"
+  },
+  {
+    id: 5,
+    title: "Collatz Conjecture",
+    client: "ProductivityPro",
+    category: "Web Development, Product Strategy",
+    description: "A visualization of the Collatz Conjecture to explore mathematical patterns.",
+    image: "/collatz.PNG",
+    demoUrl: "https://collatz-visual.netlify.app/"
   },
   {
     id: 6,
-    title: "SEO Optimization Campaign",
+    title: "Pop It",
     client: "Local Business Network",
-    category: "Digital Marketing, SEO",
+    // category: "Digital Marketing, SEO",
+    category: "Web Application",
     description:
-      "SEO optimization that resulted in first-page rankings for 50+ target keywords and 200% increase in organic traffic.",
-    image: "/placeholder.svg?height=600&width=800&text=SEO+Campaign",
+      "A casual popping game for quick, addictive and relaxing gameplay.",
+    image: "/pop-game.PNG",
+    demoUrl: "https://pop-game.netlify.app/"
   },
+  {
+    id: 6,
+    title: "Quiz It",
+    client: "Local Business Network",
+    // category: "Digital Marketing, SEO",
+    category: "Web Application",
+    description:
+      "A fun and engaging quiz application for testing knowledge.",
+    image: "/quiz-it.PNG",
+    demoUrl: "https://quiz-jam.netlify.app/index.html"
+  },
+  {
+    id: 6,
+    title: "Les Papilles",
+    client: "Local Business Network",
+    // category: "Digital Marketing, SEO",
+    category: "Web Application",
+    description:
+      "A visually appealing food, restaurant and online ordering website.",
+    image: "/les-papilles.PNG",
+    demoUrl: "https://les-papilles.netlify.app/#m"
+  },
+  {
+    id: 6,
+    title: "Temperature Plot Chart",
+    client: "Local Business Network",
+    // category: "Digital Marketing, SEO",
+    category: "Web Application",
+    description:
+      "An interactive temperature plot chart to visualize yearly trends.",
+    image: "/temperature-plot-chart.PNG",
+    demoUrl: "https://yearly-temperature.netlify.app/"
+  },
+  {
+    id: 6,
+    title: "Error Service",
+    client: "Local Business Network",
+    // category: "Digital Marketing, SEO",
+    category: "Web Application",
+    description:
+      "An application designed to efficiently handle and manage website errors.",
+    image: "/error-service.PNG",
+    demoUrl: "https://wrng.netlify.app/"
+  },
+  {
+    id: 6,
+    title: "To Do List",
+    client: "Local Business Network",
+    // category: "Digital Marketing, SEO",
+    category: "Web Application",
+    description:
+      "A simple and efficient to-do list web app for task management.",
+    image: "/to-do-app.PNG",
+    demoUrl: "https://manage-todo.netlify.app/"
+  },
+  {
+    id: 6,
+    title: "Big Oven",
+    client: "Local Business Network",
+    // category: "Digital Marketing, SEO",
+    category: "Web Application",
+    description:
+      "A recipe and meal planning app to explore and manage cooking ideas easily.",
+    image: "/big-oven.PNG",
+    demoUrl: "https://big-oven.netlify.app/"
+  }
 ]
 
 export default function ProjectsPage() {
@@ -98,14 +182,15 @@ export default function ProjectsPage() {
                     <div>
                       <p className="text-sm text-muted-foreground">{project.category}</p>
                       <h3 className="text-xl font-bold">{project.title}</h3>
-                      <p className="text-sm text-muted-foreground">Client: {project.client}</p>
+                      {/* <p className="text-sm text-muted-foreground">Client: {project.client}</p> */}
                     </div>
                     <p className="text-muted-foreground">{project.description}</p>
                     <Link
-                      href={`/projects/${project.id}`}
+                      target="_blank"
+                      href={`${project.demoUrl}`}
                       className="inline-flex items-center text-sm font-medium text-primary group translate-y-2 transform"
                     >
-                      View Case Study <ArrowRight className="ml-1 h-4 w-4" />
+                      Live Demo <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>
                   </div>
                 </CardContent>
