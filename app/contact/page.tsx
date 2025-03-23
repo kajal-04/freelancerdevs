@@ -181,46 +181,45 @@ export default function ContactPage() {
                         />
                       </div>
                     </div>
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number</Label>
-                        <div className="flex items-center gap-2">
-                          {/* can i add search bar in select? */}
-
-                        <Select value={formData.phoneCountryCode} onValueChange={handlePhoneSelectChange}>
-                          <SelectTrigger id="phoneCountryCode">
-                            <SelectValue placeholder="Select Country Code">
-                              {formData.phoneCountryCode || "Select Country Code"}
-                            </SelectValue>
-                          </SelectTrigger>
-                          <SelectContent>
-                            {countries.length > 0 &&
-                              countries.map((c) => (
-                                <SelectItem key={c._id} value={c._id}>
-                                  {c.value}
-                                </SelectItem>
-                              ))}
-                          </SelectContent>
-                        </Select>
-                          <Input
-                            id="phone"
-                            name="phone"
-                            placeholder="+1 (234) 567-890"
-                            value={formData.phone}
-                            onChange={handleChange}
-                          />
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone Number</Label>
+                      <div className="flex items-center gap-2">
+                        {/* can i add search bar in select? */}
+                        <div className="w-[120px]">
+                          <Select value={formData.phoneCountryCode} onValueChange={handlePhoneSelectChange}>
+                            <SelectTrigger id="phoneCountryCode">
+                              <SelectValue placeholder="Select Country Code">
+                                {formData.phoneCountryCode || "Select Country Code"}
+                              </SelectValue>
+                            </SelectTrigger>
+                            <SelectContent>
+                              {countries.length > 0 &&
+                                countries.map((c) => (
+                                  <SelectItem key={c._id} value={c._id}>
+                                    {c.value}
+                                  </SelectItem>
+                                ))}
+                            </SelectContent>
+                          </Select>
                         </div>
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="companyName">Company</Label>
                         <Input
-                          id="companyName"
-                          name="companyName"
-                          placeholder="Your Company"
-                          value={formData.companyName}
+                          id="phone"
+                          name="phone"
+                          placeholder="+1 (234) 567-890"
+                          value={formData.phone}
                           onChange={handleChange}
                         />
                       </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="companyName">Company</Label>
+                      <Input
+                        id="companyName"
+                        name="companyName"
+                        placeholder="Your Company"
+                        value={formData.companyName}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="projectType">Service Interested In</Label>
