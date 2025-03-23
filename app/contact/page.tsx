@@ -72,7 +72,7 @@ export default function ContactPage() {
     setIsSubmitting(true)
 
     // Add api call here
-    try {      
+    try {
       const response = await fetch("http://localhost:5000/api/v1/prospect", {
         method: "POST",
         body: JSON.stringify(formData),
@@ -80,21 +80,21 @@ export default function ContactPage() {
           "Content-Type": "application/json",
         },
       })
-      
+
       if (!response.ok) {
         console.error("Failed to submit form")
         setIsSubmitting(false)
         return
       }
-  
+
       const data = await response.json();
-  
+
       if (data.error) {
         console.error("Failed to submit form", data.msg)
         setIsSubmitting(false)
         return
       }
-  
+
       console.log("Form submitted successfully", data)
       setIsSubmitting(false)
       setIsSubmitted(true)
@@ -181,54 +181,53 @@ export default function ContactPage() {
                         />
                       </div>
                     </div>
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number</Label>
-                        <div className="flex items-center gap-2">
-                          {/* can i add search bar in select? */}
-
-                        <Select value={formData.phoneCountryCode} onValueChange={handlePhoneSelectChange}>
-                          <SelectTrigger id="phoneCountryCode">
-                            <SelectValue placeholder="Select Country Code">
-                              {formData.phoneCountryCode || "Select Country Code"}
-                            </SelectValue>
-                          </SelectTrigger>
-                          <SelectContent>
-                            {countries.length > 0 &&
-                              countries.map((c) => (
-                                <SelectItem key={c._id} value={c._id}>
-                                  {c.value}
-                                </SelectItem>
-                              ))}
-                          </SelectContent>
-                        </Select>
-                          <Input
-                            id="phone"
-                            name="phone"
-                            placeholder="+1 (234) 567-890"
-                            value={formData.phone}
-                            onChange={handleChange}
-                          />
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone Number</Label>
+                      <div className="flex items-center gap-2">
+                        {/* can i add search bar in select? */}
+                        <div className="w-[120px]">
+                          <Select value={formData.phoneCountryCode} onValueChange={handlePhoneSelectChange}>
+                            <SelectTrigger id="phoneCountryCode">
+                              <SelectValue placeholder="Select Country Code">
+                                {formData.phoneCountryCode || "Select Country Code"}
+                              </SelectValue>
+                            </SelectTrigger>
+                            <SelectContent>
+                              {countries.length > 0 &&
+                                countries.map((c) => (
+                                  <SelectItem key={c._id} value={c._id}>
+                                    {c.value}
+                                  </SelectItem>
+                                ))}
+                            </SelectContent>
+                          </Select>
                         </div>
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="companyName">Company</Label>
                         <Input
-                          id="companyName"
-                          name="companyName"
-                          placeholder="Your Company"
-                          value={formData.companyName}
+                          id="phone"
+                          name="phone"
+                          placeholder="+1 (234) 567-890"
+                          value={formData.phone}
                           onChange={handleChange}
                         />
                       </div>
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="companyName">Company</Label>
+                      <Input
+                        id="companyName"
+                        name="companyName"
+                        placeholder="Your Company"
+                        value={formData.companyName}
+                        onChange={handleChange}
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="projectType">Service interested in</Label>
                       <Select value={`${formData.projectType}`} onValueChange={handleProjectTypeSelectChange}>
                         <SelectTrigger id="projectType">
                           <SelectValue placeholder="Select a projectType">
-                            {formData.projectType ? 
-                              ProjectType.getById(formData.projectType) :  
+                            {formData.projectType ?
+                              ProjectType.getById(formData.projectType) :
                               <span className="text-gray-400">Select a service</span>
                             }
                           </SelectValue>
@@ -257,8 +256,8 @@ export default function ContactPage() {
                       <Select value={`${formData.discoveryType}`} onValueChange={handleDiscoverySelectChange}>
                         <SelectTrigger id="discoveryType">
                           <SelectValue placeholder="Select a discoveryType">
-                            {formData.discoveryType ? 
-                              Discovery.getById(formData.discoveryType) :  
+                            {formData.discoveryType ?
+                              Discovery.getById(formData.discoveryType) :
                               <span className="text-gray-400">Google, Facebook, Upwork etc.</span>
                             }
                           </SelectValue>
@@ -424,8 +423,8 @@ export default function ContactPage() {
       {/* CTA */}
       <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-lg bg-primary p-8 bg-gradient-to-r from-primary to-primary-foreground opacity-90 md:p-12">
-          <div className="mx-auto max-w-3xl space-y-6 text-center">
+          <div className="rounded-lg bg-primary p-8 bg-gradient-to-r from-primary to-primary-foreground opacity-90 md:p-12">
+            <div className="mx-auto max-w-3xl space-y-6 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Ready to start your project?
               </h2>
