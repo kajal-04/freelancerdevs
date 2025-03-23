@@ -302,9 +302,11 @@ export default function ContactPage() {
                         />
                       </div>
                     )}
-                    <Button type="submit" className="w-full text-white" disabled={isSubmitting}>
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </Button>
+                    <div>
+                      <Button type="submit" className="w-full text-white mt-4" disabled={isSubmitting}>
+                        {isSubmitting ? "Sending..." : "Send Message"}
+                      </Button>
+                    </div>
                   </form>
                 )}
               </CardContent>
