@@ -16,7 +16,7 @@ const projects = [
     description:
       "Disteven is your all-in-one solution for effortlessly managing groups, friends, expenses, and their resolutions.",
     image: "/disteven.PNG",
-    demoUrl: "https://app.disteven.com/"
+    demoUrl: "https://www.disteven.com/"
   },
   {
     id: 2,
@@ -208,7 +208,7 @@ export default function ProjectsPage() {
                     width={800}
                     height={600}
                     alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="h-full w-full transition-transform duration-300 hover:scale-105"
                   />
                 </div>
                 <CardContent className="p-6">

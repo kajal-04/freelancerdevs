@@ -21,15 +21,21 @@ export default function Footer() {
                   { icon: <Instagram className="h-5 w-5" />, label: "Instagram" },
                   { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn" },
                 ].map((social, i) => (
-                  <Link
-                    key={i}
-                    href="#"
-                    className="text-muted-foreground hover:text-primary transition-colors duration-200 relative group"
-                  >
+                  <div className="text-muted-foreground hover:text-primary transition-colors duration-200 relative group">
                     <span className="absolute -inset-2 rounded-full bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     {social.icon}
                     <span className="sr-only">{social.label}</span>
-                  </Link>
+                  </div>
+                  
+                  // <Link
+                  //   key={i}
+                  //   href="/"
+                  //   className="text-muted-foreground hover:text-primary transition-colors duration-200 relative group"
+                  // >
+                  //   <span className="absolute -inset-2 rounded-full bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  //   {social.icon}
+                  //   <span className="sr-only">{social.label}</span>
+                  // </Link>
                 ))}
               </div>
             </div>
@@ -43,15 +49,15 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/careers"
+                    href="/services"
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
-                    Careers
+                    Services
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors duration-200">
-                    Blog
+                  <Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                    Projects
                   </Link>
                 </li>
                 <li>
@@ -69,7 +75,7 @@ export default function Footer() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    href="/services/web-development"
+                    href="/services"
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     Web Development
@@ -77,7 +83,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services/ui-ux-design"
+                    href="/services"
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     UI/UX Design
@@ -85,7 +91,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services/digital-marketing"
+                    href="/services"
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     Digital Marketing
@@ -93,7 +99,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services/product-strategy"
+                    href="/services"
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     Product Strategy
@@ -117,7 +123,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="tel:+1234567890"
+                    href="+91 8295309717"
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     +91 8295309717
