@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -14,9 +13,24 @@ import { Mail, MapPin, Phone } from "lucide-react"
 import { PageTransition } from '@/components/page-transition'
 import AnimatedGradientText from "@/components/animated-gradient-text"
 import { Discovery, ProjectType } from "@/types/enums"
-import { Toast } from "@radix-ui/react-toast"
+import { useToast } from "@/hooks/use-toast"
 
 export default function ContactPage() {
+  const { toast } = useToast();
+
+  function testToast() {
+    console.log("Toast");
+    toast({
+      title: "Submission Failed",
+      description: "Something went wrong. Please try again.",
+      variant: "destructive",
+    });
+    toast({
+      title: "Form Submitted Successfully",
+      description: "",
+      variant: "default",
+    });
+  }
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -73,7 +87,7 @@ export default function ContactPage() {
 
     // Add api call here
     try {      
-      const response = await fetch("http://localhost:5000/api/v1/prospect", {
+      const response = await fetch("https://api.freelancerdevs.com", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -82,7 +96,11 @@ export default function ContactPage() {
       })
       
       if (!response.ok) {
-        console.error("Failed to submit form")
+        toast({
+          title: "Submission Failed",
+          description: "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
         setIsSubmitting(false)
         return
       }
@@ -90,12 +108,23 @@ export default function ContactPage() {
       const data = await response.json();
   
       if (data.error) {
-        console.error("Failed to submit form", data.msg)
+        toast({
+          title: "Submission Failed",
+          description: data.msg || "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+        // console.error("Failed to submit form", data.msg)
         setIsSubmitting(false)
         return
       }
   
-      console.log("Form submitted successfully", data)
+      toast({
+        title: "Form Submitted Successfully",
+        description: "Your form has been submitted successfully!",
+        variant: "default",
+      });
+
+      // console.log("Form submitted successfully", data)
       setIsSubmitting(false)
       setIsSubmitted(true)
       setFormData({
@@ -111,10 +140,23 @@ export default function ContactPage() {
       })
     } catch (error) {
       setIsSubmitting(false)
-      console.error("Failed to submit form", error)
+      toast({
+        title: "Submission Failed",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
       return
     }
   }
+
+  // function testToast(): void {
+  //   console.log("toast");
+  //   toast({
+  //     title: "Submission Failed",
+  //     description: "Something went wrong. Please try again.",
+  //     variant: "destructive",
+  //   });
+  // }
 
   return (
     <PageTransition>
@@ -272,17 +314,18 @@ export default function ContactPage() {
                         />
                       </div>
                     )}
-                    <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    <Button type="submit" className="w-full text-white" disabled={isSubmitting}>
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 )}
+                <Button onClick={testToast}>Toast Test</Button>
               </CardContent>
             </Card>
 
             {/* Contact Info */}
             <div className="space-y-8">
-              <div className="flex space-x-4 items-center">
+              <div className="flex space-x-4 items-center justify-between">
                 <div>
                   <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Contact Information</h2>
                   <p className="mt-2 text-muted-foreground">Reach out to us directly using the information below.</p>

@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import BackgroundGrid from "@/components/background-grid"
+import { Toaster } from "@/components/ui/toaster"
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
@@ -84,6 +85,7 @@ export default function RootLayout({
               <main className="flex-1">
                 <div>
                   {children}
+                  <Toaster />
                 </div>
               </main>
               <Footer />
