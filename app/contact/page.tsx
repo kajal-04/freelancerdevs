@@ -35,9 +35,9 @@ export default function ContactPage() {
     phone: "",
     phoneCountryCode: "",
     companyName: "",
-    projectType: 0,
+    projectType: null,
     description: "",
-    discoveryType: 0,
+    discoveryType: null,
     discoveryDescription: "",
   })
 
@@ -104,9 +104,9 @@ export default function ContactPage() {
         phoneCountryCode: "",
         phone: "",
         companyName: "",
-        projectType: 0,
+        projectType: null,
         description: "",
-        discoveryType: 0,
+        discoveryType: null,
         discoveryDescription: "",
       })
     } catch (error) {
@@ -223,10 +223,15 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="projectType">Service Interested In</Label>
+                      <Label htmlFor="projectType">Service interested in</Label>
                       <Select value={`${formData.projectType}`} onValueChange={handleProjectTypeSelectChange}>
                         <SelectTrigger id="projectType">
-                          <SelectValue placeholder="Select a projectType" />
+                          <SelectValue placeholder="Select a projectType">
+                            {formData.projectType ? 
+                              ProjectType.getById(formData.projectType) :  
+                              <span className="text-gray-400">Select a service</span>
+                            }
+                          </SelectValue>
                         </SelectTrigger>
                         <SelectContent>
                           {ProjectType.getAll().map((projectType) => (
@@ -251,7 +256,12 @@ export default function ContactPage() {
                       <Label htmlFor="discoveryType">How did you hear about us?</Label>
                       <Select value={`${formData.discoveryType}`} onValueChange={handleDiscoverySelectChange}>
                         <SelectTrigger id="discoveryType">
-                          <SelectValue placeholder="Select a discoveryType" />
+                          <SelectValue placeholder="Select a discoveryType">
+                            {formData.discoveryType ? 
+                              Discovery.getById(formData.discoveryType) :  
+                              <span className="text-gray-400">Google, Facebook, Upwork etc.</span>
+                            }
+                          </SelectValue>
                         </SelectTrigger>
                         <SelectContent>
                           {Discovery.getAll().map((discoveryType) => (
