@@ -15,7 +15,7 @@ const projects = [
     category: "Web Development, UI/UX Design",
     description:
       "Disteven is your all-in-one solution for effortlessly managing groups, friends, expenses, and their resolutions.",
-    image: "/disteven.PNG",
+    image: "/disteven.png",
     demoUrl: "https://www.disteven.com/"
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     category: "Web Development, UI/UX Design",
     description:
       "A secure platform for encrypting and decrypting text online.",
-    image: "/cipher-bay.PNG",
+    image: "/cipher-bay.png",
     demoUrl: "https://cipherbay.vercel.app/home"
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     category: "Web Development, UI/UX Design",
     description:
       "A simple and efficient URL shortener for quick link management.",
-    image: "/url-shortner.PNG",
+    image: "/url-shortner.png",
     demoUrl: "https://fexy.vercel.app/"
   },
   {
@@ -46,7 +46,7 @@ const projects = [
     // category: "Branding, Design",
     category: "Web Application",
     description: "A color palette exploration tool for designers and developers.",
-    image: "/colors-expo.PNG",
+    image: "/colors-expo.png",
     demoUrl: "https://find-colors.netlify.app/"
   },
   {
@@ -55,7 +55,7 @@ const projects = [
     client: "ProductivityPro",
     category: "Web Development, Product Strategy",
     description: "A random lottery number matcher for testing luck.",
-    image: "/lottery.PNG",
+    image: "/lottery.png",
     demoUrl: "https://lottery-js.netlify.app/"
   },
   {
@@ -64,7 +64,7 @@ const projects = [
     client: "ProductivityPro",
     category: "Web Development, Product Strategy",
     description: "A visualization of the Collatz Conjecture to explore mathematical patterns.",
-    image: "/collatz.PNG",
+    image: "/collatz.png",
     demoUrl: "https://collatz-visual.netlify.app/"
   },
   {
@@ -75,7 +75,7 @@ const projects = [
     category: "Web Application",
     description:
       "A casual popping game for quick, addictive and relaxing gameplay.",
-    image: "/pop-game.PNG",
+    image: "/pop-game.png",
     demoUrl: "https://pop-game.netlify.app/"
   },
   {
@@ -86,7 +86,7 @@ const projects = [
     category: "Web Application",
     description:
       "A fun and engaging quiz application for testing knowledge.",
-    image: "/quiz-it.PNG",
+    image: "/quiz-it.png",
     demoUrl: "https://quiz-jam.netlify.app/index.html"
   },
   {
@@ -97,7 +97,7 @@ const projects = [
     category: "Web Application",
     description:
       "A visually appealing food, restaurant and online ordering website.",
-    image: "/les-papilles.PNG",
+    image: "/les-papilles.png",
     demoUrl: "https://les-papilles.netlify.app/#m"
   },
   {
@@ -108,7 +108,7 @@ const projects = [
     category: "Web Application",
     description:
       "An interactive temperature plot chart to visualize yearly trends.",
-    image: "/temperature-plot-chart.PNG",
+    image: "/temperature-plot-chart.png",
     demoUrl: "https://yearly-temperature.netlify.app/"
   },
   {
@@ -119,7 +119,7 @@ const projects = [
     category: "Web Application",
     description:
       "An application designed to efficiently handle and manage website errors.",
-    image: "/error-service.PNG",
+    image: "/error-service.png",
     demoUrl: "https://wrng.netlify.app/"
   },
   {
@@ -130,7 +130,7 @@ const projects = [
     category: "Web Application",
     description:
       "A simple and efficient to-do list web app for task management.",
-    image: "/to-do-app.PNG",
+    image: "/to-do-app.png",
     demoUrl: "https://manage-todo.netlify.app/"
   },
   {
@@ -141,7 +141,7 @@ const projects = [
     category: "Web Application",
     description:
       "A recipe and meal planning app to explore and manage cooking ideas easily.",
-    image: "/big-oven.PNG",
+    image: "/big-oven.png",
     demoUrl: "https://big-oven.netlify.app/"
   }
 ]
