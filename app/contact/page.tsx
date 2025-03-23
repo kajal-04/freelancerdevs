@@ -324,12 +324,12 @@ export default function ContactPage() {
       {/* CTA */}
       <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-lg bg-primary p-8 text-primary-foreground md:p-12">
-            <div className="mx-auto max-w-3xl space-y-6 text-center">
+        <div className="rounded-lg bg-primary p-8 bg-gradient-to-r from-primary to-primary-foreground opacity-90 md:p-12">
+          <div className="mx-auto max-w-3xl space-y-6 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Ready to start your project?
               </h2>
-              <p className="text-primary-foreground/80">
+              <p className="text-white/80">
                 Let's discuss how we can help your business grow with our comprehensive digital solutions.
               </p>
               <Button size="lg" variant="secondary" asChild>

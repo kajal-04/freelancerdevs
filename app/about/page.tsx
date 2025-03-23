@@ -144,7 +144,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
+      {/* <section className="container mx-auto py-16 md:py-24 container px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-sm mb-4">
@@ -183,7 +183,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Stats */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-background via-primary/5 to-background px-4 sm:px-6 lg:px-8">
@@ -211,7 +211,6 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-90"></div>
-            <div className="absolute inset-0 bg-[url('/images/cta-background.png')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
 
             <div className="relative z-10 p-8 md:p-12">
               <div className="mx-auto max-w-3xl space-y-6 text-center">

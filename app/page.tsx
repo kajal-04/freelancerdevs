@@ -24,13 +24,13 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section ref={targetRef} className="container mx-auto relative min-h-[90vh] flex items-center px-4 sm:px-6 lg:px-8">
+      <section ref={targetRef} className="relative min-h-[90vh] flex items-center px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 from-primary/5 to-background"></div>
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent"></div>
         </div>
 
-        <motion.div style={{ opacity, scale }} className="container relative z-10 py-20">
+        <motion.div style={{ opacity, scale }} className="container mx-auto relative z-10 py-20">
           <div className="flex flex-col items-center justify-center space-y-12 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -291,6 +291,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true, amount: 0.3 }}
+                className="h-full"
               >
                 <GlowCard>
                   <div className="relative">
@@ -366,8 +367,7 @@ export default function HomePage() {
             viewport={{ once: true, amount: 0.3 }}
             className="relative rounded-2xl overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-[0.15]"></div>
-            <div className="absolute inset-0 bg-[url('/images/cta-background.png')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-[0.8]"></div>
 
             <div className="relative z-10 px-8 py-16 md:px-16 md:py-24">
               <div className="mx-auto max-w-3xl space-y-8 text-center">
