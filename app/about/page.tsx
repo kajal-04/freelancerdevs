@@ -27,7 +27,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 from-primary/5 to-background z-0 rounded-lg"></div>
         <div className="container relative z-10">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
-            <div className="space-y-6">
+            <div className="space-y-6 text-center sm:text-left">
               <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-sm">
                 About Us
               </div>
@@ -40,7 +40,7 @@ export default function AboutPage() {
               </p>
               <Button asChild className="group relative overflow-hidden">
                 <Link href="/contact" className="flex items-center gap-2">
-                  <span className="relative z-10">Get in Touch</span>
+                  <span className="relative z-10 text-white">Get in Touch</span>
                   <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
                 </Link>
               </Button>
