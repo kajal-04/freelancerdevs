@@ -84,8 +84,7 @@ export default function ContactPage() {
 
       if (!response.ok) {
         toast({
-          title: "Submission Failed",
-          description: "Something went wrong. Please try again.",
+          title: "Error sending message! Try again.",
           variant: "destructive",
         });
         setIsSubmitting(false)
@@ -96,8 +95,7 @@ export default function ContactPage() {
 
       if (data.error) {
         toast({
-          title: data.msg || "Something went wrong. Please try again.",
-          description: "",
+          title: data?.msg ?? "Error sending message! Try again.",
           variant: "destructive",
         });
         // console.error("Failed to submit form", data.msg)
@@ -128,7 +126,7 @@ export default function ContactPage() {
     } catch (error) {
       setIsSubmitting(false)
       toast({
-        title: "Something went wrong. Please try again.",
+        title: "Error sending message! Try again.",
         description: "",
         variant: "destructive",
       });
