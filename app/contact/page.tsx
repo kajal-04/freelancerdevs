@@ -431,9 +431,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-medium">Our location</h3>
-                      <p className="text-muted-foreground text-sm">
+                       <Link href="https://maps.app.goo.gl/c6c3CrWZkaozsUPU7" target="_blank" className="text-muted-foreground hover:text-primary text-sm">
                         Hyderabad, India
-                      </p>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>

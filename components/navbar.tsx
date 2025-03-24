@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import AnimatedGradientText from "./animated-gradient-text"
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -69,8 +70,8 @@ export default function Navbar() {
                   loading="eager"
                   className="rounded-lg mx-auto"
                 />
-                <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-                  FreelancerDevs
+                <span className="text-xl font-bold">
+                  <AnimatedGradientText text="FreelancerDevs" />
                 </span>
               </Link>
             </div>

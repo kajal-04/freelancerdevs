@@ -25,6 +25,18 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <section ref={targetRef} className="relative min-h-[90vh] flex items-center px-4 sm:px-6 lg:px-8">
+        <Image
+          src='/dots.svg'
+          height={200}
+          width={200}
+          alt="'Dots'"
+          className="absolute top-0 left-[-75px] z-0 opacity-50" />
+        <Image
+          src='/lines.svg'
+          height={200}
+          width={200}
+          alt="'Dots'"
+          className="absolute bottom-[60px] right-0 z-0 opacity-50" />
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 from-primary/5 to-background"></div>
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent"></div>
@@ -78,32 +90,12 @@ export default function HomePage() {
             >
               <div className="absolute -inset-0.5 rounded-xl from-primary to-primary-foreground opacity-20 blur-xl"></div>
               <div className="absolute -inset-0.5 rounded-xl from-primary to-primary-foreground opacity-20"></div>
-              <div className="relative rounded-xl overflow-hidden flex items-center content-center mt-8">
-                <Image
-                  src="/hero-svg.svg"
-                  width={500}
-                  height={350}
-                  alt="Digital solutions showcase"
-                  className="m-auto"
-                  loading="eager"
-                  priority
-                />
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-center">
-                  <div>
-                    <h3 className="text-xl font-bold text-white">Latest Project: TechFusion Platform</h3>
-                    <p className="text-white/80">A revolutionary SaaS solution for enterprise management</p>
-                  </div>
-                  <Button variant="secondary" size="sm" asChild>
-                    <Link href="/projects/techfusion">View Case Study</Link>
-                  </Button>
-                </div> */}
-              </div>
+
             </motion.div>
           </div>
         </motion.div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce border rounded-full p-2">
           <ArrowRight className="h-6 w-6 rotate-90 text-primary" />
         </div>
       </section>
