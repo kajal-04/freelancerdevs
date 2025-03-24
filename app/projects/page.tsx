@@ -251,7 +251,7 @@ export default function ProjectsPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {categories.map((category, i) => (
-              <Card key={i} className="bg-bacpkground">
+              <Card key={i} className="bg-background">
                 <CardContent className="flex flex-col items-center p-6 text-center">
                   <h3 className="text-lg font-medium">{category.name}</h3>
                   <p className="text-muted-foreground hover:text-primary text-sm">{category.description}</p>
