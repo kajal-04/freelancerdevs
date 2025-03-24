@@ -304,6 +304,69 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
+
+            {/* Automation Solutions */}
+            <div className="grid gap-8 md:grid-cols-2 md:items-center">
+              <div className="order-2 md:order-1">
+                <div className="space-y-4">
+                  <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
+                  Automation Testing Solutions
+                  </div>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+                  Testing <AnimatedGradientText text="Automation" />
+                  </h2>
+                  <p className="text-muted-foreground">
+                    We provide comprehensive automation testing solutions to enhance software quality, reduce manual effort, and accelerate release cycles. Our expert team utilizes industry-leading tools and frameworks to create robust, scalable, and maintainable test automation suites.
+                  </p>
+                  <ul className="mt-6 space-y-2">
+                    {[
+                      "Functional Test Automation",
+                      "Regression Testing",
+                      "Performance & Load Testing",
+                      "API & Integration Testing",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center">
+                        <div className="mr-2 h-1.5 w-1.5 rounded-full bg-primary"></div>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6">
+                    <Button asChild className="group relative overflow-hidden">
+                      <Link href="/contact">
+                        <span className="relative z-10 text-white">Test Now</span>
+                        <span className="absolute inset-0 bg-gradient-to-r from-primary to-primary-foreground opacity-0"></span>
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 md:order-2">
+                <div className="relative">
+                  {/* <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-20 blur-xl"></div> */}
+                  <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-primary to-primary-foreground opacity-[0.025]"></div>
+                  <div className="relative rounded-xl overflow-hidden p-10">
+                    <motion.div style={{ scale }}>
+
+                      <motion.div
+                        initial={{ y: 20 }}
+                        animate={{ y: 0 }}
+                        transition={{ duration: 1 }}
+                        className="space-y-6 max-w-4xl"
+                      >
+                        <Image
+                          src="/bug.svg"
+                          width={400}
+                          height={200}
+                          alt="FreelancerDevs team"
+                          className="rounded-lg mx-auto"
+                        />
+                      </motion.div>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
