@@ -8,6 +8,7 @@ import Footer from "@/components/footer"
 import BackgroundGrid from "@/components/background-grid"
 import { Toaster } from "@/components/ui/toaster"
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
@@ -86,6 +87,7 @@ export default function RootLayout({
               <main className="flex-1">
                 <div>
                   {children}
+                  <SpeedInsights />
                   <Toaster />
                 </div>
               </main>
