@@ -59,7 +59,7 @@ const projects = [
     demoUrl: "https://lottery-js.netlify.app/"
   },
   {
-    id: 5,
+    id: 6,
     title: "Collatz Conjecture",
     client: "ProductivityPro",
     category: "Web Development, Product Strategy",
@@ -68,7 +68,7 @@ const projects = [
     demoUrl: "https://collatz-visual.netlify.app/"
   },
   {
-    id: 6,
+    id: 7,
     title: "Pop It",
     client: "Local Business Network",
     // category: "Digital Marketing, SEO",
@@ -79,7 +79,7 @@ const projects = [
     demoUrl: "https://pop-game.netlify.app/"
   },
   {
-    id: 6,
+    id: 8,
     title: "Quiz It",
     client: "Local Business Network",
     // category: "Digital Marketing, SEO",
@@ -90,7 +90,7 @@ const projects = [
     demoUrl: "https://quiz-jam.netlify.app/index.html"
   },
   {
-    id: 6,
+    id: 9,
     title: "Les Papilles",
     client: "Local Business Network",
     // category: "Digital Marketing, SEO",
@@ -101,7 +101,7 @@ const projects = [
     demoUrl: "https://les-papilles.netlify.app/#m"
   },
   {
-    id: 6,
+    id: 10,
     title: "Temperature Plot Chart",
     client: "Local Business Network",
     // category: "Digital Marketing, SEO",
@@ -112,7 +112,7 @@ const projects = [
     demoUrl: "https://yearly-temperature.netlify.app/"
   },
   {
-    id: 6,
+    id: 11,
     title: "Error Service",
     client: "Local Business Network",
     // category: "Digital Marketing, SEO",
@@ -123,7 +123,7 @@ const projects = [
     demoUrl: "https://wrng.netlify.app/"
   },
   {
-    id: 6,
+    id: 12,
     title: "To Do List",
     client: "Local Business Network",
     // category: "Digital Marketing, SEO",
@@ -134,7 +134,7 @@ const projects = [
     demoUrl: "https://manage-todo.netlify.app/"
   },
   {
-    id: 6,
+    id: 13,
     title: "Big Oven",
     client: "Local Business Network",
     // category: "Digital Marketing, SEO",
@@ -201,12 +201,10 @@ export default function ProjectsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <Card key={project.id} className="overflow-hidden">
-                <div className="aspect-video overflow-hidden h-1/2 w-full">
-                  <Link
-                      target="_blank"
-                      href={`${project.demoUrl}`}
-                    >
+              <Card key={project.id} className="overflow-hidden h-full flex flex-col">
+                {/* Image Section */}
+                <div className="aspect-video overflow-hidden h-[200px] w-full">
+                  <Link target="_blank" href={`${project.demoUrl}`}>
                     <Image
                       src={project.image || "/placeholder.svg"}
                       width={800}
@@ -217,16 +215,17 @@ export default function ProjectsPage() {
                     />
                   </Link>
                 </div>
-                <CardContent className="p-6 h-1/2">
-                <div className="space-y-4 flex flex-col justify-between h-full">
-                  <div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">{project.category}</p>
-                        <h3 className="text-xl font-bold mt-3 mb-1">{project.title}</h3>
-                        {/* <p className="text-sm text-muted-foreground">Client: {project.client}</p> */}
-                      </div>
+
+                {/* Content Section */}
+                <CardContent className="p-6 flex-grow flex flex-col">
+                  <div className="flex flex-col justify-between h-full space-y-4">
+                    <div>
+                      <p className="text-sm text-muted-foreground">{project.category}</p>
+                      <h3 className="text-xl font-bold mt-3 mb-1">{project.title}</h3>
+                      {/* <p className="text-sm text-muted-foreground">Client: {project.client}</p> */}
                       <p className="text-muted-foreground">{project.description}</p>
                     </div>
+
                     <Link
                       target="_blank"
                       href={`${project.demoUrl}`}
@@ -239,6 +238,7 @@ export default function ProjectsPage() {
               </Card>
             ))}
           </div>
+
         </div>
       </section>
 
