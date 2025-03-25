@@ -49,11 +49,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FreelancerDevs | Web Development & Digital Marketing Agency",
     description: "Expert web development, UI/UX design, and digital marketing services to grow your business online. Build stunning websites, optimize for SEO, and drive engagement with our custom solutions.",
-    url: "https://stage.freelancerdevs.com",
+    url: "https://freelancerdevs.com",
     siteName: "FreelancerDevs",
     images: [
       {
-        url: "https://stage.freelancerdevs.com/logo-og.svg", // Replace with your actual OG image
+        url: "https://freelancerdevs.com/logo-og.svg", // Replace with your actual OG image
         width: 1200,
         height: 630,
         alt: "FreelancerDevs | Web Development & Digital Marketing Agency",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "FreelancerDevs - Web Development & Digital Marketing Agency",
     description:
       "FreelancerDevs offers high-quality web development, UI/UX design, and digital marketing services. Build, scale, and grow your business with our expert solutions.",
-    images: ["https://stage.freelancerdevs.com/logo-og.svg"], // Replace with actual Twitter OG image
+    images: ["https://freelancerdevs.com/logo-og.svg"], // Replace with actual Twitter OG image
   },
   robots: "index, follow",
 };
