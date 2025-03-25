@@ -9,6 +9,7 @@ import BackgroundGrid from "@/components/background-grid"
 import { Toaster } from "@/components/ui/toaster"
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import OfflineOverlay from "@/components/offline-overlay"
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
@@ -16,10 +17,10 @@ export const metadata: Metadata = {
   title: "FreelancerDevs | Web Development, UI/UX & Digital Marketing Experts",
   description: "Expert web development, UI/UX design, and digital marketing services to grow your business online. Build stunning websites, optimize for SEO, and drive engagement with our custom solutions.",
   icons: {
-      href: "/favicon.ico",
-      icon: "/favicon.ico",
-      shortcut: "/favicon.ico",
-      apple: "/favicon.png",
+    href: "/favicon.ico",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.png",
   },
   keywords: [
     "FreelancerDevs",
@@ -48,11 +49,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FreelancerDevs | Web Development & Digital Marketing Agency",
     description: "Expert web development, UI/UX design, and digital marketing services to grow your business online. Build stunning websites, optimize for SEO, and drive engagement with our custom solutions.",
-    url: "https://stage.freelancerdevs.com",
+    url: "https://freelancerdevs.com",
     siteName: "FreelancerDevs",
     images: [
       {
-        url: "https://stage.freelancerdevs.com/logo-og.svg", // Replace with your actual OG image
+        url: "https://freelancerdevs.com/logo-og.svg", // Replace with your actual OG image
         width: 1200,
         height: 630,
         alt: "FreelancerDevs | Web Development & Digital Marketing Agency",
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
     title: "FreelancerDevs - Web Development & Digital Marketing Agency",
     description:
       "FreelancerDevs offers high-quality web development, UI/UX design, and digital marketing services. Build, scale, and grow your business with our expert solutions.",
-    images: ["https://stage.freelancerdevs.com/logo-og.svg"], // Replace with actual Twitter OG image
+    images: ["https://freelancerdevs.com/logo-og.svg"], // Replace with actual Twitter OG image
   },
   robots: "index, follow",
 };
@@ -91,6 +92,7 @@ export default function RootLayout({
                   <Toaster />
                 </div>
               </main>
+              <OfflineOverlay />
               <Footer />
             </div>
           </div>

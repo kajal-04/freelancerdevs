@@ -46,6 +46,33 @@
   }
 }
 
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary)/0.75);
+  border-radius: 5px;
+  border: 2px solid hsl(var(--secondary));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+::selection {
+  /* dark */
+  background: #1b1b1b;
+  color: wheat;
+}
+
 @layer utilities {
   .animate-gradient {
     background-size: 200% auto;
