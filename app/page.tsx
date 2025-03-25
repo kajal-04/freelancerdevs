@@ -152,15 +152,31 @@ export default function HomePage() {
             ].map((service, i) => (
               <GlowCard key={i}>
                 <div className="flex flex-col h-full">
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-                    <div className="text-primary">{service.icon}</div>
-                  </div>
+                  {/* <div className="relative mb-6 flex h-14 w-14 items-center justify-center rounded-full overflow-hidden">
+                    <div className="absolute inset-0 animate-spin-slow bg-gradient-to-b from-primary/20 to-secondary/20"></div>
+
+                    <div className="relative z-10 flex h-full w-full items-center justify-center rounded-full bg-primary/10">
+                      <div className="text-primary">{service.icon}</div>
+                    </div>
+                  </div> */}
+                    <div className="relative mb-6 flex h-[59px] w-[60px] items-center justify-center rounded-full">
+                      {/* Rotating gradient border */}
+                      <div className="absolute inset-0 rounded-full">
+                        <div className="absolute inset-0 rounded-full animate-spin-slow 
+                          before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r 
+                          before:from-background before:via-blue-500 before:to-background 
+                          before:p-[30px]">
+                        </div>
+                      </div>
+
+                      {/* Inner circle */}
+                      <div className="relative z-10 flex h-full w-full items-center justify-center rounded-full bg-background">
+                        <div className="text-primary">{service.icon}</div>
+                      </div>
+                    </div>
                   <h3 className="mb-2 text-xl font-bold">{service.title}</h3>
                   <p className="flex-grow text-muted-foreground">{service.description}</p>
-                  {/* <Link href={service.link} className="inline-flex items-center text-sm font-medium text-primary group">
-                    Learn more
-                    <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link> */}
+                  
                 </div>
               </GlowCard>
             ))}
@@ -382,17 +398,19 @@ export default function HomePage() {
                 <p className="text-white/80 text-lg">
                   Let's discuss how we can help your business grow with our comprehensive digital solutions.
                 </p>
-                <Button size="lg" variant="secondary" asChild className="group mr-4">
-                  <Link href="/contact" className="flex items-center gap-2">
-                    Contact Us Today
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="secondary" asChild className="group">
-                  <Link href="https://calendly.com/contact-freelancerdevs/30min" target="_blank" className="flex items-center gap-2">
-                    Schedule a call!
-                  </Link>
-                </Button>
+                <div className="flex justify-center flex-wrap">
+                  <Button size="lg" variant="secondary" asChild className="group sm:mr-4 mb-3">
+                    <Link href="/contact" className="flex items-center gap-2 w-full sm:w-auto">
+                      Contact Us Today
+                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </Link>
+                  </Button>
+                  <Button size="lg" variant="secondary" asChild className="group">
+                    <Link href="https://calendly.com/contact-freelancerdevs/30min" target="_blank" className="flex items-center gap-2 w-full sm:w-auto">
+                      Schedule a call!
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </motion.div>
