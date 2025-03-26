@@ -14,6 +14,7 @@ import { PageTransition } from '@/components/page-transition'
 import AnimatedGradientText from "@/components/animated-gradient-text"
 import { Discovery, ProjectType } from "@/types/enums"
 import { useToast } from "@/hooks/use-toast"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export default function ContactPage() {
   const { toast } = useToast();
@@ -403,7 +404,12 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <Link href="mailto:contact@freelancerdevs.com" className="text-muted-foreground hover:text-primary text-sm">
+                      <Link href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.location.href = "mailto:contact@freelancerdevs.com";
+                        }}
+                        className="text-muted-foreground hover:text-primary text-sm">
                         contact@freelancerdevs.com
                       </Link>
                     </div>
@@ -469,7 +475,7 @@ export default function ContactPage() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Frequently Asked Questions</h2>
               <p className="mt-4 text-muted-foreground">Find answers to common questions about working with us</p>
             </div>
-            <div className="space-y-6">
+            <div className="mt-6">
               {[
                 {
                   question: "What is your typical process for new projects?",
@@ -497,14 +503,14 @@ export default function ContactPage() {
                     "We're experienced in collaborating with in-house teams and can adapt our process to complement your existing workflows and resources.",
                 },
               ].map((faq, i) => (
-                <Card key={i}>
-                  <CardHeader>
-                    <CardTitle className="text-lg">{faq.question}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{faq.answer}</p>
-                  </CardContent>
-                </Card>
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="item-1" key={i}>
+                    <AccordionTrigger className="text-left mr-3">{faq.question}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                    {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               ))}
             </div>
           </div>

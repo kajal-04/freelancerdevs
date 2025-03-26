@@ -254,7 +254,7 @@ export default function ProjectsPage() {
               <Card key={i} className="bg-background">
                 <CardContent className="flex flex-col items-center p-6 text-center">
                   <h3 className="text-lg font-medium">{category.name}</h3>
-                  <p className="text-muted-foreground hover:text-primary text-sm">{category.description}</p>
+                  <p className="text-muted-foreground text-sm">{category.description}</p>
                   {/* <Link
                   href={`/projects/category/${category.toLowerCase().replace(/\s+/g, "-")}`}
                   className="mt-2 inline-flex items-center text-sm font-medium text-primary"
