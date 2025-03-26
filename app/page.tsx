@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import GlowCard from "@/components/glow-card"
 import AnimatedGradientText from "@/components/animated-gradient-text"
 import ParallaxSection from "@/components/parallax-section"
-import { ArrowRight, Code, Layout, LineChart, MessageSquare, Zap, ArrowUpRight } from "lucide-react"
+import { ArrowRight, Code, Layout, LineChart, MessageSquare, Zap, ArrowUpRight, Phone } from "lucide-react"
 import AnimatedCounter from "@/components/animated-counter"
 
 export default function HomePage() {
@@ -419,6 +419,7 @@ export default function HomePage() {
                   <Button size="lg" variant="secondary" asChild className="group">
                     <Link href="https://calendly.com/contact-freelancerdevs/30min" target="_blank" className="flex items-center gap-2 w-full sm:w-auto">
                       Schedule a call!
+                      <Phone className="h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
