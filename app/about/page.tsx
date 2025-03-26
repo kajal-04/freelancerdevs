@@ -132,9 +132,21 @@ export default function AboutPage() {
             ].map((value, i) => (
               <GlowCard key={i}>
                 <div className="flex flex-col items-center p-6 text-center">
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-                    {value.icon}
-                  </div>
+                <div className="relative mb-6 flex h-[59px] w-[60px] items-center justify-center rounded-full">
+                      {/* Rotating gradient border */}
+                      <div className="absolute inset-0 rounded-full">
+                        <div className="absolute inset-0 rounded-full animate-[spin_5s_linear_infinite] 
+                          before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r 
+                          before:from-background before:via-blue-500 before:to-background 
+                          before:p-[30px]">
+                        </div>
+                      </div>
+
+                      {/* Inner circle */}
+                      <div className="relative z-10 flex h-full w-full items-center justify-center rounded-full bg-background">
+                        <div className="text-primary">{value.icon}</div>
+                      </div>
+                    </div>
                   <h3 className="mb-2 text-xl font-bold">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
                 </div>

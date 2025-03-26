@@ -24,25 +24,27 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section ref={targetRef} className="relative min-h-[90vh] flex items-center px-4 sm:px-6 lg:px-8">
-        <Image
-          src='/dots.svg'
-          height={200}
-          width={200}
-          alt="'Dots'"
-          className="absolute top-0 left-[-75px] z-0 opacity-50" />
-        <Image
-          src='/lines.svg'
-          height={200}
-          width={200}
-          alt="'Dots'"
-          className="absolute bottom-[60px] right-0 z-0 opacity-50" />
+      <section ref={targetRef} className="relative min-h-[90vh]">
+        <motion.div 
+          initial={{ x: -150, opacity: 0 }}
+          animate={{ x: -72, opacity: 0.5 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="absolute top-0 left-0 z-0 hidden sm:block"
+        >
+          <Image
+            src="/dots.svg"
+            height={200}
+            width={200}
+            alt="Dots"
+          />
+        </motion.div>
+
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 from-primary/5 to-background"></div>
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent"></div>
         </div>
 
-        <motion.div style={{ opacity, scale }} className="container mx-auto relative z-10 py-20">
+        <motion.div style={{ opacity, scale }} className="container mx-auto relative z-10 pt-20 px-4 sm:px-6 lg:px-8  ">
           <div className="flex flex-col items-center justify-center space-y-12 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -95,8 +97,25 @@ export default function HomePage() {
           </div>
         </motion.div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce border rounded-full p-2">
-          <ArrowRight className="h-6 w-6 rotate-90 text-primary" />
+        <div className="w-full overflow-hidden flex justify-end">
+          <motion.div
+            initial={{ x: 150, opacity: 0 }}
+            animate={{ x: 0, opacity: 0.5 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className=" bottom-[60px] right-0 z-0 opacity-50 hidden sm:block"
+          >
+            <Image
+              src="/lines.svg"
+              height={200}
+              width={200}
+              alt="Lines"
+            />
+          </motion.div>
+        </div>
+        <div className="flex justify-center">
+          <div className="absolute bottom-8 animate-bounce border rounded-full p-2">
+            <ArrowRight className="h-6 w-6 rotate-90 text-primary" />
+          </div>
         </div>
       </section>
 
@@ -154,7 +173,7 @@ export default function HomePage() {
                     <div className="relative mb-6 flex h-[59px] w-[60px] items-center justify-center rounded-full">
                       {/* Rotating gradient border */}
                       <div className="absolute inset-0 rounded-full">
-                        <div className="absolute inset-0 rounded-full animate-spin-slow 
+                        <div className="absolute inset-0 rounded-full animate-[spin_5s_linear_infinite]
                           before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r 
                           before:from-background before:via-blue-500 before:to-background 
                           before:p-[30px]">
