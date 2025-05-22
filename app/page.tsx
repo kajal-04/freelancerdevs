@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import GlowCard from "@/components/glow-card"
 import AnimatedGradientText from "@/components/animated-gradient-text"
 import ParallaxSection from "@/components/parallax-section"
-import { ArrowRight, Code, Layout, LineChart, MessageSquare, Zap, ArrowUpRight } from "lucide-react"
+import { ArrowRight, Code, Layout, LineChart, MessageSquare, Zap, ArrowUpRight, Phone } from "lucide-react"
 import AnimatedCounter from "@/components/animated-counter"
 
 export default function HomePage() {
@@ -24,13 +24,27 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section ref={targetRef} className="relative min-h-[90vh] flex items-center px-4 sm:px-6 lg:px-8">
+      <section ref={targetRef} className="relative min-h-[90vh]">
+        <motion.div 
+          initial={{ x: -150, opacity: 0 }}
+          animate={{ x: -72, opacity: 0.5 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="absolute top-0 left-0 z-0 hidden sm:block"
+        >
+          <Image
+            src="/dots.svg"
+            height={200}
+            width={200}
+            alt="Dots"
+          />
+        </motion.div>
+
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 from-primary/5 to-background"></div>
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-background to-transparent"></div>
         </div>
 
-        <motion.div style={{ opacity, scale }} className="container mx-auto relative z-10 py-20">
+        <motion.div style={{ opacity, scale }} className="container mx-auto relative z-10 pt-20 px-4 sm:px-6 lg:px-8  ">
           <div className="flex flex-col items-center justify-center space-y-12 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -78,33 +92,30 @@ export default function HomePage() {
             >
               <div className="absolute -inset-0.5 rounded-xl from-primary to-primary-foreground opacity-20 blur-xl"></div>
               <div className="absolute -inset-0.5 rounded-xl from-primary to-primary-foreground opacity-20"></div>
-              <div className="relative rounded-xl overflow-hidden flex items-center content-center mt-8">
-                <Image
-                  src="/hero-svg.svg"
-                  width={500}
-                  height={350}
-                  alt="Digital solutions showcase"
-                  className="m-auto"
-                  loading="eager"
-                  priority
-                />
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 flex justify-between items-center">
-                  <div>
-                    <h3 className="text-xl font-bold text-white">Latest Project: TechFusion Platform</h3>
-                    <p className="text-white/80">A revolutionary SaaS solution for enterprise management</p>
-                  </div>
-                  <Button variant="secondary" size="sm" asChild>
-                    <Link href="/projects/techfusion">View Case Study</Link>
-                  </Button>
-                </div> */}
-              </div>
+
             </motion.div>
           </div>
         </motion.div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <ArrowRight className="h-6 w-6 rotate-90 text-primary" />
+        <div className="w-full overflow-hidden flex justify-end">
+          <motion.div
+            initial={{ x: 150, opacity: 0 }}
+            animate={{ x: 0, opacity: 0.5 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className=" bottom-[60px] right-0 z-0 opacity-50 hidden sm:block"
+          >
+            <Image
+              src="/lines.svg"
+              height={200}
+              width={200}
+              alt="Lines"
+            />
+          </motion.div>
+        </div>
+        <div className="flex justify-center">
+          <div className="absolute bottom-8 animate-bounce border rounded-full p-2">
+            <ArrowRight className="h-6 w-6 rotate-90 text-primary" />
+          </div>
         </div>
       </section>
 
@@ -152,15 +163,31 @@ export default function HomePage() {
             ].map((service, i) => (
               <GlowCard key={i}>
                 <div className="flex flex-col h-full">
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-                    <div className="text-primary">{service.icon}</div>
-                  </div>
+                  {/* <div className="relative mb-6 flex h-14 w-14 items-center justify-center rounded-full overflow-hidden">
+                    <div className="absolute inset-0 animate-spin-slow bg-gradient-to-b from-primary/20 to-secondary/20"></div>
+
+                    <div className="relative z-10 flex h-full w-full items-center justify-center rounded-full bg-primary/10">
+                      <div className="text-primary">{service.icon}</div>
+                    </div>
+                  </div> */}
+                    <div className="relative mb-6 flex h-[59px] w-[60px] items-center justify-center rounded-full">
+                      {/* Rotating gradient border */}
+                      <div className="absolute inset-0 rounded-full">
+                        <div className="absolute inset-0 rounded-full animate-[spin_5s_linear_infinite]
+                          before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r 
+                          before:from-background before:via-blue-500 before:to-background 
+                          before:p-[30px]">
+                        </div>
+                      </div>
+
+                      {/* Inner circle */}
+                      <div className="relative z-10 flex h-full w-full items-center justify-center rounded-full bg-background">
+                        <div className="text-primary">{service.icon}</div>
+                      </div>
+                    </div>
                   <h3 className="mb-2 text-xl font-bold">{service.title}</h3>
                   <p className="flex-grow text-muted-foreground">{service.description}</p>
-                  {/* <Link href={service.link} className="inline-flex items-center text-sm font-medium text-primary group">
-                    Learn more
-                    <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link> */}
+                  
                 </div>
               </GlowCard>
             ))}
@@ -382,17 +409,20 @@ export default function HomePage() {
                 <p className="text-white/80 text-lg">
                   Let's discuss how we can help your business grow with our comprehensive digital solutions.
                 </p>
-                <Button size="lg" variant="secondary" asChild className="group mr-4">
-                  <Link href="/contact" className="flex items-center gap-2">
-                    Contact Us Today
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="secondary" asChild className="group">
-                  <Link href="https://calendly.com/contact-freelancerdevs/30min" target="_blank" className="flex items-center gap-2">
-                    Schedule a call!
-                  </Link>
-                </Button>
+                <div className="flex justify-center flex-wrap">
+                  <Button size="lg" variant="secondary" asChild className="group sm:mr-4 mb-3">
+                    <Link href="/contact" className="flex items-center gap-2 w-full sm:w-auto">
+                      Contact Us Today
+                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    </Link>
+                  </Button>
+                  <Button size="lg" variant="secondary" asChild className="group">
+                    <Link href="https://calendly.com/contact-freelancerdevs/30min" target="_blank" className="flex items-center gap-2 w-full sm:w-auto">
+                      Schedule a call!
+                      <Phone className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </motion.div>
