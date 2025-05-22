@@ -86,7 +86,7 @@ export default function BlogsPage() {
         <PageTransition>
             {/* Hero Section */}
             <section className="container mx-auto relative py-6 md:py-8 px-4 sm:px-6 lg:px-8">
-                <div className="absolute inset-0 from-primary/5 to-background z-0 rounded-lg"></div>
+                {/* <div className="absolute inset-0 from-primary/5 to-background z-0 rounded-lg"></div> */}
                 <div className="container relative z-10">
                     <div className="mx-auto max-w-3xl space-y-6 text-center">
                         <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-sm">
