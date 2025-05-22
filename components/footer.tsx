@@ -5,16 +5,16 @@ export default function Footer() {
   return (
     <footer className="relative z-10 border-t border-border/40 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-12 md:py-16">
+        <div className="py-8 md:py-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-            <div className="space-y-4">
+            <div>
               <h3 className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
                 FreelancerDevs
               </h3>
               <p className="text-sm text-muted-foreground">
                 Providing innovative digital solutions for businesses of all sizes since 2015.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 my-4">
                 {[
                   { icon: <Facebook className="h-5 w-5" />, label: "Facebook" },
                   { icon: <Twitter className="h-5 w-5" />, label: "Twitter" },
@@ -27,6 +27,9 @@ export default function Footer() {
                     <span className="sr-only">{social.label}</span>
                   </div>
                 ))}
+              </div>
+              <div>
+                  <iframe src="https://status.freelancerdevs.com/badge?theme=dark" width="250" height="30" frameBorder="0" scrolling="no" style={{ colorScheme: "normal", fontFamily: 'inherit'}}></iframe>
               </div>
             </div>
             <div>
@@ -122,7 +125,7 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div className="mt-12 border-t border-border/40 pt-6">
+          <div className="mt-6 border-t border-border/40 pt-6">
             <p className="text-center text-xs text-muted-foreground">
               © {new Date().getFullYear()} FreelancerDevs. All rights reserved.
             </p>
