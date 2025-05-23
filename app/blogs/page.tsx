@@ -15,7 +15,7 @@ export default function BlogsPage() {
     const query = `
     {
         publication(host: "blog.freelancerdevs.com") {
-            posts(first: 5) {
+            posts(first: 50) {
                 edges {
                     node {
                         id
@@ -36,7 +36,7 @@ export default function BlogsPage() {
 
 
     useEffect(() => {
-        // Fetch posts from the API
+        // Fetch posts from the GraphQL API
         fetch('https://gql.hashnode.com', {
             method: 'POST',
             headers: {
@@ -130,15 +130,15 @@ export default function BlogsPage() {
                                     </div>
                                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                                     {posts.map((post) => (
-                                        <div key={post.slug} className="rounded-lg bg-background border p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
-                                            <div className='flex justify-center items-center h-32 w-full overflow-hidden rounded-lg bg-gray-800'>
+                                        <div key={post.slug} className="rounded-lg bg-background border p-4 shadow-lg">
+                                            <div className='flex justify-center items-center h-32 w-full overflow-hidden bg-gradient-to-r from-primary/10 to-primary/20 rounded-lg opacity-[0.5] shadow-lg'>
                                                 <Image
                                                     src="/blog.png"
                                                     width={60}
                                                     height={60}
                                                     alt={post.title}
                                                     loading="eager"
-                                                    className="rounded-lg mx-auto object-cover"
+                                                    className="rounded-lg mx-auto object-cover opacity-100"
                                                 />
                                             </div>
                                             <h2 className="mt-4 text-xl font-semibold">{post.title}</h2>
@@ -147,17 +147,7 @@ export default function BlogsPage() {
                                                     <TooltipProvider>
                                                         <Tooltip>
                                                             <TooltipTrigger asChild>
-                                                                <p className="text-sm flex items-center gap-1">{post.views} <EyeIcon className="h-4 w-4" /></p>
-                                                            </TooltipTrigger>
-                                                            <TooltipContent side="top">
-                                                                Views
-                                                            </TooltipContent>
-                                                        </Tooltip>
-                                                    </TooltipProvider>
-                                                    <TooltipProvider>
-                                                        <Tooltip>
-                                                            <TooltipTrigger asChild>
-                                                                <p className="text-sm flex items-center gap-1">{post.reactionCount}  <HeartIcon className="h-4 w-4" /> </p>
+                                                                <p className="text-sm flex items-center gap-1">{post.reactionCount}  <HeartIcon className="h-4 w-4 stroke-red-500" /> </p>
                                                             </TooltipTrigger>
                                                             <TooltipContent side="top">
                                                                 Likes
@@ -167,7 +157,17 @@ export default function BlogsPage() {
                                                     <TooltipProvider>
                                                         <Tooltip>
                                                             <TooltipTrigger asChild>
-                                                                <p className="text-sm flex items-center gap-1">{post.responseCount} <MessageCircleIcon className="h-4 w-4" /> </p>
+                                                                <p className="text-sm flex items-center gap-1">{post.views} <EyeIcon className="h-4 w-4 " /></p>
+                                                            </TooltipTrigger>
+                                                            <TooltipContent side="top">
+                                                                Views
+                                                            </TooltipContent>
+                                                        </Tooltip>
+                                                    </TooltipProvider>
+                                                    <TooltipProvider>
+                                                        <Tooltip>
+                                                            <TooltipTrigger asChild>
+                                                                <p className="text-sm flex items-center gap-1">{post.responseCount} <MessageCircleIcon className="h-4 w-4 " /> </p>
                                                             </TooltipTrigger>
                                                             <TooltipContent side="top">
                                                                 Comments
@@ -177,11 +177,13 @@ export default function BlogsPage() {
                                                 </div>
                                                 <p className="mt-2 text-sm text-muted-foreground">{formatDate(post.publishedAt)}</p>
                                             </div>
+
                                             {/* Uncomment the line below if you want to show the brief */}
                                             {/* <p className="mt-2 text-slate-600">{post.brief}</p> */}
-                                            <Link href={`https://blog.freelancerdevs.com/${post.slug}`} target="_blank" className="mt-4 inline-block text-primary flex items-center gap-1">
+
+                                            <Link href={`https://blog.freelancerdevs.com/${post.slug}`} target="_blank" className="group mt-4 text-primary inline-flex items-center gap-1">
                                                 <span className="text-sm font-medium">{post.readTimeInMinutes} min read</span>
-                                                <ArrowUpRightIcon className="h-4 w-4" />
+                                                <ArrowUpRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                             </Link>
                                         </div>
                                     ))}
