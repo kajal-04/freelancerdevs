@@ -503,7 +503,7 @@ export default function ContactPage() {
                     "We're experienced in collaborating with in-house teams and can adapt our process to complement your existing workflows and resources.",
                 },
               ].map((faq, i) => (
-                <Accordion type="single" collapsible>
+                <Accordion type="single" key={i} collapsible>
                   <AccordionItem value="item-1" key={i}>
                     <AccordionTrigger className="text-left mr-3">{faq.question}</AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">
